@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension group="system" method="upgrade" type="plugin" version="2.5">
+    <name>System - RokSprocket</name>
+    <creationDate>April 13, 2018</creationDate>
+    <author>RocketTheme, LLC</author>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2018 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>2.1.23</version>
+    <description>RokSprocket System Plugin</description>
+    <files>
+        <filename plugin="roksprocket">roksprocket.php</filename>
+        <filename>index.html</filename>
+    </files>
+</extension>

@@ -1,0 +1,24 @@
+/**
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+.tags {width: 180px;}
+.tags, .tags-holder {display: inline-block;margin-bottom: 9px;}
+.tags-holder {cursor: text;width: 100%;border: 1px solid #ccc;border-bottom-color: #bbb;border-radius: 4px;font-size: 1.2em;padding:4px 5px 0 !important;vertical-align: middle;}
+.tags-holder li {float: left;list-style-type: none;margin: 0 5px 4px 0;padding: 0px 5px;font-size: 13px;;text-shadow: 0 1px 0 #fff;}
+.tags-holder .tags-input {display: none;}
+.tags-holder .tags-input.main-input {display:block;padding: 0;}
+.tags-holder .tags-input.main-input input {width: 15px;height:20px;}
+.tags-holder .tags-input input {margin: 0;padding: 0;border: 0;border-radius: 0;box-shadow: none;background-color: transparent;}
+
+/* tag style */
+.tags-holder li.tags-box {background: #dee7f8;border-radius: 4px;border: 1px solid #c9d4ef;color:#59627a;}
+.tags-remove {font-size: 15px;margin-left: 5px;line-height:15px;position:relative;top: 1px;cursor:pointer;}
+.tags-remove:hover {color: #111;}
+
+/* sprocket per item reset */
+body .articles .article .item-params .tags-holder {border-radius: 0 4px 4px 4px;}
+body .articles .article .item-params .tags-holder li, body #tabs-container .articles .article .item-params .tags-holder li {clear: none !important;padding: 0px 5px !important;}
+body .articles .article .item-params .tags-holder li.main-input, body #tabs-container .articles .article .item-params .tags-holder li.main-input {margin:0 0 3px 0 !important;padding:0 !important;}
+body .articles .article .item-params .tags-holder li.tags-box span {width:auto !important;padding-right: 0 !important;color:#59627a !important;line-height: 18px !important;}

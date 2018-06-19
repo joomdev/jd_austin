@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" type="plugin" group="system" method="upgrade">
+    <name>JD Austin</name>
+    <description>JD Austin - Free Business Joomla Template</description>
+    <scriptfile>installer.script.php</scriptfile>
+    <files>
+		<filename plugin="tmp_helixult">installer.script.php</filename>
+    </files>
+    <plugins>
+        <plugin plugin="helixultimate" group="system" />
+    </plugins>
+    <template name="jd_austin"/>
+</extension>

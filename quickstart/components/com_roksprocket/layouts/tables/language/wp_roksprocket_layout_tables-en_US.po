@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jakub Baran <jakub@rockettheme.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.6.6\n"
+
+msgid "ROKSPROCKET_TABLES_LAYOUT_TITLE"
+msgstr "Tables Layout Options"
+
+msgid "ROKSPROCKET_TABLES_LAYOUT_DEFAULTS_TITLE"
+msgstr "Tables Article Defaults"
+
+msgid "ROKSPROCKET_TABLES_ITEMSPERPAGE_LABEL"
+msgstr "Previews per Page"
+
+msgid "ROKSPROCKET_TABLES_ITEMSPERPAGE_DESC"
+msgstr "Amount of article previews to show on each page"
+
+msgid "ROKSPROCKET_TABLES_ITEMSPERROW"
+msgstr "Items Per Row"
+
+msgid "ROKSPROCKET_TABLES_ITEMSPERROW_DESC"
+msgstr "Amount of article items to show in each row."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_TITLE_LABEL"
+msgstr "Title"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_TITLE_DESC"
+msgstr ""
+"The title to be used for each product. If not set, it will default to the "
+"article title."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_DESCRIPTION_LABEL"
+msgstr "Description"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_DESCRIPTION_DESC"
+msgstr ""
+"The description to be used for the product. If not set, it will defaults to "
+"the article Introtext."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_CLASS_LABEL"
+msgstr "Class"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_CLASS_DESC"
+msgstr "A HTML class that is applied to enable custom per-item styling."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_PRICE_LABEL"
+msgstr "Price"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_PRICE_DESC"
+msgstr "The price to be displayed for each product."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_IMAGE_LABEL"
+msgstr "Image"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_IMAGE_DESC"
+msgstr "The image to be used for the product."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_1"
+msgstr "Feature 1"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_2"
+msgstr "Feature 2"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_3"
+msgstr "Feature 3"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_4"
+msgstr "Feature 4"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_FEATURE_DESC"
+msgstr ""
+"The description text to describe features and information about the product. "
+"Each feature line will appear as another row in the table."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_LINK_LABEL"
+msgstr "Link"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_LINK_DESC"
+msgstr ""
+"If set, the link will show a button allowing you to link to additional "
+"product details or directly to a purchase action. You can customize the "
+"button text below."
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_LINK_TEXT_LABEL"
+msgstr "Link Text"
+
+msgid "ROKSPROCKET_LAYOUT_TABLES_LINK_TEXT_DESC"
+msgstr ""
+"Customize the text for the link button to describe the intended action."
+
+msgid "SLIDE"
+msgstr "Slide"
+
+msgid "FADEDELAY"
+msgstr "Fade Delayed"
+
+msgid "FLYIN"
+msgstr "Fly In"
+
+msgid "FALLDOWN"
+msgstr "Fall Down"
+
+msgid "FLOATUP"
+msgstr "Float Up"
+
+msgid "SCALEIN"
+msgstr "Scale In"
+
+msgid "SCALEOUT"
+msgstr "Scale Out"
+
+msgid "SINGLE_ROW"
+msgstr "Single Row"
+
+msgid "WRAP"
+msgstr "Wrap"
+
+msgid "BUY_NOW"
+msgstr "Buy Now"

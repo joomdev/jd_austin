@@ -1,0 +1,41 @@
+<config>
+    <fields name="params">
+        <fieldset name="roksprocket" overwrite="true">
+            <field name="k2_provider_title" type="label" label="ROKSPROCKET_K2_CONTENT_FILTER_RULES" default="" description=""
+                   optionorder="10" class="provider provider_k2"/>
+            <field name="k2_articles" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_k2 filter_articles" optionorder="12"
+                   filterlocationparam="roksprocket.providers.registered.k2.path"
+                   filterfile="articles.xml" emptybuttontext="ROKSPROCKET_ADD_SPECIFIC_ARTICLES"
+                   notice=""/>
+            <field name="k2_filters" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_k2 filter_filters" optionorder="13"
+                   filterlocationparam="roksprocket.providers.registered.k2.path"
+                   filterfile="filters.xml" emptybuttontext="ROKSPROCKET_ADD_FILTERS"
+                   notice=""/>
+            <field name="k2_sort" type="dynamicfields" label=""
+                   class="provider provider_k2 dynamicfield-subinstance" optionorder="14" default="automatic"
+                   description="">
+                <option value="automatic" rel="k2_sort_automatic">ROKSPROCKET_SORT_AUTOMATIC</option>
+                <option value="manual" rel="k2_sort_manual">ROKSPROCKET_SORT_MANUAL</option>
+                <option value="random" rel="k2_sort_random">ROKSPROCKET_SORT_RANDOM</option>
+            </field>
+            <field name="k2_sort_automatic_filters"
+                   class="k2_sort k2_sort_automatic provider provider_k2 filter_automatic_filters" optionorder="15"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.k2.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_SORT_RULES"/>
+
+            <field name="k2_sort_manual_append" class="k2_sort k2_sort_manual provider provider_k2" optionorder="15"
+                   type="list" label="ROKSPROCKET_WITH_NEW_ARTICLES_ADDED" default="after">
+                <option value="before">ROKSPROCKET_SORT_BEFORE</option>
+                <option value="after">ROKSPROCKET_SORT_AFTER</option>
+            </field>
+            <field name="k2_sort_manual_filters"
+                   class="k2_sort k2_sort_manual provider provider_k2 filter_manual_filter_sort" optionorder="16"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.k2.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_FALLBACK_MANUAL_SORT_RULES"/>
+        </fieldset>
+    </fields>
+</config>

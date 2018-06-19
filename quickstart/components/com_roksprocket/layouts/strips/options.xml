@@ -1,0 +1,122 @@
+<config>
+  <fields name="params">
+    <fieldset name="roksprocket" overwrite="false">
+      <field name="strips_layout_title" type="label" label="ROKSPROCKET_STRIPS_LAYOUT_TITLE" default=""
+         description="" optionorder="50" class=""/>
+         <field name="strips_themes" label="ROKSPROCKET_THEMES_LABEL" type="containerlist"
+           description="ROKSPROCKET_THEMES_DESC" configkey="roksprocket.layouts.strips.themes" optionorder="51"
+           class=""/>
+           <field name="strips_previews_length" type="textplus" default="20" append="words"
+             label="ROKSPROCKET_PREVIEWSLENGTH_LABEL" description="ROKSPROCKET_PREVIEWSLENGTH_DESC"
+             optionorder="53" class=""/>
+             <field name="strips_strip_html_tags" type="containerlist" default="1" label="ROKSPROCKET_STRIP_HTML_TAGS_LABEL"
+               description="ROKSPROCKET_STRIP_HTML_TAGS_DESC" optionorder="53.5" class="">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+           </field>
+           <field name="strips_items_per_page" type="text" default="4" append="chrs"
+               label="ROKSPROCKET_STRIPS_ITEMSPERPAGE_LABEL" description="ROKSPROCKET_STRIPS_ITEMSPERPAGE_DESC"
+               optionorder="54" class=""/>
+               <field name="strips_items_per_row" type="containerlist" default="4" label="ROKSPROCKET_STRIPS_ITEMSPERROW"
+                 description="ROKSPROCKET_STRIPS_ITEMSPERROW_DESC" optionorder="55" class="">
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+                 <option value="6">6</option>
+                 <option value="7">7</option>
+                 <option value="8">8</option>
+                 <option value="9">9</option>
+                 <option value="10">10</option>
+                 <option value="11">11</option>
+                 <option value="12">12</option>
+             </field>
+               <field name="strips_show_arrows" type="containerlist" default="show" label="ROKSPROCKET_ARROW_LABEL"
+                 description="ROKSPROCKET_ARROW_DESC" optionorder="55" class="">
+                 <option value="show">JSHOW</option>
+                 <option value="hide">JHIDE</option>
+             </field>
+             <field name="strips_show_pagination" type="containerlist" default="1" label="ROKSPROCKET_PAGINATION_LABEL"
+                 description="ROKSPROCKET_PAGINATION_DESC" optionorder="56" class="">
+                 <option value="1">JSHOW</option>
+                 <option value="0">JHIDE</option>
+             </field>
+             <field name="strips_animation" label="ROKSPROCKET_ANIMATION_LABEL" type="containerlist"
+                 description="ROKSPROCKET_ANIMATION_DESC" default="fadeDelay" optionorder="57"
+                 class="animations-dropdown ">
+                 <option value="fade">FADE</option>
+                 <option value="slide">SLIDE</option>
+                 <option value="" divider="true"></option>
+                 <option value="fadeDelay">FADEDELAY</option>
+                 <option value="flyIn">FLYIN</option>
+                 <option value="fallDown">FALLDOWN</option>
+                 <option value="floatUp">FLOATUP</option>
+                 <option value="scaleIn">SCALEIN</option>
+                 <option value="scaleOut">SCALEOUT</option>
+                 <option value="" divider="true"></option>
+                 <option value="random">RANDOM</option>
+             </field>
+             <field name="strips_autoplay" type="containerlist" default="0" label="ROKSPROCKET_AUTOPLAY_LABEL"
+                 description="ROKSPROCKET_AUTOPLAY_DESC" optionorder="58" class="">
+                 <option value="1">ENABLE</option>
+                 <option value="0">DISABLE</option>
+             </field>
+             <field name="strips_autoplay_delay" type="textplus" default="5" append="s"
+                 label="ROKSPROCKET_AUTOPLAY_DELAY_LABEL" description="ROKSPROCKET_AUTOPLAY_DELAY_DESC"
+                 optionorder="59" class=""/>
+                 <field name="strips_resize_enable" type="containerlist" default="0"
+                   label="ROKSPROCKET_RESIZE_ENABLE_LABEL" description="ROKSPROCKET_RESIZE_ENABLE_DESC"
+                   optionorder="59.5" class="" group_open="true" group_class="group_imageresize">
+                   <option value="1">ENABLE</option>
+                   <option value="0">DISABLE</option>
+               </field>
+               <field name="strips_resize_width" type="textplus" default="0" append="px"
+                   label="ROKSPROCKET_RESIZE_WIDTH_LABEL" description="ROKSPROCKET_RESIZE_WIDTH_DESC"
+                   optionorder="59.6" class="" group_bit="true"/>
+                   <field name="strips_resize_height" type="textplus" default="0" append="px"
+                     label="ROKSPROCKET_RESIZE_HEIGHT_LABEL" description="ROKSPROCKET_RESIZE_HEIGHT_DESC"
+                     optionorder="59.7" class="" group_close="true"/>
+
+                     <field name="strips_layout_defaults_title" type="label"
+                       label="ROKSPROCKET_STRIPS_LAYOUT_DEFAULTS_TITLE"
+                       default="" description="" optionorder="80" class=""/>
+                       <field name="strips_title_default" label="ROKSPROCKET_DEFAULT_TITLE"
+                         description="ROKSPROCKET_DEFAULT_TITLE_DESC" type="provideroptionedselector"
+                         configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+                         optionorder="81" class="layout layout_strips dynamicfield-subinstance" default="title">
+                         <option value="none">JNONE</option>
+                         <option value="title">ROKSPROCKET_DEFAULT_ARTICLE_TITLE</option>
+                     </field>
+                     <field name="strips_description_default" label="ROKSPROCKET_DEFAULT_DESCRIPTION"
+                         description="ROKSPROCKET_DEFAULT_DESCRIPTION_DESC" type="provideroptionedselector"
+                         configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+                         optionorder="82" class="layout layout_strips dynamicfield-subinstance" default="primary">
+                         <option value="none">JNONE</option>
+                         <option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_TEXT</option>
+                     </field>
+                     <field name="strips_image_default" label="ROKSPROCKET_DEFAULT_IMAGE"
+                         description="ROKSPROCKET_DEFAULT_IMAGE_DESC" type="provideroptionedselector"
+                         configkey="roksprocket.providers.registered" controller="provider" populator="getImageTypes"
+                         optionorder="82" class="layout layout_strips dynamicfield-subinstance" default="primary">
+                         <option value="none">JNONE</option>
+                         <option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_IMAGE</option>
+                         <option value="custom">Custom</option>
+                     </field>
+                     <field name="strips_image_default_custom" type="imagepicker" value=""
+                         label="ROKSPROCKET_DEFAULT_ARTICLE_IMAGE" default="" description="" optionorder="83"
+                         class="layout layout_strips strips_image_default strips_image_default_custom" article-defaults="true"/>
+                         <field name="strips_link_default" label="ROKSPROCKET_DEFAULT_LINK"
+                           description="ROKSPROCKET_DEFAULT_LINK_DESC" type="provideroptionedselector"
+                           configkey="roksprocket.providers.registered" controller="provider" populator="getLinkTypes"
+                           optionorder="84" class="layout layout_strips dynamicfield-subinstance" default="primary">
+                           <option value="none">JNONE</option>
+                           <option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_LINK</option>
+                           <option value="custom">ROKSPROCKET_CUSTOM</option>
+                       </field>
+                       <field name="strips_link_default_custom" type="text" value=""
+                           label="ROKSPROCKET_CUSTOM_ARTICLE_LINK" default="" description="" optionorder="85"
+                           class="layout layout_strips strips_link_default strips_link_default_custom"/>
+                       </fieldset>
+                   </fields>
+               </config>

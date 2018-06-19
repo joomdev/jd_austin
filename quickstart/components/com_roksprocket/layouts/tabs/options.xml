@@ -1,0 +1,95 @@
+<config>
+	<fields name="params">
+		<fieldset name="roksprocket" overwrite="false">
+			<field name="tabs_layout_title" type="label" label="ROKSPROCKET_TABS_LAYOUT_TITLE" default="" description=""
+					 optionorder="50" class=""/>
+
+			<field name="tabs_themes" label="ROKSPROCKET_THEMES_LABEL" type="containerlist"
+					 description="ROKSPROCKET_THEMES_DESC" configkey="roksprocket.layouts.tabs.themes" optionorder="51"
+					 class=""/>
+
+			<field name="tabs_position" label="ROKSPROCKET_TABS_POSITION_LABEL" type="containerlist"
+					 description="ROKSPROCKET_TABS_POSITION_DESC" default="top" optionorder="52"
+					 class="">
+				<option value="top">TOP</option>
+				<option value="right">RIGHT</option>
+				<option value="bottom">BOTTOM</option>
+				<option value="left">LEFT</option>
+			</field>
+			<field name="tabs_animation" label="ROKSPROCKET_ANIMATION_LABEL" type="containerlist"
+					 description="ROKSPROCKET_ANIMATION_DESC" default="slideandfade" optionorder="53"
+					 class="">
+				<option value="fade">FADE</option>
+				<option value="slideandfade">SLIDE_AND_FADE</option>
+				<option value="none">JNONE</option>
+			</field>
+			<field name="tabs_autoplay" type="containerlist" default="0" label="ROKSPROCKET_AUTOPLAY_LABEL"
+					 description="ROKSPROCKET_AUTOPLAY_DESC" optionorder="54" class="">
+				<option value="1">ENABLE</option>
+				<option value="0">DISABLE</option>
+			</field>
+			<field name="tabs_autoplay_delay" type="textplus" default="5" append="s"
+					 label="ROKSPROCKET_AUTOPLAY_DELAY_LABEL" description="ROKSPROCKET_AUTOPLAY_DELAY_DESC"
+					 optionorder="55" class=""/>
+			<field name="tabs_resize_enable" type="containerlist" default="0"
+					 label="ROKSPROCKET_RESIZE_ENABLE_LABEL" description="ROKSPROCKET_RESIZE_ENABLE_DESC"
+					 optionorder="56.1" class="" group_open="true" group_class="group_imageresize">
+				<option value="1">ENABLE</option>
+				<option value="0">DISABLE</option>
+			</field>
+			<field name="tabs_resize_width" type="textplus" default="0" append="px"
+					 label="ROKSPROCKET_RESIZE_WIDTH_LABEL" description="ROKSPROCKET_RESIZE_WIDTH_DESC"
+					 optionorder="56.2" class="" group_bit="true"/>
+			<field name="tabs_resize_height" type="textplus" default="0" append="px"
+					 label="ROKSPROCKET_RESIZE_HEIGHT_LABEL" description="ROKSPROCKET_RESIZE_HEIGHT_DESC"
+					 optionorder="56.3" class="" group_close="true"/>
+			<field name="tabs_previews_length" type="textplus" default="0" append="words"
+					 label="ROKSPROCKET_PREVIEWSLENGTH_LABEL" description="ROKSPROCKET_PREVIEWSLENGTH_DESC"
+					 optionorder="57" class=""/>
+			<field name="tabs_strip_html_tags" type="containerlist" default="0" label="ROKSPROCKET_STRIP_HTML_TAGS_LABEL"
+					 description="ROKSPROCKET_STRIP_HTML_TAGS_DESC" optionorder="58" class="">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="tabs_layout_defaults_title" type="label" label="ROKSPROCKET_TABS_LAYOUT_DEFAULTS_TITLE"
+					 default="" description="" optionorder="80" class=""/>
+			<field name="tabs_title_default" label="ROKSPROCKET_DEFAULT_TITLE"
+					 description="ROKSPROCKET_DEFAULT_TITLE_DESC" type="provideroptionedselector"
+					 configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+					 optionorder="81" class="layout layout_tabs dynamicfield-subinstance" default="title">
+				<option value="none">JNONE</option>
+				<option value="title">ROKSPROCKET_DEFAULT_ARTICLE_TITLE</option>
+			</field>
+
+			<field name="tabs_description_default" label="ROKSPROCKET_DEFAULT_DESCRIPTION" description="ROKSPROCKET_DEFAULT_DESCRIPTION_DESC" type="provideroptionedselector"
+				 configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+				 optionorder="132" class="layout layout_tabs dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_TEXT</option>
+			</field>
+			<field name="tabs_icon_default" label="ROKSPROCKET_DEFAULT_ICON"
+					 description="ROKSPROCKET_DEFAULT_IMAGE_DESC" type="provideroptionedselector"
+					 configkey="roksprocket.providers.registered" controller="provider" populator="getImageTypes"
+					 optionorder="82" class="layout layout_tabs dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_IMAGE</option>
+				<option value="custom">Custom</option>
+			</field>
+			<field name="tabs_icon_default_custom" type="imagepicker" value=""
+					 label="Default Article Icon" default="" description="" optionorder="83"
+					 class="layout layout_tabs tabs_icon_default tabs_icon_default_custom" article-defaults="true"/>
+
+			<field name="tabs_link_default" label="ROKSPROCKET_DEFAULT_LINK" description="ROKSPROCKET_DEFAULT_LINK_DESC"
+					 type="provideroptionedselector"
+					 configkey="roksprocket.providers.registered" controller="provider" populator="getLinkTypes"
+					 optionorder="84" class="layout layout_tabs dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_LINK</option>
+				<option value="custom">ROKSPROCKET_CUSTOM</option>
+			</field>
+			<field name="tabs_link_default_custom" type="text" value=""
+					 label="ROKSPROCKET_CUSTOM_ARTICLE_LINK" default="" description="" optionorder="85"
+					 class="layout layout_tabs tabs_link_default tabs_link_default_custom"/>
+		</fieldset>
+	</fields>
+</config>

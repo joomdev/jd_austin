@@ -1,0 +1,70 @@
+<config>
+    <fields name="params">
+        <fieldset name="peritem" overwrite="false">
+            <field name="tables_item_title" label="ROKSPROCKET_LAYOUT_TABLES_TITLE_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="54" description="ROKSPROCKET_LAYOUT_TABLES_TITLE_DESC">
+                <option value="-default-">JDEFAULT</option>
+                <option value="-title-">ROKSPROCKET_ARTICLE_TITLE</option>
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="tables_item_description" label="ROKSPROCKET_LAYOUT_TABLES_DESCRIPTION_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="55" description="ROKSPROCKET_LAYOUT_TABLES_DESCRIPTION_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_DESCRIPTION</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="tables_item_image" label="ROKSPROCKET_LAYOUT_TABLES_IMAGE_LABEL" type="imagepicker" icon="image" default="-default-" optionorder="56" description="ROKSPROCKET_LAYOUT_TABLES_IMAGE_DESC"/>
+			
+            <field name="tables_item_class" label="ROKSPROCKET_LAYOUT_TABLES_CLASS_LABEL" type="peritempicker" default="-none-" icon="text" optionorder="57" description="ROKSPROCKET_LAYOUT_TABLES_CLASS_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="tables_item_price" label="ROKSPROCKET_LAYOUT_TABLES_PRICE_LABEL" type="peritempicker" default="-none-" icon="text" optionorder="58" description="ROKSPROCKET_LAYOUT_TABLES_PRICE_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="tables_item_feature_1" label="ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_1" type="peritempicker" default="-none-" icon="text" optionorder="59" description="ROKSPROCKET_LAYOUT_TABLES_FEATURE_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+            <field name="tables_item_feature_2" label="ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_2" type="peritempicker" default="-none-" icon="text" optionorder="60" description="ROKSPROCKET_LAYOUT_TABLES_FEATURE_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+            <field name="tables_item_feature_3" label="ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_3" type="peritempicker" default="-none-" icon="text" optionorder="61" description="ROKSPROCKET_LAYOUT_TABLES_FEATURE_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+            <field name="tables_item_feature_4" label="ROKSPROCKET_LAYOUT_TABLES_FEATURE_LABEL_4" type="peritempicker" default="-none-" icon="text" optionorder="62" description="ROKSPROCKET_LAYOUT_TABLES_FEATURE_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="tables_item_link" label="ROKSPROCKET_LAYOUT_TABLES_LINK_LABEL" type="peritempicker" default="-default-" icon="link" optionorder="63" description="ROKSPROCKET_LAYOUT_TABLES_LINK_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_LINK</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+             <field name="tables_item_link_text" label="ROKSPROCKET_LAYOUT_TABLES_LINK_TEXT_LABEL" type="peritempicker" default="Buy Now" icon="text" optionorder="64" description="ROKSPROCKET_LAYOUT_TABLES_LINK_TEXT_DESC">
+                <option value="Buy Now">BUY_NOW</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+        </fieldset>
+    </fields>
+</config>

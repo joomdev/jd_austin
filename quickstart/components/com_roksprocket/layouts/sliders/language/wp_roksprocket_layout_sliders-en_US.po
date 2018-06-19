@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jakub Baran <jakub@rockettheme.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.6.6\n"
+
+msgid "ROKSPROCKET_SLIDERS_LAYOUT_TITLE"
+msgstr "Sliders Layout Options"
+
+msgid "ROKSPROCKET_SLIDERS_HEIGHT_LABEL"
+msgstr "Panel Height"
+
+msgid "ROKSPROCKET_SLIDERS_HEIGHT_DESC"
+msgstr ""
+"Select the type of height control for expanded accordion items. It can be "
+"automatic based on content, or set to a fixed height by entering a value "
+"below."
+
+msgid "ROKSPROCKET_SLIDERS_HEIGHT_FIXED_LABEL"
+msgstr "Fixed Height Value"
+
+msgid "ROKSPROCKET_SLIDERS_HEIGHT_FIXED_DESC"
+msgstr ""
+"If you selected fixed for panel height, specify the height in px for the "
+"expanded accordion items."
+
+msgid "ROKSPROCKET_SLIDERS_SHOW_OVERLAY_LABEL"
+msgstr "Overlay"
+
+msgid "ROKSPROCKET_SLIDERS_SHOW_OVERLAY_DESC"
+msgstr ""
+"Show or Hide a dark overlay background to make it easier to read text on top "
+"of lighter images."
+
+msgid "ROKSPROCKET_SLIDERS_SHOW_TITLE_LABEL"
+msgstr "Article Titles"
+
+msgid "ROKSPROCKET_SLIDERS_SHOW_TITLE_DESC"
+msgstr "Show or Hide the Article Titles"
+
+msgid "ROKSPROCKET_SLIDERS_SHOW_TEXT_LABEL"
+msgstr "Article Text"
+
+msgid "ROKSPROCKET_SLIDERS_SHOW_TEXT_DESC"
+msgstr "Show or Hide the Article Content Text"
+
+msgid "ROKSPROCKET_SLIDERS_LAYOUT_DEFAULTS_TITLE"
+msgstr "Sliders Article Defaults"
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_TITLE_LABEL"
+msgstr "Title"
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_TITLE_DESC"
+msgstr ""
+"The title to be used for the Feature. If not set, it will defaults to the "
+"article Title."
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_DESCRIPTION_LABEL"
+msgstr "Description"
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_DESCRIPTION_DESC"
+msgstr ""
+"The description to be used for the Feature. If not set, it will defaults to "
+"the article Introtext."
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_IMAGE_LABEL"
+msgstr "Image"
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_IMAGE_DESC"
+msgstr "The image to be used assigned to the article for the Feature."
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_LINK_LABEL"
+msgstr "Link"
+
+msgid "ROKSPROCKET_LAYOUT_SLIDERS_LINK_DESC"
+msgstr ""
+"If set, the link will show a 'Read More' button, link the title and based on "
+"the Theme, link the image as well."
+
+msgid "AUTO"
+msgstr "Auto"
+
+msgid "FIXED"
+msgstr "Fixed"

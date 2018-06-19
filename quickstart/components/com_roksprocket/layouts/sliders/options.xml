@@ -1,0 +1,97 @@
+<config>
+	<fields name="params">
+		<fieldset name="roksprocket" overwrite="false">
+			<field name="sliders_layout_title" type="label" label="ROKSPROCKET_SLIDERS_LAYOUT_TITLE" default=""
+				   description="" optionorder="51" class=""/>
+			<field name="sliders_themes" label="ROKSPROCKET_THEMES_LABEL" type="containerlist" default="accordion"
+				   description="ROKSPROCKET_THEMES_DESC" configkey="roksprocket.layouts.sliders.themes"
+				   optionorder="52" class=""/>
+			<field name="sliders_height_control" type="containerlist" default="auto"
+				   label="ROKSPROCKET_SLIDERS_HEIGHT_LABEL" description="ROKSPROCKET_SLIDERS_HEIGHT_DESC"
+				   optionorder="52.1" class="">
+				<option value="auto">AUTO</option>
+				<option value="fixed">FIXED</option>
+			</field>
+		   <field name="sliders_height_fixed" type="textplus" default="350" append="px"
+				   label="ROKSPROCKET_SLIDERS_HEIGHT_FIXED_LABEL" description="ROKSPROCKET_SLIDERS_HEIGHT_FIXED_DESC"
+				   optionorder="52.2" class=""/>
+			<field name="sliders_show_overlay" type="containerlist" default="1"
+				   label="ROKSPROCKET_SLIDERS_SHOW_OVERLAY_LABEL" description="ROKSPROCKET_SLIDERS_SHOW_OVERLAY_DESC"
+				   optionorder="52.3" class="">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="sliders_show_title" type="containerlist" default="1"
+				   label="ROKSPROCKET_SLIDERS_SHOW_TITLE_LABEL" description="ROKSPROCKET_SLIDERS_SHOW_TITLE_DESC"
+				   optionorder="53" class="">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="sliders_show_article_text" type="containerlist" default="1"
+				   label="ROKSPROCKET_SLIDERS_SHOW_TEXT_LABEL" description="ROKSPROCKET_SLIDERS_SHOW_TEXT_DESC"
+				   optionorder="54" class="">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+            <field name="sliders_previews_length" type="textplus" default="∞" append="words"
+                   label="ROKSPROCKET_PREVIEWSLENGTH_LABEL" description="ROKSPROCKET_PREVIEWSLENGTH_DESC"
+                   optionorder="54.1" class=""/>
+            <field name="sliders_strip_html_tags" type="containerlist" default="1" label="ROKSPROCKET_STRIP_HTML_TAGS_LABEL"
+                   description="ROKSPROCKET_STRIP_HTML_TAGS_DESC" optionorder="54.2" class="">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+			<field name="sliders_show_arrows" type="containerlist" default="show" label="ROKSPROCKET_ARROW_LABEL"
+				   description="ROKSPROCKET_ARROW_DESC" optionorder="55" class="">
+				<option value="show">JSHOW</option>
+				<option value="hide">JHIDE</option>
+			</field>
+			<field name="sliders_autoplay" type="containerlist" default="1" label="ROKSPROCKET_AUTOPLAY_LABEL"
+				   description="ROKSPROCKET_AUTOPLAY_DESC" optionorder="58" class="">
+				<option value="1">ENABLE</option>
+				<option value="0">DISABLE</option>
+			</field>
+			<field name="sliders_autoplay_delay" type="textplus" default="5" append="s"
+				   label="ROKSPROCKET_AUTOPLAY_DELAY_LABEL" description="ROKSPROCKET_AUTOPLAY_DELAY_DESC"
+				   optionorder="59" class=""/>
+
+			<field name="sliders_layout_defaults_title" type="label" label="ROKSPROCKET_SLIDERS_LAYOUT_DEFAULTS_TITLE"
+				   default="" description="" optionorder="80" class=""/>
+			<field name="sliders_title_default" label="ROKSPROCKET_DEFAULT_TITLE" description="ROKSPROCKET_DEFAULT_TITLE_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+				   optionorder="81" class="layout layout_sliders dynamicfield-subinstance" default="title">
+				<option value="none">JNONE</option>
+				<option value="title">ROKSPROCKET_DEFAULT_ARTICLE_TITLE</option>
+			</field>
+			<field name="sliders_description_default" label="ROKSPROCKET_DEFAULT_DESCRIPTION" description="ROKSPROCKET_DEFAULT_DESCRIPTION_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+				   optionorder="82" class="layout layout_sliders dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_TEXT</option>
+			</field>
+
+			<field name="sliders_image_default" label="ROKSPROCKET_DEFAULT_ARTICLE_IMAGE" description="ROKSPROCKET_DEFAULT_IMAGE_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getImageTypes"
+				   optionorder="83" class="layout layout_sliders dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_IMAGE</option>
+				<option value="custom">ROKSPROCKET_CUSTOM</option>
+			</field>
+
+			<field name="sliders_image_default_custom" type="imagepicker" value=""
+				   label="ROKSPROCKET_DEFAULT_CUSTOM_IMAGE" default="" description="" optionorder="84"
+				   class="layout layout_sliders sliders_image_default sliders_image_default_custom" article-defaults="true" />
+
+			<field name="sliders_link_default" label="ROKSPROCKET_DEFAULT_LINK" description="ROKSPROCKET_DEFAULT_LINK_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getLinkTypes"
+				   optionorder="85" class="layout layout_sliders dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_LINK</option>
+				<option value="custom">ROKSPROCKET_CUSTOM</option>
+			</field>
+			<field name="sliders_link_default_custom" type="text" value=""
+				   label="ROKSPROCKET_CUSTOM_ARTICLE_LINK" default="" description="" optionorder="86"
+				   class="layout layout_sliders sliders_link_default sliders_link_default_custom"/>
+		</fieldset>
+	</fields>
+</config>

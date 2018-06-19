@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.zoo" type="collection">
+            <parameter key="name">zoo</parameter>
+            <parameter key="displayname">ZOO</parameter>
+            <parameter key="path">%current.path%</parameter>
+            <parameter key="class">RokSprocket_Provider_Zoo</parameter>
+            <parameter key="optionfile">options.xml</parameter>
+            <parameter key="service">roksprocket.provider.zoo</parameter>
+            <parameter key="filter.processor">roksprocket.filter.processor.zoo</parameter>
+            <parameter key="filter.file">filters.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.provider.zoo" class="%roksprocket.providers.registered.zoo.class%" shared="false"/>
+        <service id="roksprocket.filter.processor.zoo" class="RokSprocket_Provider_Zoo_Filter" shared="false"/>
+    </services>
+</container>

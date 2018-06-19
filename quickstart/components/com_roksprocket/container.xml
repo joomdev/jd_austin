@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <imports>
+        <import resource="lib/base_container.xml"/>
+    </imports>
+    <parameters>
+        <parameter key="roksprocket.platformhelper.class">RokSprocket_PlatformHelper_Joomla</parameter>
+        <parameter key="roksprocket.addons" type="collection">
+            <parameter>roksprocket_addon_advancedmodulemanager</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket_logger" class="%logger.class%" shared="false">
+            <argument>%logger.loglevels%</argument>
+            <argument type="collection">
+                <!-- Formatted Text File Options -->
+                <argument key="logger">formattedtext</argument>
+                <argument key="text_file">roksprocket.php</argument>
+                <argument key="text_file_no_php">0</argument>
+                <!--<argument key="text_file_path"></argument>-->
+                <!--<argument key="text_entry_format"></argument>-->
+
+                <!-- Syslog Options -->
+                <!--<argument key="logger">syslog</argument>-->
+                <!--<argument key="sys_ident">Joomla Platform</argument>-->
+                <!--<argument key="sys_add_pid">1</argument>-->
+                <!--<argument key="sys_use_stderr">0</argument>-->
+
+                <!-- Database Options -->
+                <!--<argument key="logger">database</argument>-->
+                <!--<argument key="db_driver">mysql</argument>-->
+                <!--<argument key="db_host">127.0.0.1</argument>-->
+                <!--<argument key="db_user">root</argument>-->
+                <!--<argument key="db_pass"></argument>-->
+                <!--<argument key="db_database">logging</argument>-->
+                <!--<argument key="db_prefix">jos_</argument>-->
+                <!--<argument key="db_table">#__log_entries</argument>-->
+
+                <!-- Echo Options -->
+                <!--<argument key="logger">echo</argument>-->
+
+                <!-- Message Queue Options -->
+                <!--<argument key="logger">messagequeue</argument>-->
+
+                <!-- W3C Options -->
+                <!--<argument key="logger">w3c</argument>-->
+                <!--<argument key="text_file">error.w3c.php</argument>-->
+            </argument>
+            <argument>RokSprocket</argument>
+        </service>
+        <service id="roksprocket_addon_advancedmodulemanager" class="RokSprocket_Addon_AdvancedModuleManager">
+            <argument type="service" id="roksprocket_dispatcher"/>
+        </service>
+    </services>
+</container>

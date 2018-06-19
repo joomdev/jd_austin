@@ -1,0 +1,33 @@
+/**
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2018 RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+/* Sliders - Layout Accordion - Core */
+.sprocket-accordion {position: relative;}
+.sprocket-accordion:after {display: table;content: "";*zoom: 1;clear: both;}
+.sprocket-accordion-container {background: #000;}
+
+/* Sliders - Layout Accordion - Item */
+.sprocket-accordion-item {position: relative;height: 50px;opacity: 0.3;overflow: hidden;cursor: pointer;background-color: #000;background-position: 50% 50%;background-size: cover;-webkit-transition: height 0.3s, opacity 0.4s;-moz-transition: height 0.3s, opacity 0.4s;transition: height 0.3s, opacity 0.4s;}
+.sprocket-accordion-item.active {height: auto;background-color: transparent;opacity: 1;cursor: inherit;}
+.sprocket-accordion-overlay {position: absolute;top: -300px;left: 0;right: 0;bottom: 0;z-index: 1;opacity: 0;-webkit-transition: opacity 0.3s, top 0.3s;-moz-transition: opacity 0.3s, top 0.3s;transition: opacity 0.3s, top 0.3s;height: 300px;}
+.sprocket-accordion-overlay {opacity: 1;background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 65%);background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 65%);background: -ms-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 65%);background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 65%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#00000000',GradientType=0 );}
+.sprocket-accordion-item.active .sprocket-accordion-overlay {top: 0;}
+.sprocket-accordion-item:not(.active) .sprocket-accordion-title {margin-top: 0;}
+.sprocket-accordion-item:not(.active) .sprocket-accordion-content {padding-bottom: 70px;}
+
+/* Sliders - Layout Accordion - Content */
+.sprocket-accordion-content {color: #fff;padding: 0 20px 20px;position: relative;z-index: 2;}
+.sprocket-accordion-title {font-size: 2.3em;line-height: 50px;margin: 55px 0 15px 0;display: block;-webkit-transition: margin 0.4s;-moz-transition: margin 0.4s;transition: margin 0.4s;}
+.sprocket-accordion-title a {color: #fff;text-decoration: none;}
+.sprocket-accordion-item.active .sprocket-accordion-content {}
+.sprocket-accordion-desc {font-size: 1.1em;line-height: 1.3em;opacity: 0;-webkit-transition: opacity 0.3s 0.3s;-moz-transition: opacity 0.3s 0.3s;transition: opacity 0.3s 0.3s;}
+.sprocket-accordion-desc > span {display: block;}
+.sprocket-accordion-item.active .sprocket-accordion-desc {opacity: 1;}
+.sprocket-accordion-content .readon {display: inline-block;margin-top: 15px;background: rgba(0,0,0,0.8);color: #fff;border-radius: 4px;padding: 5px 8px;}
+
+/* Sliders - Layout Accordion - Arrows */
+.sprocket-accordion-arrow {width: 0;height: 0;border-left: 15px solid transparent;border-right: 15px solid transparent;margin: 0 auto;cursor: pointer;visibility: hidden;-moz-transform: scale(.9999);}
+.sprocket-accordion .arrow-up {border-bottom: 12px solid;margin-bottom: 10px;}
+.sprocket-accordion .arrow-down {border-top: 12px solid;margin-top: 10px;}

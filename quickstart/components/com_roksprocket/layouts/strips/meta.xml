@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+	<parameters>
+		<parameter key="roksprocket.layouts.strips" type="collection">
+			<parameter key="library.paths" type="collection">
+				<parameter>%current.path%</parameter>
+			</parameter>
+            <parameter key="ajax.dir">ajax</parameter>
+			<parameter key="service">roksprocket.layout.strips</parameter>
+			<parameter key="displayname">Strips</parameter>
+			<parameter key="options.file">options.xml</parameter>
+			<parameter key="options.peritem">items.xml</parameter>
+			<parameter key="options.joinmethod">merge</parameter>
+			<parameter key="icon">icon.png</parameter>
+			<parameter key="paths" type="collection">
+				<parameter>%current.path%</parameter>
+				<parameter>%roksprocket.template.override.path%/layouts/strips</parameter>
+			</parameter>
+			<parameter key="themes" type="collection">
+				<parameter key="default" type="collection">
+					<parameter key="displayname">Default</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+				<parameter key="separated" type="collection">
+					<parameter key="displayname">Separated</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+				<parameter key="parallel" type="collection">
+					<parameter key="displayname">Parallel</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+				<parameter key="cards" type="collection">
+					<parameter key="displayname">Cards</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+			</parameter>
+		</parameter>
+	</parameters>
+	<services>
+		<service id="roksprocket.layout.strips" class="RokSprocket_Layout_Strips" shared="false">
+			<argument type="service" id="roksprocket_dispatcher"/>
+		</service>
+	</services>
+</container>

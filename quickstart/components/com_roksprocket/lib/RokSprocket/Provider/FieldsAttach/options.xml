@@ -1,0 +1,41 @@
+<config>
+    <fields name="params">
+        <fieldset name="roksprocket" overwrite="true">
+            <field name="fieldsattach_provider_title" type="label" label="ROKSPROCKET_FIELDSATTACH_CONTENT_FILTER_RULES" default="" description=""
+                   optionorder="11" class="provider provider_fieldsattach"/>
+            <field name="fieldsattach_articles" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_fieldsattach filter_articles" optionorder="12"
+                   filterlocationparam="roksprocket.providers.registered.fieldsattach.path"
+                   filterfile="articles.xml" emptybuttontext="ROKSPROCKET_ADD_SPECIFIC_ARTICLES"
+                   notice=""/>
+            <field name="fieldsattach_filters" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_fieldsattach filter_filters" optionorder="13"
+                   filterlocationparam="roksprocket.providers.registered.fieldsattach.path"
+                   filterfile="filters.xml" emptybuttontext="ROKSPROCKET_ADD_FILTERS"
+                   notice=""/>
+            <field name="fieldsattach_sort" type="dynamicfields" label=""
+                   class="provider provider_fieldsattach dynamicfield-subinstance" optionorder="14" default="automatic"
+                   description="">
+                <option value="automatic" rel="fieldsattach_sort_automatic">ROKSPROCKET_SORT_AUTOMATIC</option>
+                <option value="manual" rel="fieldsattach_sort_manual">ROKSPROCKET_SORT_MANUAL</option>
+                <option value="random" rel="fieldsattach_sort_random">ROKSPROCKET_SORT_RANDOM</option>
+            </field>
+            <field name="fieldsattach_sort_automatic_filters"
+                   class="fieldsattach_sort fieldsattach_sort_automatic provider provider_fieldsattach filter_automatic_filters" optionorder="15"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.fieldsattach.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_SORT_RULES"/>
+
+            <field name="fieldsattach_sort_manual_append" class="fieldsattach_sort fieldsattach_sort_manual provider provider_fieldsattach" optionorder="15"
+                   type="list" label="ROKSPROCKET_WITH_NEW_ARTICLES_ADDED" default="after">
+                <option value="before">ROKSPROCKET_SORT_BEFORE</option>
+                <option value="after">ROKSPROCKET_SORT_AFTER</option>
+            </field>
+            <field name="fieldsattach_sort_manual_filters"
+                   class="fieldsattach_sort fieldsattach_sort_manual provider provider_fieldsattach filter_manual_filter_sort" optionorder="16"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.fieldsattach.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_FALLBACK_MANUAL_SORT_RULES"/>
+        </fieldset>
+    </fields>
+</config>

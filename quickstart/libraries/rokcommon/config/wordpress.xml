@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <imports>
+        <import resource="base.xml"/>
+    </imports>
+    <parameters>
+        <parameter key="platforminfo.class">RokCommon_PlatformInfo_Wordpress</parameter>
+        <parameter key="i18n.class">RokCommon_I18N_Wordpress</parameter>
+        <parameter key="header.class">RokCommon_Header_Wordpress</parameter>
+        <parameter key="logger.class">RokCommon_Logger_Unsupported</parameter>
+        <parameter key="doctrine.platform.class">RokCommon_Doctrine_Platform_Wordpress3</parameter>
+        <parameter key="cache.group">rokcommon</parameter>
+        <parameter key="cache.driver.file.lifetime">%cache.lifetime%</parameter>
+        <parameter key="form.namehandler.class">RokCommon_Form_WordpressItemNameHandler</parameter>
+        <parameter key="form.field.paths" type="collection">
+            <parameter key="RokCommon_Form_Field_" type="collection">
+                <parameter key="20" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Fields/Wordpress</parameter>
+                </parameter>
+                <parameter key="10" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Fields</parameter>
+                </parameter>
+            </parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="doctrine_platform" class="%doctrine.platform.class%"/>
+        <service id="logger" class="%logger.class%" shared="false">
+            <argument>%logger.loglevels%</argument>
+        </service>
+    </services>
+</container>

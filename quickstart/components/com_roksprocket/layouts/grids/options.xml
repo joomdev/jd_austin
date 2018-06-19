@@ -1,0 +1,89 @@
+<config>
+	<fields name="params">
+		<fieldset name="roksprocket" overwrite="false">
+			<field name="grids_layout_title" type="label" label="ROKSPROCKET_GRIDS_LAYOUT_TITLE" default=""
+				   description="" optionorder="50" class=""/>
+			<field name="grids_themes" label="ROKSPROCKET_THEMES_LABEL" type="containerlist"
+				   description="ROKSPROCKET_THEMES_DESC" configkey="roksprocket.layouts.grids.themes" optionorder="51"
+				   class=""/>
+			<field name="grids_columns" type="containerlist" default="3" label="ROKSPROCKET_GRIDS_COLUMNS"
+				   description="ROKSPROCKET_GRIDS_COLUMNS_DESC" optionorder="54" class="">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</field>
+			<field name="grids_previews_length" type="textplus" default="20" append="words"
+					label="ROKSPROCKET_PREVIEWSLENGTH_LABEL" description="ROKSPROCKET_PREVIEWSLENGTH_DESC"
+					optionorder="55" class=""/>
+            <field name="grids_strip_html_tags" type="containerlist" default="1" label="ROKSPROCKET_STRIP_HTML_TAGS_LABEL"
+                   description="ROKSPROCKET_STRIP_HTML_TAGS_DESC" optionorder="55.5" class="">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+			<field name="grids_animations" type="multiselect" default="fade,scale,rotate" label="ROKSPROCKET_GRIDS_ANIMATIONS" description="ROKSPROCKET_GRIDS_ANIMATIONS_DESC" optionorder="58" class="">
+					<option value="fade">ROKSPROCKET_GRIDS_ANIMATIONS_FADE</option>
+					<option value="scale">ROKSPROCKET_GRIDS_ANIMATIONS_SCALE</option>
+					<option value="rotate">ROKSPROCKET_GRIDS_ANIMATIONS_ROTATE</option>
+					<option value="flip">ROKSPROCKET_GRIDS_ANIMATIONS_FLIP</option>
+			</field>
+
+			<field name="grids_resize_enable" type="containerlist" default="0"
+				   label="ROKSPROCKET_RESIZE_ENABLE_LABEL" description="ROKSPROCKET_RESIZE_ENABLE_DESC"
+				   optionorder="109.1" class="" group_open="true" group_class="group_imageresize">
+				<option value="1">ENABLE</option>
+				<option value="0">DISABLE</option>
+			</field>
+			<field name="grids_resize_width" type="textplus" default="0" append="px"
+				   label="ROKSPROCKET_RESIZE_WIDTH_LABEL" description="ROKSPROCKET_RESIZE_WIDTH_DESC"
+				   optionorder="109.2" class="" group_bit="true" />
+			<field name="grids_resize_height" type="textplus" default="0" append="px"
+				   label="ROKSPROCKET_RESIZE_HEIGHT_LABEL" description="ROKSPROCKET_RESIZE_HEIGHT_DESC"
+				   optionorder="109.3" class="" group_close="true" />
+
+
+			<field name="grids_layout_defaults_title" type="label"
+				   label="ROKSPROCKET_GRIDS_LAYOUT_DEFAULTS_TITLE"
+				   default="" description="" optionorder="130" class=""/>
+			<field name="grids_title_default" label="ROKSPROCKET_DEFAULT_TITLE" description="ROKSPROCKET_DEFAULT_TITLE_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+				   optionorder="131" class="layout layout_grids dynamicfield-subinstance" default="title">
+				<option value="none">JNONE</option>
+				<option value="title">ROKSPROCKET_DEFAULT_ARTICLE_TITLE</option>
+			</field>
+			<field name="grids_description_default" label="ROKSPROCKET_DEFAULT_DESCRIPTION" description="ROKSPROCKET_DEFAULT_DESCRIPTION_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+				   optionorder="132" class="layout layout_grids dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_TEXT</option>
+			</field>
+			<field name="grids_image_default" label="ROKSPROCKET_DEFAULT_IMAGE" description="ROKSPROCKET_DEFAULT_IMAGE_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getImageTypes"
+				   optionorder="133" class="layout layout_grids dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_IMAGE</option>
+				<option value="custom">ROKSPROCKET_CUSTOM</option>
+			</field>
+			<field name="grids_image_default_custom" type="imagepicker" value=""
+				   label="ROKSPROCKET_DEFAULT_ARTICLE_IMAGE" default="" description="" optionorder="134"
+				   class="layout layout_grids grids_image_default grids_image_default_custom" article-defaults="true" />
+			<field name="grids_link_default" label="ROKSPROCKET_DEFAULT_LINK" description="ROKSPROCKET_DEFAULT_LINK_DESC" type="provideroptionedselector"
+				   configkey="roksprocket.providers.registered" controller="provider" populator="getLinkTypes"
+				   optionorder="135" class="layout layout_grids dynamicfield-subinstance" default="primary">
+				<option value="none">JNONE</option>
+				<option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_LINK</option>
+				<option value="custom">ROKSPROCKET_CUSTOM</option>
+			</field>
+			<field name="grids_link_default_custom" type="text" value=""
+				   label="Default Article Link" default="" description="" optionorder="136"
+				   class="layout layout_grids grids_link_default grids_link_default_custom"/>
+		</fieldset>
+	</fields>
+</config>

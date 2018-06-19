@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+	<parameters>
+		<parameter key="roksprocket.layouts.features" type="collection">
+			<parameter key="library.paths" type="collection">
+				<parameter>%current.path%</parameter>
+			</parameter>
+			<parameter key="service">roksprocket.layout.features</parameter>
+			<parameter key="displayname">Features</parameter>
+			<parameter key="options.file">options.xml</parameter>
+            <parameter key="options.peritem">items.xml</parameter>
+			<parameter key="options.joinmethod">merge</parameter>
+			<parameter key="icon">icon.png</parameter>
+			<parameter key="paths" type="collection">
+				<parameter>%current.path%</parameter>
+				<parameter>%roksprocket.template.override.path%/layouts/features</parameter>
+			</parameter>
+			<parameter key="themes" type="collection">
+				<parameter key="slideshow" type="collection">
+					<parameter key="displayname">Slideshow</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+				<parameter key="slideshow2" type="collection">
+					<parameter key="displayname">Slideshow Style 2</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+				<parameter key="showcase" type="collection">
+					<parameter key="displayname">Showcase</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+			</parameter>
+		</parameter>
+	</parameters>
+	<services>
+		<service id="roksprocket.layout.features" class="RokSprocket_Layout_Features" shared="false">
+			<argument type="service" id="roksprocket_dispatcher"/>
+		</service>
+	</services>
+</container>

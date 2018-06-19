@@ -1,0 +1,41 @@
+/**
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2018 RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+/* Features - Layout Showcase - Core */
+.layout-showcase {position: relative;}
+.layout-showcase:after {display: table;content: "";*zoom: 1;clear: both;}
+.layout-showcase ul {list-style: none !important;margin: 0;padding: 0;}
+
+/* Features - Layout Showcase - Content */
+.pagination-active {margin-bottom: 35px;}
+.layout-showcase .sprocket-features-list {position: relative;overflow: hidden;padding: 0 !important;}
+.layout-showcase .sprocket-features-list li {position: absolute;top: 0;left: 0;opacity: 0;width: 100%;height: 100%;display: none;}
+.layout-showcase .sprocket-features-list li.active {position: static;height: auto;opacity: 1;display: block;}
+.arrows-active .sprocket-features-list {margin-left: 50px;margin-right: 50px;}
+.layout-showcase .sprocket-features-img-container img {float: left;margin-right: 25px;}
+.layout-showcase .sprocket-features-list .sprocket-features-desc li {display: list-item;opacity: 1;position: relative;}
+
+/* Features - Layout Showcase - Navigation */
+.layout-showcase .sprocket-features-arrows .arrow {position: absolute;display: block;width: 24px;height: 24px;top: 50%;margin-top: -12px;border-radius: 1em;opacity: 0.5;cursor: pointer;z-index: 10;text-align: center;font-size: 2em;line-height: 18px;}
+.layout-showcase .sprocket-features-arrows .prev {left: 10px;}
+.layout-showcase .sprocket-features-arrows .next {right: 10px;}
+.layout-showcase .sprocket-features-arrows .arrow:hover {opacity: 1;}
+.sprocket-features.arrows-onhover .sprocket-features-arrows .arrow {opacity: 0;}
+.sprocket-features.arrows-onhover:hover .sprocket-features-arrows .arrow {opacity: 1;}
+.layout-showcase .sprocket-features-pagination {position: absolute;left: 50px;bottom: 15px;z-index: 10;padding: 0 !important;}
+.layout-showcase .sprocket-features-pagination-hidden {display: none;}
+.layout-showcase .sprocket-features-pagination li {display: inline-block;padding: 4px;opacity: 0.4;border-radius: 1em;cursor: pointer;}
+.layout-showcase .sprocket-features-pagination li.active {opacity: 1;}
+.layout-showcase .sprocket-features-pagination li span {display: none;font-size: 0.85em;line-height: 1em;}
+.pagination-active .sprocket-features-pagination {bottom: -30px;}
+
+/* Features - Layout Showcase - Colors */
+.layout-showcase .sprocket-features-pagination li, .layout-showcase .sprocket-features-arrows .arrow {background: #000;color: #fff;box-shadow: 1px 1px 1px rgba(255,255,255,0.5);}
+
+/* Features - Layout Showcase - Transitions */
+.layout-showcase .sprocket-features-pagination li, .layout-showcase .sprocket-features-arrows .arrow {-webkit-transition: opacity 0.2s ease-in;-moz-transition: opacity 0.2s ease-in;-o-transition: opacity 0.2s ease-in;transition: opacity 0.2s ease-in;}
+
+
+

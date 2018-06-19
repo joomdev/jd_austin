@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.simple" type="collection">
+            <parameter key="storage_class">RokSprocket_Provider_Simple_Storage_Wordpress</parameter>
+            <parameter key="templatepath">%roksprocket.providers.registered.simple.path%/templates/module</parameter>
+        </parameter>
+        <parameter key="roksprocket.form.wrapper.class">RokSprocket_Form_Wrapper_RokCommon</parameter>
+    </parameters>
+</container>

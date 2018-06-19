@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.joomla" type="collection">
+            <parameter key="name">joomla</parameter>
+            <parameter key="displayname">Joomla!</parameter>
+            <parameter key="path">%current.path%</parameter>
+            <parameter key="class">RokSprocket_Provider_Joomla</parameter>
+            <parameter key="optionfile">options.xml</parameter>
+            <parameter key="service">roksprocket.provider.joomla</parameter>
+            <parameter key="filter.processor">roksprocket.filter.processor.joomla</parameter>
+            <parameter key="filter.file">filters.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.provider.joomla" class="%roksprocket.providers.registered.joomla.class%" shared="false"/>
+        <service id="roksprocket.filter.processor.joomla" class="RokSprocket_Provider_Joomla_Filter" shared="false"/>
+        <service id="roksprocket.filter.processor.joomla_tagmerge" class="RokSprocket_Provider_Joomla_NoTagsMerge" shared="false"/>
+    </services>
+</container>

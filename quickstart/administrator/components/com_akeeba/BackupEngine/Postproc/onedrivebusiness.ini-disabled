@@ -1,0 +1,75 @@
+; Akeeba Upload to OneDrive for Business post processing engine
+; Copyright (c)2006-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+;
+; Sorry, we had to cancel this feature.
+;
+; Microsoft requires us to register the app in the Azure Directory per
+; https://dev.onedrive.com/app-registration-server.htm  Despite repeated attempts at following their instructions it
+; seems to be impossible. There is no "midsize business" plan, the regular subscription doesn'tlet you create the
+; "private site" required for development and both enterprise and developer accounts can't seem to be able to be
+; purchased. Apparently the only way to make this work is having a US-based enterprise?! So, sorry, we won't waste any
+; more time on this.
+;
+
+; Engine information
+[_information]
+title=COM_AKEEBA_CONFIG_ENGINE_POSTPROC_ONEDRIVEBUSINESS_TITLE
+description=COM_AKEEBA_CONFIG_ENGINE_POSTPROC_ONEDRIVEBUSINESS_DESCRIPTION
+
+; Post-process after generating each part?
+[engine.postproc.common.after_part]
+default=0
+type=bool
+title=COM_AKEEBA_CONFIG_POSTPROCPARTS_TITLE
+description=COM_AKEEBA_CONFIG_POSTPROCPARTS_DESCRIPTION
+
+; Delete from server after processing?
+[engine.postproc.common.delete_after]
+default=1
+type=bool
+title=COM_AKEEBA_CONFIG_DELETEAFTER_TITLE
+description=COM_AKEEBA_CONFIG_DELETEAFTER_DESCRIPTION
+
+; Enable chunk upload?
+[engine.postproc.onedrivebusiness.chunk_upload]
+default=1
+type=bool
+title=COM_AKEEBA_CONFIG_BOX_CHUNKUPLOAD_ENABLE
+
+; Chunk size in megabytes
+[engine.postproc.onedrivebusiness.chunk_upload_size]
+default=10
+type=integer
+min=4
+max=60
+shortcuts="5|10|20|40|60"
+scale=1
+uom=MB
+title=COM_AKEEBA_CONFIG_BOX_CHUNKUPLOAD_SIZE
+
+; Open OAuth
+[engine.postproc.onedrivebusiness.openoauth]
+default=""
+type=button
+title=COM_AKEEBA_CONFIG_BOX_OPENOAUTH_TITLE
+description=COM_AKEEBA_CONFIG_BOX_OPENOAUTH_DESC
+hook=akconfig_onedrivebusiness_openoauth
+
+; OneDrive Directory name
+[engine.postproc.onedrivebusiness.directory]
+default="/"
+type=string
+title=COM_AKEEBA_CONFIG_ONEDRIVEBUSINESS_DIRECTORY_TITLE
+description=COM_AKEEBA_CONFIG_ONEDRIVEBUSINESS_DIRECTORY_DESCRIPTION
+
+[engine.postproc.onedrivebusiness.service_id]
+default = ""
+type=string
+title=COM_AKEEBA_CONFIG_ONEDRIVEBUSINESS_SERVICEID_TITLE
+description=COM_AKEEBA_CONFIG_ONEDRIVEBUSINESS_SERVICEID_DESCRIPTION
+
+[engine.postproc.onedrivebusiness.refresh_token]
+default = ""
+type=string
+title=COM_AKEEBA_CONFIG_ONEDRIVEBUSINESS_REFRESHTOKEN_TITLE
+description=COM_AKEEBA_CONFIG_ONEDRIVEBUSINESS_REFRESHTOKEN_DESCRIPTION

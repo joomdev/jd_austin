@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RokSprocket v2.1.23\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-06-03 10:00-0500\n"
+"Last-Translator: RocketTheme LLC <support@rockettheme.com>\n"
+"Language-Team: RocketTheme LLC <support@rockettheme.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_STRIPS_LAYOUT_TITLE"
+msgstr "Strips Layout Options"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_STRIPS_LAYOUT_DEFAULTS_TITLE"
+msgstr "Strips Article Defaults"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_STRIPS_ITEMSPERPAGE_LABEL"
+msgstr "Previews per Page"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_STRIPS_ITEMSPERPAGE_DESC"
+msgstr "Amount of article previews to show on each page"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_STRIPS_ITEMSPERROW"
+msgstr "Items Per Row"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_STRIPS_ITEMSPERROW_DESC"
+msgstr "Amount of article items to show in each row."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_TITLE_LABEL"
+msgstr "Title"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_TITLE_DESC"
+msgstr ""
+"The title to be used for the List item. If not set, it will default to the "
+"article title."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_DESCRIPTION_LABEL"
+msgstr "Description"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_DESCRIPTION_DESC"
+msgstr ""
+"The description to be used for the Feature. If not set, it will defaults to "
+"the article Introtext."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_IMAGE_LABEL"
+msgstr "Image"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_IMAGE_DESC"
+msgstr "The image to be used assigned to the article for the List items."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_LINK_LABEL"
+msgstr "Link"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_STRIPS_LINK_DESC"
+msgstr ""
+"If set, the link will show a 'Read More' button, link the title and based on "
+"the Theme, link the image as well."
+
+# @ wp_roksprocket
+msgid "SLIDE"
+msgstr "Slide"
+
+# @ wp_roksprocket
+msgid "FADEDELAY"
+msgstr "Fade Delayed"
+
+# @ wp_roksprocket
+msgid "FLYIN"
+msgstr "Fly In"
+
+# @ wp_roksprocket
+msgid "FALLDOWN"
+msgstr "Fall Down"
+
+# @ wp_roksprocket
+msgid "FLOATUP"
+msgstr "Float Up"
+
+# @ wp_roksprocket
+msgid "SCALEIN"
+msgstr "Scale In"
+
+# @ wp_roksprocket
+msgid "SCALEOUT"
+msgstr "Scale Out"
+
+# @ wp_roksprocket
+msgid "SINGLE_ROW"
+msgstr "Single Row"
+
+# @ wp_roksprocket
+msgid "WRAP"
+msgstr "Wrap"

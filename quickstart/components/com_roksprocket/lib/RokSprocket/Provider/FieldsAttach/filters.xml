@@ -1,0 +1,26 @@
+<filters>
+    <filter name="title" label="Title" type="RokCommon_Filter_Type_Text"/>
+    <filter name="alias" label="Alias" type="RokCommon_Filter_Type_Text"/>
+    <filter name="articletext" label="Article Text" type="RokCommon_Filter_Type_LargeText"/>
+    <filter name="published" label="Published" type="RokCommon_Filter_Type_Boolean"/>
+    <filter name="publish_up" label="Publish Up" type="RokCommon_Filter_Type_Date"/>
+    <filter name="publish_down" label="Publish Down" type="RokCommon_Filter_Type_Date"/>
+    <filter name="featured" label="Featured" type="RokCommon_Filter_Type_Boolean"/>
+    <filter name="category" label="Category" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_FieldsAttach_CategoryPopulator"/>
+    <filter name="group" label="Has Field Group" type="RokCommon_Filter_Type_PickList"
+                    populator="RokSprocket_Provider_FieldsAttach_GroupPopulator"/>
+    <filter name="field" label="Has Field" type="RokCommon_Filter_Type_PickList"
+                populator="RokSprocket_Provider_FieldsAttach_FieldTypePopulator"/>
+    <filter name="createddate" label="Created Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="modifieddate" label="Last Modified Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="modifiedby" label="Last Modified By" type="RokSprocket_Provider_FieldsAttach_Filter_Type_User"/>
+    <filter name="author" label="Author" type="RokSprocket_Provider_FieldsAttach_Filter_Type_User"/>
+    <filter name="authoralias" label="Author Alias" type="RokCommon_Filter_Type_Text"/>
+    <filter name="rating" label="Rating" type="RokCommon_Filter_Type_Number"/>
+    <filter name="hits" label="Hits" type="RokCommon_Filter_Type_Number"/>
+    <filter name="language" label="Language" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_FieldsAttach_LanguagePopulator"/>
+    <filter name="access" label="Access Level" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_FieldsAttach_AccessPopulator"/>
+</filters>

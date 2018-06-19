@@ -1,0 +1,35 @@
+<config>
+    <fields name="params">
+        <fieldset name="peritem" overwrite="false">
+            <field name="tabs_item_title" label="ROKSPROCKET_LAYOUT_TABS_TITLE_LABEL" type="peritempicker"
+                   default="-default-" icon="tab" optionorder="54" description="ROKSPROCKET_LAYOUT_TABS_TITLE_DESC">
+                <option value="-default-">JDEFAULT</option>
+                <option value="-title-">ROKSPROCKET_ARTICLE_TITLE</option>
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="tabs_item_icon" label="ROKSPROCKET_LAYOUT_TABS_ICON_LABEL" type="imagepicker" icon="image"
+                   default="-default-" optionorder="55" description="ROKSPROCKET_LAYOUT_TABS_ICON_DESC"/>
+
+            <field name="tabs_item_link" label="ROKSPROCKET_LAYOUT_TABS_LINK_LABEL" type="peritempicker"
+                   default="-default-" icon="link" optionorder="56" description="ROKSPROCKET_LAYOUT_TABS_LINK_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_LINK</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+            <field name="tabs_item_description" label="ROKSPROCKET_LAYOUT_TABS_DESCRIPTION_LABEL"
+                   type="peritempicker" default="-default-" icon="text" optionorder="57"
+                   description="ROKSPROCKET_LAYOUT_TABS_DESCRIPTION_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_DESCRIPTION</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+        </fieldset>
+    </fields>
+</config>
