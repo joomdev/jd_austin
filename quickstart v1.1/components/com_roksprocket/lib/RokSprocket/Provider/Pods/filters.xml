@@ -1,0 +1,10 @@
+<filters>
+    <filter name="title" label="Title" type="RokCommon_Filter_Type_Text"/>
+    <filter name="pod" label="Pod Type" type="RokCommon_Filter_Type_PickList"
+                populator="RokSprocket_Provider_Pods_PodtypePopulator"/>
+    <filter name="hasfield" label="Has Field" type="RokCommon_Filter_Type_PickList"
+                populator="RokSprocket_Provider_Pods_FieldPopulator"/>
+    <filter name="createddate" label="Created Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="modified" label="Last Modified Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="author" label="Author" type="RokSprocket_Provider_Pods_Filter_Type_User"/>
+</filters>

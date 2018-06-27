@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RokSprocket v2.1.23\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-10-13 22:39-0500\n"
+"Last-Translator: RocketTheme LLC <support@rockettheme.com>\n"
+"Language-Team: RocketTheme LLC <support@rockettheme.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_LAYOUT_TITLE"
+msgstr "Mosaic Layout Options"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_LAYOUT_DEFAULTS_TITLE"
+msgstr "Mosaic Article Defaults"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_COLUMNS"
+msgstr "Columns"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_COLUMNS_DESC"
+msgstr "Amount of columns the blocks should be layed down like"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ITEMSPERPAGE_LABEL"
+msgstr "Blocks per View"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ITEMSPERPAGE_DESC"
+msgstr ""
+"The amount of blocks to show on a page load. If the amount of blocks is "
+"lesser than the Display Limit, a 'Load More' functionality will appear."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_ORDERING"
+msgstr "Ordering"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_ORDERING_DESC"
+msgstr "Ordering items to switch between on the frontend."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ORDERING_RANDOM"
+msgstr "Random"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ORDERING_DEFAULT"
+msgstr "Default"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ORDERING_TITLE"
+msgstr "Title"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ORDERING_DATE"
+msgstr "Date"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ANIMATIONS"
+msgstr "Block Animation"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ANIMATIONS_DESC"
+msgstr ""
+"The types of animations desired for the blocks when appearing/disappearing. "
+"Default is Fade."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ANIMATIONS_FADE"
+msgstr "Fade"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ANIMATIONS_SCALE"
+msgstr "Scale"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ANIMATIONS_ROTATE"
+msgstr "Rotate"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ANIMATIONS_FLIP"
+msgstr "Flip"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ARTICLEDETAILS"
+msgstr "Article Details"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_ARTICLEDETAILS_DESC"
+msgstr "Shows or Hides article details such as Date and Author."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_LOADMORE"
+msgstr "load more"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_LOADMORE_TIP"
+msgstr "hold <strong>SHIFT</strong> key to load all"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_MOSAIC_LOADALL"
+msgstr "load all"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_TITLE_LABEL"
+msgstr "Title"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_TITLE_DESC"
+msgstr ""
+"The title to be used for the Mosaic item. If not set, it will default to the "
+"article title."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_DESCRIPTION_LABEL"
+msgstr "Description"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_DESCRIPTION_DESC"
+msgstr ""
+"The description to be used for the Feature. If not set, it will defaults to "
+"the article Introtext."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_IMAGE_LABEL"
+msgstr "Image"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_IMAGE_DESC"
+msgstr "The image to be used assigned to the article for the Mosaic items."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_LINK_LABEL"
+msgstr "Link"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_LINK_DESC"
+msgstr ""
+"If set, the link will show a 'Read More' button, link the title and based on "
+"the Theme, link the image as well."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_TAGS_LABEL"
+msgstr "Tags"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_TAGS_DESC"
+msgstr "A comma separated list of tags for the filtering on frontend."
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_TAGS_FILTER_LABEL"
+msgstr "Only Show Tags"
+
+# @ wp_roksprocket
+msgid "ROKSPROCKET_LAYOUT_MOSAIC_TAGS_FILTER_DESC"
+msgstr "Only show these tags as the filter and on the items"

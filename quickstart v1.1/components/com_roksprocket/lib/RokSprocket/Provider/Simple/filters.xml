@@ -1,0 +1,3 @@
+<filters>
+    <filter name="title" label="Title" type="RokCommon_Filter_Type_Text"/>
+</filters>

@@ -1,0 +1,209 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="browser.class">RokCommon_Browser</parameter>
+        <parameter key="platforminfo.class">RokCommon_PlatformInfo_Unsupported</parameter>
+
+        <parameter key="classloader.class">RokCommon_ClassLoader</parameter>
+        <parameter key="classloader.filefinder.class">RokCommon_ClassLoader_FileFinder</parameter>
+        <parameter key="classloader.mapfinder.class">RokCommon_ClassLoader_MapFinder</parameter>
+        <parameter key="classloader.combinedfinder.class">RokCommon_ClassLoader_CombinedFinder</parameter>
+
+        <parameter key="classloader.prefixedloader.class">RokCommon_ClassLoader_PrefixedLoader</parameter>
+        <parameter key="classloader.basicloader.class">RokCommon_ClassLoader_BasicLoader</parameter>
+        <parameter key="classloader.cacheloaders_prefix">rokcommon_classes</parameter>
+        <parameter key="classloader.cacheloaders" type="collection">
+            <parameter key="apc" type="collection">
+                <parameter key="use">true</parameter>
+                <parameter key="extension">apc</parameter>
+                <parameter key="class">RokCommon_ClassLoader_ApcLoader</parameter>
+                <parameter key="prefix">%classloader.cacheloaders_prefix%</parameter>
+                <parameter key="service">classloader_apcloader</parameter>
+            </parameter>
+            <parameter key="xcache" type="collection">
+                <parameter key="use">true</parameter>
+                <parameter key="extension">Xcache</parameter>
+                <parameter key="class">RokCommon_ClassLoader_XcacheLoader</parameter>
+                <parameter key="prefix">%classloader.cacheloaders_prefix%</parameter>
+                <parameter key="service">classloader_xcacheloader</parameter>
+            </parameter>
+        </parameter>
+
+        <parameter key="libpath">#ROKCOMMON_LIB_PATH#</parameter>
+        <parameter key="less.compiler.class">RokCommon_Less_Compiler</parameter>
+
+        <!-- classpaths with priority for the default classloader -->
+        <parameter key="classloader.classpath" type="collection">
+            <parameter key="20" type="collection">
+                <parameter>%libpath%/Overrides</parameter>
+            </parameter>
+            <parameter key="10" type="collection">
+                <parameter>%libpath%</parameter>
+            </parameter>
+        </parameter>
+
+        <parameter key="classloader.allowed_prefixes" type="collection">
+            <parameter>RokCommon</parameter>
+            <parameter>Doctrine</parameter>
+            <parameter>phpQuery</parameter>
+            <parameter>RokSprocket</parameter>
+            <parameter>RokGallery</parameter>
+            <parameter>ModRokSprocket</parameter>
+            <parameter>WideImage</parameter>
+        </parameter>
+        <!-- a [prefix][priority][paths] classspath with for ajax models -->
+        <!--<parameter key="ajax.model.paths" type="collection"/>-->
+
+
+        <parameter key="form.item.classloader.class">RokCommon_Form_ItemLoader</parameter>
+        <parameter key="form.assets.appendpath">assets</parameter>
+        <parameter key="form.field.paths" type="collection">
+            <parameter key="RokCommon_Form_Field_" type="collection">
+                <parameter key="10" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Fields</parameter>
+                </parameter>
+            </parameter>
+        </parameter>
+        <parameter key="form.field.assets.context">rokcommon_form_field_assets</parameter>
+
+        <parameter key="form.group.paths" type="collection">
+            <parameter key="RokCommon_Form_Group_" type="collection">
+                <parameter key="10" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Groups</parameter>
+                </parameter>
+            </parameter>
+        </parameter>
+        <parameter key="form.group.assets.context">rokcommon_form_group_assets</parameter>
+
+        <parameter key="form.validator.paths" type="collection">
+            <parameter key="RokCommon_Form_Validator_" type="collection">
+                <parameter key="10" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Validators</parameter>
+                </parameter>
+            </parameter>
+        </parameter>
+        <parameter key="form.validator.assets.context">rokcommon_form_validator_assets</parameter>
+
+
+        <parameter key="doctrine.platform.class">RokCommon_Doctrine_Platform_Unsupported</parameter>
+
+        <parameter key="i18n.class">RokCommon_I18N_Unsupported</parameter>
+        <parameter key="header.class">RokCommon_Header_Unsupported</parameter>
+        <parameter key="logger.class">RokCommon_Logger_Unsupported</parameter>
+        <parameter key="dispatcher.class">RokCommon_Dispatcher</parameter>
+        <parameter key="registry.converter.class">RokCommon_Registry_Converter_Unsupported</parameter>
+
+        <parameter key="cache.class">RokCommon_Cache_Null</parameter>
+        <parameter key="cache.lifetime">900</parameter>
+
+        <parameter key="html.renderer.select.service">html.renderer.select</parameter>
+        <parameter key="html.renderer.select.class">RokCommon_HTML_Select</parameter>
+        <!--
+        Possible Log Levels:
+            ALL
+            TRACE
+            DEBUG
+            INFO
+            NOTICE
+            WARNING
+            ERROR
+            FATAL
+        -->
+        <parameter key="logger.loglevels" type="collection">
+            <!--<parameter>TRACE</parameter>-->
+            <!--<parameter>DEBUG</parameter>-->
+            <parameter>INFO</parameter>
+            <parameter>NOTICE</parameter>
+            <parameter>WARNING</parameter>
+            <parameter>ERROR</parameter>
+            <parameter>FATAL</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="browser" class="%browser.class%"/>
+
+        <service id="less.compiler" class="%less.compiler.class%" shared="false"/>
+
+        <service id="classloader_filefinder" class="%classloader.filefinder.class%">
+            <argument>classloader.classpath</argument>
+        </service>
+
+        <service id="classloader_combinedfinder" class="%classloader.combinedfinder.class%">
+            <argument>classloader.classpath</argument>
+        </service>
+
+        <service id="classloader_mapfinder" class="%classloader.mapfinder.class%">
+            <argument>classloader.classpath</argument>
+        </service>
+
+        <service id="classloader_basicloader" class="%classloader.basicloader.class%"/>
+
+        <service id="classloader_apcloader" class="%classloader.cacheloaders.apc.class%">
+            <argument>%classloader.cacheloaders.apc.prefix%</argument>
+        </service>
+        <service id="classloader_xcacheloader" class="%classloader.cacheloaders.xcache.class%">
+            <argument>%classloader.cacheloaders.xcache.prefix%</argument>
+        </service>
+
+        <service id="classloader_defaultloader" class="RokCommon_ClassLoader_LoaderFactory" constructor="getLoader">
+            <call method="setFinders">
+                <argument type="collection">
+                    <argument type="service" id="classloader_mapfinder"/>
+                    <argument type="service" id="classloader_combinedfinder"/>
+                    <argument type="service" id="classloader_filefinder"/>
+                </argument>
+            </call>
+        </service>
+
+        <service id="classloader" class="%classloader.class%" constructor="getInstance">
+            <call method="setDefaultLoader">
+                <argument type="service" id="classloader_defaultloader"/>
+            </call>
+        </service>
+
+        <service id="ajax.model.loader" class="%classloader.prefixedloader.class%">
+            <argument>ajax.model.paths</argument>
+            <call method="activate"/>
+        </service>
+
+
+
+        <service id="form.field.loader" class="%form.item.classloader.class%">
+            <argument>form.field.paths</argument>
+            <argument>%form.field.assets.context%</argument>
+            <call method="activate"/>
+        </service>
+
+        <service id="form.group.loader" class="%form.item.classloader.class%">
+            <argument>form.group.paths</argument>
+            <argument>%form.group.assets.context%</argument>
+            <call method="activate"/>
+        </service>
+
+        <service id="form.validator.loader" class="%form.item.classloader.class%">
+            <argument>form.validator.paths</argument>
+            <argument>%form.validator.assets.context%</argument>
+            <call method="activate"/>
+        </service>
+
+        <service id="form.namehandler" class="%form.namehandler.class%"/>
+
+        <service id="form" class="RokCommon_Form" shared="false">
+
+        </service>
+
+        <service id="logger" class="%logger.class%" shared="false">
+            <argument>%logger.loglevels%</argument>
+        </service>
+        <service id="header" class="%header.class%" shared="true"/>
+        <service id="i18n" class="%i18n.class%" shared="true"/>
+        <service id="platforminfo" class="%platforminfo.class%" shared="true"/>
+        <service id="cache" class="%cache.class%" shared="true">
+            <argument>%cache.lifetime%</argument>
+        </service>
+        <service id="dispatcher" class="%dispatcher.class%"/>
+        <service id="doctrine_platform" class="%doctrine.platform.class%"/>
+        <service id="registry_converter" class="%registry.converter.class%"/>
+        <service id="html.renderer.select" class="%html.renderer.select.class%"/>
+    </services>
+</container>

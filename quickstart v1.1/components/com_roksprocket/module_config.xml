@@ -1,0 +1,39 @@
+<config>
+    <fields name="params">
+        <fieldset name="roksprocket" overwrite="false" addfieldpath="/components/com_roksprocket/fields">
+            <field name="provider_selector" type="label" label="" class="first" optionorder="0"/>
+            <field name="provider" type="providerselection" default="joomla" label="Content Provider" description=""
+                   class="content_provider" refresher="true" configkey="roksprocket.providers.registered"
+                   optionorder="1"/>
+            <field name="layout" type="layoutselection" default="tabs" label="Type" description=""
+                   configkey="roksprocket.layouts" optionorder="2"/>
+            <field name="display_limit" type="textplus" default="∞" label="Display Limit"
+                   description="Amount of articles to display when rendering. Use ∞ or 0 for unlimited articles."
+                   optionorder="52" append="articles" />
+        </fieldset>
+        <fieldset name="advanced" overwrite="false" addfieldpath="/components/com_roksprocket/fields">
+            <field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix"
+                   description="PARAMMODULECLASSSUFFIX" optionorder="3"/>
+            <field name="cache" type="hidden" default="0"/>
+            <field
+                name="module_cache"
+                type="list"
+                default="1"
+                label="COM_MODULES_FIELD_CACHING_LABEL"
+                description="COM_MODULES_FIELD_CACHING_DESC" optionorder="4">
+                <option
+                    value="1">JGLOBAL_USE_GLOBAL
+                </option>
+                <option
+                    value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                </option>
+            </field>
+            <field
+                name="cache_time"
+                type="text"
+                default="900"
+                label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                description="COM_MODULES_FIELD_CACHE_TIME_DESC" optionorder="5"/>
+        </fieldset>
+    </fields>
+</config>

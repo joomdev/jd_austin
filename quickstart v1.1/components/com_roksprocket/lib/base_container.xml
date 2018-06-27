@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.dispatcher.class">RokCommon_Dispatcher</parameter>
+        <parameter key="roksprocket.providers" type="collection">
+            <parameter key="path">%current.path%/RokSprocket/Provider</parameter>
+            <parameter key="platforms_path">%current.path%/platforms</parameter>
+            <parameter key="file">container.xml</parameter>
+            <parameter key="mode">childdir</parameter>
+        </parameter>
+        <parameter key="roksprocket.addons" type="collection"/>
+        <parameter key="roksprocket.template.subdir">roksprocket</parameter>
+        <parameter key="roksprocket.template.override.path">%template.path%/%roksprocket.template.subdir%</parameter>
+        <parameter key="roksprocket.platformhelper.class">RokSprocket_PlatformHelper_Unsupported</parameter>
+        <parameter key="roksprocket.form.wrapper.class">RokSprocket_Form_Wrapper_JForm</parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket_dispatcher" class="%roksprocket.dispatcher.class%"/>
+        <service id="roksprocket.filter.select.renderer" class="%html.renderer.select.class%"/>
+
+        <service id='roksprocket_platformhelper' class="%roksprocket.platformhelper.class%"/>
+    </services>
+</container>

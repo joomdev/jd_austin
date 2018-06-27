@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+  <name>MOD_SKILLSET</name>
+	<author>SPEDI srl</author>
+	<creationDate>Novambre 2017</creationDate>
+  <copyright>Copyright (C) SPEDI srl</copyright>
+	<license>GNU/GPL license: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>sviluppo@spedi.it</authorEmail>
+	<authorUrl>http://www.spedi.it</authorUrl>
+	<version>3.0.0</version>
+	<description>MOD_SKILLSET_DESC</description>
+
+    <files>
+      <filename>mod_skillset.xml</filename>
+      <filename module="mod_skillset">mod_skillset.php</filename>
+      <filename>index.html</filename>
+      <filename>helper.php</filename>
+      <folder>tmpl</folder>
+      <folder>css</folder>
+      <folder>dist</folder>
+      <folder>images</folder>
+      <folder>language</folder>
+    </files>
+    <config>
+      <fields name="params">
+          <fieldset name="basic">
+
+            <field
+              name="spskill-jquery"
+              type="radio"
+              label="MOD_SKILLSET_JQUERY_LOAD"
+              description="MOD_SKILLSET_JQUERY_LOAD_DESC"
+              class="btn-group btn-group-yesno"
+              default="1"
+              >
+              <option value="1">JYES</option>
+              <option value="0">JNO</option>
+            </field>
+
+            <field
+              name="spskill-description"
+              type="textarea"
+              label="MOD_SKILLSET_SKILL_DESC"
+              description="MOD_SKILLSET_SKILL_DESC_DESC"
+              rows="10" cols="5"
+              filter="raw"
+            />
+
+          </fieldset>
+
+          <fieldset name="skillset" label="MOD_SKILLSET_SKILLSET">
+            <field name="note" type="note" label="MOD_SKILLSET_SKILLSET_1" />
+            <field
+              name="spskill-name-1"
+              type="text"
+              label="MOD_SKILLSET_NAME"
+              description="MOD_SKILLSET_NAME_DESC"
+            />
+
+            <field
+              name="spskill-icon-1"
+              type="text"
+              default="far fa-address-book fa-3x"
+              label="MOD_SKILLSET_ICON"
+              description="MOD_SKILLSET_ICON_DESC"
+            />
+
+            <field
+              name="spskill-count-1"
+              type="text"
+              label="MOD_SKILLSET_SKILL_NUM"
+              description="MOD_SKILLSET_SKILL_NUM_DESC"
+              filter="integer"
+            />
+            <field type="spacer" />
+
+            <field name="note" type="note" label="MOD_SKILLSET_SKILLSET_2" />
+            <field
+              name="spskill-name-2"
+              type="text"
+              label="MOD_SKILLSET_NAME"
+              description="MOD_SKILLSET_NAME_DESC"
+            />
+
+            <field
+              name="spskill-icon-2"
+              type="text"
+              default="far fa-address-book fa-3x"
+              label="MOD_SKILLSET_ICON"
+              description="MOD_SKILLSET_ICON_DESC"
+            />
+
+            <field
+              name="spskill-count-2"
+              type="text"
+              label="MOD_SKILLSET_SKILL_NUM"
+              description="MOD_SKILLSET_SKILL_NUM_DESC"
+              filter="integer"
+            />
+            <field type="spacer" />
+
+            <field name="note" type="note" label="MOD_SKILLSET_SKILLSET_3" />
+            <field
+              name="spskill-name-3"
+              type="text"
+              label="MOD_SKILLSET_NAME"
+              description="MOD_SKILLSET_NAME_DESC"
+            />
+
+            <field
+              name="spskill-icon-3"
+              type="text"
+              default="far fa-address-book fa-3x"
+              label="MOD_SKILLSET_ICON"
+              description="MOD_SKILLSET_ICON_DESC"
+            />
+
+            <field
+              name="spskill-count-3"
+              type="text"
+              label="MOD_SKILLSET_SKILL_NUM"
+              description="MOD_SKILLSET_SKILL_NUM_DESC"
+              filter="integer"
+            />
+            <field type="spacer" />
+
+            <field name="note" type="note" label="MOD_SKILLSET_SKILLSET_4" />
+            <field
+              name="spskill-name-4"
+              type="text"
+              label="MOD_SKILLSET_NAME"
+              description="MOD_SKILLSET_NAME_DESC"
+            />
+
+            <field
+              name="spskill-icon-4"
+              type="text"
+              default="far fa-address-book fa-3x"
+              label="MOD_SKILLSET_ICON"
+              description="MOD_SKILLSET_ICON_DESC"
+            />
+
+            <field
+              name="spskill-count-4"
+              type="text"
+              label="MOD_SKILLSET_SKILL_NUM"
+              description="MOD_SKILLSET_SKILL_NUM_DESC"
+              filter="integer"
+            />
+          </fieldset>
+
+
+          <fieldset name="style" label="MOD_SKILLSET_STYLE">
+
+            <field
+    					name="spskill-bg-image"
+    					type="media"
+    					label="MOD_SKILLSET_BG_IMAGE"
+    					description="MOD_SKILLSET_BG_IMAGE_DESC"
+    				/>
+
+            <field
+    					name="spskill-bg-color"
+    					type="color"
+    					label="MOD_SKILLSET_BG_COLOR"
+    					description="MOD_SKILLSET_BG_COLOR_DESC"
+    				/>
+
+            <field
+    					name="spskill-skill-color"
+    					type="color"
+    					label="MOD_SKILLSET_SKILL_COLOR"
+    					description="MOD_SKILLSET_SKILL_COLOR_DESC"
+    				/>
+
+            <field
+              name="spskill-pattern"
+              type="radio"
+              label="MOD_SKILLSET_PATTERN"
+              description="MOD_SKILLSET_PATTERN_DESC"
+              class="btn-group btn-group-yesno"
+              default="1"
+              >
+              <option value="1">JYES</option>
+              <option value="0">JNO</option>
+            </field>
+
+          </fieldset>
+
+          <fieldset name="advanced">
+    				<field
+    					name="layout"
+    					type="modulelayout"
+    					label="JFIELD_ALT_LAYOUT_LABEL"
+    					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+    				/>
+          </fieldset>
+
+      </fields>
+
+    </config>
+    <updateservers>
+  		<server type="extension" priority="1" name="Spedi Skillset">http://update.spedi.it/mod_skillset.xml</server>
+  	</updateservers>
+</extension>

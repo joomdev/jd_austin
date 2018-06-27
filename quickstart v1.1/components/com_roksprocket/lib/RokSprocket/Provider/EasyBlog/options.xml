@@ -1,0 +1,37 @@
+<config>
+    <fields name="params">
+        <fieldset name="roksprocket" overwrite="true">
+            <field name="easyblog_provider_title" type="label" label="ROKSPROCKET_EASYBLOG_CONTENT_FILTER_RULES" default="" description=""
+                   optionorder="11" class="provider provider_easyblog"/>
+            <field name="easyblog_articles" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_easyblog filter_articles" optionorder="12"
+                   filterlocationparam="roksprocket.providers.registered.easyblog.path"
+                   filterfile="articles.xml" emptybuttontext="ROKSPROCKET_ADD_SPECIFIC_ARTICLES"
+                   notice=""/>
+            <field name="easyblog_filters" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_easyblog filter_filters" optionorder="13"
+                   filterlocationparam="roksprocket.providers.registered.easyblog.path"
+                   filterfile="filters.xml" emptybuttontext="ROKSPROCKET_ADD_FILTERS"
+                   notice=""/>
+            <field name="easyblog_sort" type="dynamicfields" label=""
+                   class="provider provider_easyblog dynamicfield-subinstance" optionorder="14" default="automatic"
+                   description="">
+                <option value="automatic" rel="easyblog_sort_automatic">ROKSPROCKET_SORT_AUTOMATIC</option>
+                <option value="manual" rel="easyblog_sort_manual">ROKSPROCKET_SORT_MANUAL</option>
+                <option value="random" rel="easyblog_sort_random">ROKSPROCKET_SORT_RANDOM</option>
+            </field>
+            <field name="easyblog_sort_automatic_filters"
+                   class="easyblog_sort easyblog_sort_automatic provider provider_easyblog filter_automatic_filters" optionorder="15"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.easyblog.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_SORT_RULES"/>
+
+            <field name="easyblog_sort_manual_append" class="easyblog_sort easyblog_sort_manual provider provider_easyblog" optionorder="15"
+                   type="list" label="ROKSPROCKET_WITH_NEW_ARTICLES_ADDED" default="after">
+                <option value="before">ROKSPROCKET_SORT_BEFORE</option>
+                <option value="after">ROKSPROCKET_SORT_AFTER</option>
+            </field>
+        </fieldset>
+    </fields>
+</config>
+

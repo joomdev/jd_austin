@@ -1,0 +1,19 @@
+<config>
+	<fields name="params">
+		<fieldset name="roksprocket" overwrite="true">
+			<field name="simple_provider_title" type="label" label="ROKSPROCKET_SIMPLE_CONTENT_FILTER_RULES" default="" description=""
+				   optionorder="11" class="provider provider_simple"/>
+
+			<field name="simple_add_item" type="additem" default="" multiple="false" label="" description=""
+				   class="provider provider_simple filter_add_item" optionorder="12"
+				   filterlocationparam="roksprocket.providers.registered.simple.path"
+				   emptybuttontext="ROKSPROCKET_ADD_SPECIFIC_ITEM"
+				   notice=""/>
+			<field name="simple_sort" type="dynamicfields" label=""
+				   class="provider provider_simple dynamicfield-subinstance" optionorder="14" default="automatic" description="">
+				<option value="manual" rel="simple_sort_manual">ROKSPROCKET_SORT_MANUAL</option>
+                <option value="random" rel="simple_sort_random">ROKSPROCKET_SORT_RANDOM</option>
+			</field>
+		</fieldset>
+	</fields>
+</config>

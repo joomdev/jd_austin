@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.contentbuilder" type="collection">
+            <parameter key="name">contentbuilder</parameter>
+            <parameter key="displayname">ContentBuilder</parameter>
+            <parameter key="path">%current.path%</parameter>
+            <parameter key="class">RokSprocket_Provider_ContentBuilder</parameter>
+            <parameter key="optionfile">options.xml</parameter>
+            <parameter key="service">roksprocket.provider.contentbuilder</parameter>
+            <parameter key="filter.processor">roksprocket.filter.processor.contentbuilder</parameter>
+            <parameter key="filter.file">filters.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.provider.contentbuilder" class="%roksprocket.providers.registered.contentbuilder.class%"  shared="false"/>
+        <service id="roksprocket.filter.processor.contentbuilder" class="RokSprocket_Provider_ContentBuilder_Filter"  shared="false"/>
+    </services>
+</container>

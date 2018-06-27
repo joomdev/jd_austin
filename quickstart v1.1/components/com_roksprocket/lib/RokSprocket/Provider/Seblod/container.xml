@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.seblod" type="collection">
+            <parameter key="name">seblod</parameter>
+            <parameter key="displayname">Seblod</parameter>
+            <parameter key="path">%current.path%</parameter>
+            <parameter key="class">RokSprocket_Provider_Seblod</parameter>
+            <parameter key="optionfile">options.xml</parameter>
+            <parameter key="service">roksprocket.provider.seblod</parameter>
+            <parameter key="filter.processor">roksprocket.filter.processor.seblod</parameter>
+            <parameter key="filter.file">filters.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.provider.seblod" class="%roksprocket.providers.registered.seblod.class%" shared="false"/>
+        <service id="roksprocket.filter.processor.seblod" class="RokSprocket_Provider_Seblod_Filter" shared="false"/>
+    </services>
+</container>

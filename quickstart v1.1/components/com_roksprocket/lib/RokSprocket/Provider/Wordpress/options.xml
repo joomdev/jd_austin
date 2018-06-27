@@ -1,0 +1,40 @@
+<config>
+	<fields name="params">
+		<fieldset name="roksprocket" overwrite="true">
+			<field name="wordpress_provider_title" type="label" label="WordPress Content Filter Rules" default="" description=""
+				   optionorder="11" class="provider provider_wordpress"/>
+			<field name="wordpress_articles" type="filters" default="" multiple="false" label="" description=""
+				   class="provider provider_wordpress filter_articles" optionorder="12"
+				   filterlocationparam="roksprocket.providers.registered.wordpress.path"
+				   filterfile="articles.xml" emptybuttontext="Add Specific Articles"
+				   notice=""/>
+			<field name="wordpress_filters" type="filters" default="" multiple="false" label="" description=""
+				   class="provider provider_wordpress filter_filters" optionorder="13"
+				   filterlocationparam="roksprocket.providers.registered.wordpress.path"
+				   filterfile="filters.xml" emptybuttontext="Add Filters"
+				   notice=""/>
+			<field name="wordpress_sort" type="dynamicfields" label=""
+				   class="provider provider_wordpress dynamicfield-subinstance" optionorder="14" default="automatic" description="">
+				<option value="automatic" rel="wordpress_sort_automatic">Automatic sort</option>
+				<option value="manual" rel="wordpress_sort_manual">Manual sort</option>
+                <option value="random" rel="wordpress_sort_random">Random sort</option>
+			</field>
+			<field name="wordpress_sort_automatic_filters"
+				   class="wordpress_sort wordpress_sort_automatic provider provider_wordpress filter_automatic_filters" optionorder="15"
+				   type="filters" label=""
+				   filterlocationparam="roksprocket.providers.registered.wordpress.path"
+				   filterfile="sorts.xml" emptybuttontext="Add Sort Rules"/>
+
+			<field name="wordpress_sort_manual_append" class="wordpress_sort wordpress_sort_manual provider provider_wordpress" optionorder="15"
+				   type="list" label="with new articles added" default="after">
+				<option value="before">before</option>
+				<option value="after">after</option>
+			</field>
+			<field name="wordpress_sort_manual_filters"
+				   class="wordpress_sort wordpress_sort_manual provider provider_wordpress filter_manual_filter_sort" optionorder="16"
+				   type="filters" label=""
+				   filterlocationparam="roksprocket.providers.registered.wordpress.path"
+				   filterfile="sorts.xml" emptybuttontext="Add Fallback Manual Sort Rules"/>
+		</fieldset>
+	</fields>
+</config>

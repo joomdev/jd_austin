@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.easyblog" type="collection">
+            <parameter key="name">easyblog</parameter>
+            <parameter key="displayname">EasyBlog</parameter>
+            <parameter key="path">%current.path%</parameter>
+            <parameter key="class">RokSprocket_Provider_EasyBlog</parameter>
+            <parameter key="optionfile">options.xml</parameter>
+            <parameter key="service">roksprocket.provider.easyblog</parameter>
+            <parameter key="filter.processor">roksprocket.filter.processor.easyblog</parameter>
+            <parameter key="filter.file">filters.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.provider.easyblog" class="%roksprocket.providers.registered.easyblog.class%" shared="false"/>
+        <service id="roksprocket.filter.processor.easyblog" class="RokSprocket_Provider_EasyBlog_Filter" shared="false"/>
+    </services>
+</container>

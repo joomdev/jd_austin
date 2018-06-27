@@ -1,0 +1,28 @@
+<filters>
+    <filter name="title" label="Title" type="RokCommon_Filter_Type_Text"/>
+    <filter name="alias" label="Alias" type="RokCommon_Filter_Type_Text"/>
+    <filter name="articletext" label="Article Text" type="RokCommon_Filter_Type_LargeText"/>
+    <filter name="tag" label="Tags" type="RokCommon_Filter_Type_LargeText"/>
+    <filter name="published" label="Published" type="RokCommon_Filter_Type_Boolean"/>
+    <filter name="publish_up" label="Publish Up" type="RokCommon_Filter_Type_Date"/>
+    <filter name="publish_down" label="Publish Down" type="RokCommon_Filter_Type_Date"/>
+    <filter name="featured" label="Featured" type="RokCommon_Filter_Type_Boolean"/>
+    <filter name="category" label="Category" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_ContentBuilder_CategoryPopulator"/>
+    <filter name="storage" label="Storage" type="RokCommon_Filter_Type_PickList"
+                populator="RokSprocket_Provider_ContentBuilder_StoragePopulator"/>
+    <filter name="field" label="Field" type="RokCommon_Filter_Type_PickList"
+                populator="RokSprocket_Provider_ContentBuilder_FieldPopulator"/>
+    <filter name="createddate" label="Created Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="modifieddate" label="Last Modified Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="modifiedby" label="Last Modified By" type="RokSprocket_Provider_ContentBuilder_Filter_Type_User"/>
+    <filter name="author" label="Author" type="RokSprocket_Provider_ContentBuilder_Filter_Type_User"/>
+    <filter name="authoralias" label="Author Alias" type="RokCommon_Filter_Type_Text"/>
+    <filter name="rating" label="Rating" type="RokCommon_Filter_Type_Number"/>
+    <filter name="hits" label="Hits" type="RokCommon_Filter_Type_Number"/>
+    <filter name="language" label="Language" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_ContentBuilder_LanguagePopulator"/>
+    <filter name="access" label="Access Level" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_Joomla_AccessPopulator"/>
+    <filter name="searchablefield" label="Searchable Fields" type="RokCommon_Filter_Type_LargeText"/>
+</filters>

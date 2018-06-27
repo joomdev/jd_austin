@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.types" type="collection">
+            <parameter key="name">types</parameter>
+            <parameter key="displayname">Types</parameter>
+            <parameter key="path">%current.path%</parameter>
+            <parameter key="class">RokSprocket_Provider_Types</parameter>
+            <parameter key="optionfile">options.xml</parameter>
+            <parameter key="service">roksprocket.provider.types</parameter>
+            <parameter key="filter.processor">roksprocket.filter.processor.types</parameter>
+            <parameter key="filter.file">filters.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.provider.types" class="%roksprocket.providers.registered.types.class%" shared="false"/>
+        <service id="roksprocket.filter.processor.types" class="RokSprocket_Provider_Types_Filter" shared="false"/>
+    </services>
+</container>

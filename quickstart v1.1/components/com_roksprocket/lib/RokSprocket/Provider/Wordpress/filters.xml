@@ -1,0 +1,20 @@
+<filters>
+    <filter name="title" label="Title" type="RokCommon_Filter_Type_Text"/>
+    <filter name="name" label="Slug" type="RokCommon_Filter_Type_Text"/>
+    <filter name="content" label="Article Text" type="RokCommon_Filter_Type_LargeText"/>
+    <filter name="tag" label="Post Tag" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_Wordpress_TagPopulator"/>
+    <filter name="status" label="Status" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_Wordpress_StatusPopulator"/>
+    <filter name="category" label="Category" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_Wordpress_CategoryPopulator"/>
+    <filter name="posttype" label="Post Type" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_Wordpress_PosttypePopulator"/>
+    <filter name="parentpage" label="Parent Page" type="RokCommon_Filter_Type_PickList"
+            populator="RokSprocket_Provider_Wordpress_ParentpagePopulator"/>
+    <filter name="createddate" label="Created Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="modified" label="Last Modified Date" type="RokCommon_Filter_Type_Date"/>
+    <filter name="author" label="Author" type="RokSprocket_Provider_Wordpress_Filter_Type_User"/>
+    <filter name="comments" label="Comment Count" type="RokCommon_Filter_Type_Number"/>
+    <filter name="password" label="Password Protected" type="RokCommon_Filter_Type_Boolean"/>
+</filters>

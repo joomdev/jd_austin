@@ -1,0 +1,33 @@
+<config>
+    <fields name="params">
+        <fieldset name="peritem" overwrite="false">
+            <field name="grids_item_title" label="ROKSPROCKET_LAYOUT_GRIDS_TITLE_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="54" description="ROKSPROCKET_LAYOUT_GRIDS_TITLE_DESC">
+                <option value="-default-">JDEFAULT</option>
+                <option value="-title-">ROKSPROCKET_ARTICLE_TITLE</option>
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="grids_item_description" label="ROKSPROCKET_LAYOUT_GRIDS_DESCRIPTION_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="55" description="ROKSPROCKET_LAYOUT_GRIDS_DESCRIPTION_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_DESCRIPTION</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="grids_item_image" label="ROKSPROCKET_LAYOUT_GRIDS_IMAGE_LABEL" type="imagepicker" icon="image" default="-default-" optionorder="56" description="ROKSPROCKET_LAYOUT_GRIDS_IMAGE_DESC" />
+
+
+            <field name="grids_item_link" label="ROKSPROCKET_LAYOUT_GRIDS_LINK_LABEL" type="peritempicker" default="-default-" icon="link" optionorder="57" description="ROKSPROCKET_LAYOUT_GRIDS_LINK_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_LINK</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+        </fieldset>
+    </fields>
+</config>

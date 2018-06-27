@@ -1,0 +1,51 @@
+<config>
+    <fields name="params">
+        <fieldset name="roksprocket" overwrite="true">
+            <field name="contentbuilder_provider_title" type="label" label="ROKSPROCKET_CONTENTBUILDER_CONTENT_FILTER_RULES" default="" description=""
+                   optionorder="10" class="provider provider_contentbuilder"/>
+            <!--<field name="contentbuilder_category" type="providerbasedlist" label="CONTENTBUILDER Category"-->
+                   <!--class="provider provider_contentbuilder dynamicfield-subinstance dynamicfield-last-fire" optionorder="11"-->
+                   <!--description="" refresher="true" provider="contentbuilder" populator="getCCKGroups" cckgroup="true"  attrs="data-provider-submit" data-provider-submit="contentbuilder_category">-->
+            <!--</field>-->
+            <field name="contentbuilder_articles" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_contentbuilder filter_articles" optionorder="12"
+                   filterlocationparam="roksprocket.providers.registered.contentbuilder.path"
+                   filterfile="articles.xml" emptybuttontext="ROKSPROCKET_ADD_SPECIFIC_ARTICLES"
+                   notice=""/>
+            <field name="contentbuilder_filters" type="filters" default="" multiple="false" label="" description=""
+                   class="provider provider_contentbuilder filter_filters" optionorder="13"
+                   filterlocationparam="roksprocket.providers.registered.contentbuilder.path"
+                   filterfile="filters.xml" emptybuttontext="ROKSPROCKET_ADD_FILTERS"
+                   notice=""/>
+            <field name="contentbuilder_sort" type="dynamicfields" label=""
+                   class="provider provider_contentbuilder dynamicfield-subinstance" optionorder="14" default="automatic"
+                   description="">
+                <option value="automatic" rel="contentbuilder_sort_automatic">ROKSPROCKET_SORT_AUTOMATIC</option>
+                <option value="manual" rel="contentbuilder_sort_manual">ROKSPROCKET_SORT_MANUAL</option>
+                <option value="random" rel="contentbuilder_sort_random">ROKSPROCKET_SORT_RANDOM</option>
+            </field>
+            <field name="contentbuilder_sort_automatic_filters"
+                   class="contentbuilder_sort contentbuilder_sort_automatic provider provider_contentbuilder filter_automatic_filters" optionorder="15"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.contentbuilder.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_SORT_RULES"/>
+
+            <field name="contentbuilder_sort_manual_append" class="contentbuilder_sort contentbuilder_sort_manual provider provider_contentbuilder" optionorder="15"
+                   type="list" label="ROKSPROCKET_WITH_NEW_ARTICLES_ADDED" default="after">
+                <option value="before">ROKSPROCKET_SORT_BEFORE</option>
+                <option value="after">ROKSPROCKET_SORT_AFTER</option>
+            </field>
+            <field name="contentbuilder_sort_manual_filters"
+                   class="contentbuilder_sort contentbuilder_sort_manual provider provider_contentbuilder filter_manual_filter_sort" optionorder="16"
+                   type="filters" label=""
+                   filterlocationparam="roksprocket.providers.registered.contentbuilder.path"
+                   filterfile="sorts.xml" emptybuttontext="ROKSPROCKET_ADD_FALLBACK_MANUAL_SORT_RULES"/>
+
+            <!--<field name="contentbuilder_articletext_field" type="providergroupedlist" label="ROKSPROCKET_USE_AS_ARTICLE_TEXT"-->
+                   <!--class="provider provider_contentbuilder" optionorder="81" description="" controller="contentbuilder_category"-->
+                   <!--provider="contentbuilder" populator="getTextTypes" attrs="data-provider-submit" data-provider-submit="contentbuilder_articletext_field" default="primary">-->
+                <!--<option value="primary">ROKSPROCKET_ITEM_CONTENT</option>-->
+            <!--</field>-->
+        </fieldset>
+    </fields>
+</config>

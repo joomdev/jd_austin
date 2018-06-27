@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension client="site" method="upgrade" type="module" version="1.7">
+    <name>RokSprocket Module</name>
+    <creationDate>April 13, 2018</creationDate>
+    <author>RocketTheme, LLC</author>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2018 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>2.1.23</version>
+    <description>RokSprocket makes it easy to display content in a dynamic, visual layout.</description>
+    <files>
+        <filename module="mod_roksprocket">mod_roksprocket.php</filename>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <folder>lib</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field default="onmodule" description="DESC.MOD_ROKSPROCKET_RUN_CONTENT_PLUGINS_DESC" label="MOD_ROKSPROCKET_RUN_CONTENT_PLUGINS_LABEL" name="run_content_plugins" type="list">
+                    <option value="onmodule">MOD_ROKSPROCKET_RUN_CONTENT_PLUGINS_ON_MODULE</option>
+                    <option value="oneach">MOD_ROKSPROCKET_RUN_CONTENT_PLUGINS_ON_EACH</option>
+                    <option value="disabled">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server name="RocketTheme Update Directory" priority="1" type="collection">http://updates.rockettheme.com/joomla/updates.xml</server>
+    </updateservers>
+</extension>

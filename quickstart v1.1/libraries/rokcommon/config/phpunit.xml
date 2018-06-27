@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <imports>
+        <import resource="base.xml"/>
+    </imports>
+    <parameters>
+        <parameter key="platforminfo.class">RokCommon_PlatformInfo_Phpunit</parameter>
+    </parameters>
+</container>

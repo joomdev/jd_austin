@@ -1,0 +1,90 @@
+<config>
+    <fields name="params">
+        <fieldset name="roksprocket" overwrite="false">
+            <field name="headlines_layout_title" type="label" label="ROKSPROCKET_HEADLINES_LAYOUT_TITLE" default=""
+                   description="" optionorder="50" class=""/>
+            <field name="headlines_themes" label="ROKSPROCKET_THEMES_LABEL" type="containerlist"
+                   description="ROKSPROCKET_HEADLINES_DESC" configkey="roksprocket.layouts.headlines.themes"
+                   optionorder="51" class=""/>
+            <field name="headlines_label_text" type="text" default="" label="ROKSPROCKET_HEADLINES_LABEL_TEXT"
+                   description="ROKSPROCKET_HEADLINES_LABEL_TEXT_DESC" optionorder="52"
+                   class=""/>
+            <field name="headlines_previews_length" type="textplus" default="20" append="words"
+                   label="ROKSPROCKET_PREVIEWSLENGTH_LABEL" description="ROKSPROCKET_PREVIEWSLENGTH_DESC"
+                   optionorder="53" class=""/>
+            <field name="headlines_strip_html_tags" type="containerlist" default="1" label="ROKSPROCKET_STRIP_HTML_TAGS_LABEL"
+                   description="ROKSPROCKET_STRIP_HTML_TAGS_DESC" optionorder="53.2" class="">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="headlines_show_arrows" type="containerlist" default="show" label="ROKSPROCKET_ARROW_LABEL"
+                   description="ROKSPROCKET_ARROW_DESC" optionorder="54" class="">
+                <option value="show">JSHOW</option>
+                <option value="hide">JHIDE</option>
+            </field>
+            <field name="headlines_animation" label="ROKSPROCKET_ANIMATION_LABEL" type="containerlist"
+                   description="ROKSPROCKET_ANIMATION_DESC" default="slideandfade" optionorder="55"
+                   class="">
+                <option value="fade">FADE</option>
+                <option value="slideandfade">SLIDE_AND_FADE</option>
+                <option value="none">JNONE</option>
+            </field>
+            <field name="headlines_autoplay" type="containerlist" default="0" label="ROKSPROCKET_AUTOPLAY_LABEL"
+                   description="ROKSPROCKET_AUTOPLAY_DESC" optionorder="56" class="">
+                <option value="1">ENABLE</option>
+                <option value="0">DISABLE</option>
+            </field>
+            <field name="headlines_autoplay_delay" type="textplus" default="5" append="s"
+                   label="ROKSPROCKET_AUTOPLAY_DELAY_LABEL" description="ROKSPROCKET_AUTOPLAY_DELAY_DESC"
+                   optionorder="57" class=""/>
+            <field name="headlines_resize_enable" type="containerlist" default="0"
+                   label="ROKSPROCKET_RESIZE_ENABLE_LABEL" description="ROKSPROCKET_RESIZE_ENABLE_DESC"
+                   optionorder="58.1" class="" group_open="true" group_class="group_imageresize">
+                <option value="1">ENABLE</option>
+                <option value="0">DISABLE</option>
+            </field>
+            <field name="headlines_resize_width" type="textplus" default="0" append="px"
+                   label="ROKSPROCKET_RESIZE_WIDTH_LABEL" description="ROKSPROCKET_RESIZE_WIDTH_DESC"
+                   optionorder="58.2" class="" group_bit="true"/>
+            <field name="headlines_resize_height" type="textplus" default="0" append="px"
+                   label="ROKSPROCKET_RESIZE_HEIGHT_LABEL" description="ROKSPROCKET_RESIZE_HEIGHT_DESC"
+                   optionorder="58.3" class="" group_close="true"/>
+
+            <field name="headlines_layout_defaults_title" type="label"
+                   label="ROKSPROCKET_HEADLINES_LAYOUT_DEFAULTS_TITLE"
+                   default="" description="" optionorder="80" class=""/>
+
+            <field name="headlines_description_default" label="ROKSPROCKET_DEFAULT_DESCRIPTION"
+                   description="ROKSPROCKET_DEFAULT_DESCRIPTION_DESC" type="provideroptionedselector"
+                   configkey="roksprocket.providers.registered" controller="provider" populator="getTextTypes"
+                   optionorder="81" class="layout layout_headlines dynamicfield-subinstance" default="primary">
+                <option value="none">JNONE</option>
+                <option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_TEXT</option>
+            </field>
+
+            <field name="headlines_image_default" label="ROKSPROCKET_DEFAULT_IMAGE"
+                   description="ROKSPROCKET_DEFAULT_IMAGE_DESC" type="provideroptionedselector"
+                   configkey="roksprocket.providers.registered" controller="provider" populator="getImageTypes"
+                   optionorder="81" class="layout layout_headlines dynamicfield-subinstance" default="primary">
+                <option value="none">JNONE</option>
+                <option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_IMAGE</option>
+                <option value="custom">Custom</option>
+            </field>
+            <field name="headlines_image_default_custom" type="imagepicker" value=""
+                   label="ROKSPROCKET_DEFAULT_ARTICLE_IMAGE" default="" description="" optionorder="82"
+                   class="layout layout_headlines headlines_image_default headlines_image_default_custom"
+                   article-defaults="true"/>
+            <field name="headlines_link_default" label="ROKSPROCKET_DEFAULT_LINK"
+                   description="ROKSPROCKET_DEFAULT_LINK_DESC" type="provideroptionedselector"
+                   configkey="roksprocket.providers.registered" controller="provider" populator="getLinkTypes"
+                   optionorder="83" class="layout layout_headlines dynamicfield-subinstance" default="primary">
+                <option value="none">JNONE</option>
+                <option value="primary">ROKSPROCKET_DEFAULT_ARTICLE_LINK</option>
+                <option value="custom">ROKSPROCKET_CUSTOM</option>
+            </field>
+            <field name="headlines_link_default_custom" type="text" value=""
+                   label="ROKSPROCKET_CUSTOM_ARTICLE_LINK" default="" description="" optionorder="84"
+                   class="layout layout_headlines headlines_link_default headlines_link_default_custom"/>
+        </fieldset>
+    </fields>
+</config>

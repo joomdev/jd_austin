@@ -1,0 +1,3 @@
+<filters>
+    <filter name="article" label="Article" type="RokSprocket_Provider_Pods_Filter_Type_Article"/>
+</filters>

@@ -1,0 +1,6 @@
+<filters>
+    <filter name="title" label="Title" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="createddate" label="Created Date" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="modifieddate" label="Last Modified Date" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="author" label="Author" type="RokCommon_Filter_Type_Sort"/>
+</filters>

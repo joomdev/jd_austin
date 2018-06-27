@@ -1,0 +1,36 @@
+/**
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2018 RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+/* Layout - Sprocket Headlines - Core */
+.sprocket-headlines {position: relative;display: table;border-radius: 5px;margin: -1px;width: 100%;overflow: hidden;}
+.sprocket-headlines:after {display: table;content: "";*zoom: 1;clear: both;}
+.sprocket-headlines-container {display: table-row;}
+.sprocket-headlines ul {list-style: none !important;margin: 0;}
+
+/* Layout - Sprocket Headlines - Badge */
+.sprocket-headlines-badge {float: left;}
+.sprocket-headlines-badge span {display: block;padding: 10px !important;font-size: 1.1em;line-height: 1.2em;font-weight: bold;}
+
+/* Layout - Sprocket Headlines - Items */
+.sprocket-headlines-list {float: left;padding: 10px !important;overflow: hidden;}
+.sprocket-headlines-item {font-size: 1.1em;line-height: 1.2em;position: absolute;opacity: 0;height: 0;width: 0;display: block;visibility: hidden;}
+.sprocket-headlines-item.active {position: relative;opacity: 1;height: auto;width: auto;float: left;visibility: visible;}
+.animation-slideandfade .sprocket-headlines-item {margin-top: -100px;}
+.animation-slideandfade .sprocket-headlines-item.active {margin-top: 0;}
+.sprocket-headlines-image {float: left;margin-right: 10px;}
+
+/* Layout - Sprocket Headlines - Navigation */
+.sprocket-headlines-navigation {display: table-cell;width: 100px;vertical-align: middle;padding: 5px;width: 60px;}
+.sprocket-headlines-navigation .arrow {position: relative;display: block;width: 18px;height: 18px;border-radius: 1em;opacity: 0.7;cursor: pointer;float: right;margin-right: 5px;text-align: center;font-size:1.2em;font-weight: bold;}
+.sprocket-headlines-navigation .arrow:hover {opacity: 1;}
+
+/* Layout - Sprocket Headlines - Colors */
+.sprocket-headlines {background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);background: -webkit-linear-gradient(top, #f9f9f9 0%,#eaeaea 100%);background: -o-linear-gradient(top, #f9f9f9 0%,#eaeaea 100%);background: linear-gradient(top, #f9f9f9 0%,#eaeaea 100%);border: 1px solid #ddd;}
+.sprocket-headlines-navigation .arrow {background: #c0c0c0;color: #fff;box-shadow: 1px 1px 1px rgba(255,255,255,0.5);}
+
+/* Layout - Sprocket Headlines - Transitions */
+.animation-slideandfade .sprocket-headlines-item.active {-webkit-transition: margin 0.3s ease-out, opacity 0.4s ease-in;-moz-transition: margin 0.3s ease-out, opacity 0.4s ease-in;-o-transition: margin 0.3s ease-out, opacity 0.4s ease-in;transition: margin 0.3s ease-out, opacity 0.4s ease-in;}
+.animation-fade .sprocket-headlines-item.active {-webkit-transition: opacity 0.4s ease-in;-moz-transition: opacity 0.4s ease-in;-o-transition: opacity 0.4s ease-in;transition: opacity 0.4s ease-in;}
+.sprocket-headlines-navigation .arrow {-webkit-transition: opacity 0.2s ease-in;-moz-transition: opacity 0.2s ease-in;-o-transition: opacity 0.2s ease-in;transition: opacity 0.2s ease-in;}

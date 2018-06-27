@@ -1,0 +1,40 @@
+<config>
+    <fields name="params">
+        <fieldset name="peritem" overwrite="false">
+            <field name="mosaic_item_title" label="ROKSPROCKET_LAYOUT_MOSAIC_TITLE_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="54" description="ROKSPROCKET_LAYOUT_MOSAIC_TITLE_DESC">
+                <option value="-default-">JDEFAULT</option>
+                <option value="-title-">ROKSPROCKET_ARTICLE_TITLE</option>
+                <option value="-none-">JNONE</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+
+            <field name="mosaic_item_description" label="ROKSPROCKET_LAYOUT_MOSAIC_DESCRIPTION_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="55" description="ROKSPROCKET_LAYOUT_MOSAIC_DESCRIPTION_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_DESCRIPTION</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="mosaic_item_image" label="ROKSPROCKET_LAYOUT_MOSAIC_IMAGE_LABEL" type="imagepicker" icon="image" default="-default-" optionorder="56" description="ROKSPROCKET_LAYOUT_MOSAIC_IMAGE_DESC" />
+
+            <field name="mosaic_item_link" label="ROKSPROCKET_LAYOUT_MOSAIC_LINK_LABEL" type="peritempicker" default="-default-" icon="link" optionorder="57" description="ROKSPROCKET_LAYOUT_MOSAIC_LINK_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_LINK</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="mosaic_item_tags" label="ROKSPROCKET_LAYOUT_MOSAIC_TAGS_LABEL" type="peritempickertags" default="-article-" icon="tagsico" optionorder="58" description="ROKSPROCKET_LAYOUT_MOSAIC_TAGS_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_TAGS</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+            <!-- <field name="mosaic_item_tags" label="ROKSPROCKET_LAYOUT_MOSAIC_TAGS_LABEL" type="tags" default="" icon="tagsico" optionorder="58" description="ROKSPROCKET_LAYOUT_MOSAIC_TAGS_DESC" /> -->
+        </fieldset>
+    </fields>
+</config>

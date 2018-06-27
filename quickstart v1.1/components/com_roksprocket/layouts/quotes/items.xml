@@ -1,0 +1,41 @@
+<config>
+    <fields name="params">
+        <fieldset name="peritem" overwrite="false">
+            <field name="quotes_item_description" label="ROKSPROCKET_LAYOUT_QUOTES_DESCRIPTION_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="55" description="ROKSPROCKET_LAYOUT_QUOTES_DESCRIPTION_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_DESCRIPTION</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="quotes_item_image" label="ROKSPROCKET_LAYOUT_QUOTES_IMAGE_LABEL" type="imagepicker" icon="image" default="-default-" optionorder="56" description="ROKSPROCKET_LAYOUT_QUOTES_IMAGE_DESC"/>
+
+            <field name="quotes_item_author" label="ROKSPROCKET_LAYOUT_QUOTES_AUTHOR_LABEL" type="peritempicker" default="-none-" icon="text" optionorder="57" description="ROKSPROCKET_LAYOUT_QUOTES_AUTHOR_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="quotes_item_subtext" label="ROKSPROCKET_LAYOUT_QUOTES_SUBTEXT_LABEL" type="peritempicker" default="-none-" icon="text" optionorder="58" description="ROKSPROCKET_LAYOUT_QUOTES_SUBTEXT_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="quotes_item_link" label="ROKSPROCKET_LAYOUT_QUOTES_LINK_LABEL" type="peritempicker" default="-default-" icon="link" optionorder="59" description="ROKSPROCKET_LAYOUT_QUOTES_LINK_DESC">
+                <option value="-none-">JNONE</option>
+                <option value="-default-">JDEFAULT</option>
+                <option value="-article-">ROKSPROCKET_ARTICLE_LINK</option>
+                <option value="divider"></option>
+                <option value="">ROKSPROCKET_CUSTOM</option>
+            </field>
+
+            <field name="quotes_item_direction" label="ROKSPROCKET_LAYOUT_QUOTES_DIRECTION_LABEL" type="peritempicker" default="-bottomleft-" icon="provider" optionorder="60" description="ROKSPROCKET_LAYOUT_QUOTES_DIRECTION_DESC">
+                <option value="-no-">NO_ARROW</option>
+                <option value="-topleft-">TOP_LEFT</option>
+                <option value="-topright-">TOP_RIGHT</option>
+                <option value="-bottomleft-">BOTTOM_LEFT</option>
+                <option value="-bottomright-">BOTTOM_RIGHT</option>
+            </field>
+        </fieldset>
+    </fields>
+</config>

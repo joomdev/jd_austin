@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <parameters>
+        <parameter key="roksprocket.providers.registered.joomla" type="collection">
+            <parameter key="filter.file">filters-joomla31.xml</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="roksprocket.filter.processor.joomla" class="RokSprocket_Provider_Joomla_Filter31" shared="false"/>
+        <service id="roksprocket.filter.processor.joomla_tagmerge" class="RokSprocket_Provider_Joomla_TagMerge" shared="false"/>
+    </services>
+</container>

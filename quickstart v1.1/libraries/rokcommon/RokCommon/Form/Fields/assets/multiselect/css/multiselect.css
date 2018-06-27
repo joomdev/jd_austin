@@ -1,0 +1,28 @@
+/**
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+.multiselect select {display: none;}
+.multiselect, .multiselect-holder {width: 50%;display: inline-block;margin-bottom: 9px;}
+.multiselect-holder {cursor: text;width: 100%;border: 1px solid #ccc;border-bottom-color: #bbb;border-radius: 4px;font-size: 1.2em;padding:4px 5px 0 !important;vertical-align: middle;}
+.multiselect-holder li {float: left;list-style-type: none;margin: 0 5px 4px 0;padding: 0px 5px;font-size: 13px;;text-shadow: 0 1px 0 #fff;}
+.multiselect-holder .multiselect-input {display: none;}
+.multiselect-holder .multiselect-input.main-input {display:block;padding: 0;}
+.multiselect-holder .multiselect-input.main-input input {width: 15px;height:20px;}
+.multiselect-holder .multiselect-input input {margin: 0;padding: 0;border: 0;border-radius: 0;box-shadow: none;}
+
+/* active feeds */
+.multiselect-showing-feeds .multiselect-holder {border-radius: 4px 4px 0 0;}
+
+/* tag style */
+.multiselect-holder li.multiselect-box {background: #dee7f8;border-radius: 4px;border: 1px solid #c9d4ef;color:#59627a;}
+.multiselect-remove {font-size: 15px;margin-left: 5px;line-height:15px;position:relative;top: 1px;cursor:pointer;}
+.multiselect-remove:hover {color: #111;}
+
+/* dropdown selector style */
+.multiselect-feeds {display: none;position: absolute;z-index: 5;background-color: #f2f2f2;background-color: rgba(242, 242, 242, 0.9);border: 1px solid #ccc;border-top: 0;border-radius: 0 0 4px 4px;}
+.multiselect-feeds li {cursor: pointer;font-size: 13px;color: #626262; text-shadow: 0 1px 0 #fff;padding: 5px;border-top: 1px solid #fff;border-bottom: 1px solid #ccc;}
+.multiselect-feeds li:last-child, .multiselect-feeds li.last-item {border-bottom: 0;}
+.multiselect-feeds li.hover {background-color: #dee7f8;background-color: rgba(222, 231, 248, 0.6);}
+.multiselect-feeds li em {font-style: normal;color: #111;background: #a0b8f8;}

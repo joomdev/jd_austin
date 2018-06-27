@@ -1,0 +1,13 @@
+<filters>
+    <filter name="title" label="ROKSPROCKET_TITLE" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="alias" label="ROKSPROCKET_ALIAS" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="category" label="ROKSPROCKET_CATEGORY" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="ordering" label="ROKSPROCKET_ORDERING" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="createddate" label="ROKSPROCKET_CREATED_DATE" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="modifieddate" label="ROKSPROCKET_MODIFIED_DATE" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="modifiedby" label="ROKSPROCKET_MODIFIED_BY" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="author" label="ROKSPROCKET_AUTHOR" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="rating" label="ROKSPROCKET_RATING" type="RokCommon_Filter_Type_Sort"/>
+    <filter name="hits" label="ROKSPROCKET_HITS" type="RokCommon_Filter_Type_Sort"/>
+</filters>
+

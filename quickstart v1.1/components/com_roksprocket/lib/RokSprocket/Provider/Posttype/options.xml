@@ -1,0 +1,40 @@
+<config>
+	<fields name="params">
+		<fieldset name="roksprocket" overwrite="true">
+			<field name="posttype_provider_title" type="label" label="WP Post Type UI Content Filter Rules" default="" description=""
+				   optionorder="11" class="provider provider_posttype"/>
+			<field name="posttype_articles" type="filters" default="" multiple="false" label="" description=""
+				   class="provider provider_posttype filter_articles" optionorder="12"
+				   filterlocationparam="roksprocket.providers.registered.posttype.path"
+				   filterfile="articles.xml" emptybuttontext="Add Specific Articles"
+				   notice=""/>
+			<field name="posttype_filters" type="filters" default="" multiple="false" label="" description=""
+				   class="provider provider_posttype filter_filters" optionorder="13"
+				   filterlocationparam="roksprocket.providers.registered.posttype.path"
+				   filterfile="filters.xml" emptybuttontext="Add Filters"
+				   notice=""/>
+			<field name="posttype_sort" type="dynamicfields" label=""
+				   class="provider provider_posttype dynamicfield-subinstance" optionorder="14" default="automatic" description="">
+				<option value="automatic" rel="posttype_sort_automatic">Automatic sort</option>
+				<option value="manual" rel="posttype_sort_manual">Manual sort</option>
+                <option value="random" rel="posttype_sort_random">Random sort</option>
+			</field>
+			<field name="posttype_sort_automatic_filters"
+				   class="posttype_sort posttype_sort_automatic provider provider_posttype filter_automatic_filters" optionorder="15"
+				   type="filters" label=""
+				   filterlocationparam="roksprocket.providers.registered.posttype.path"
+				   filterfile="sorts.xml" emptybuttontext="Add Sort Rules"/>
+
+			<field name="posttype_sort_manual_append" class="posttype_sort posttype_sort_manual provider provider_posttype" optionorder="15"
+				   type="list" label="with new articles added" default="after">
+				<option value="before">before</option>
+				<option value="after">after</option>
+			</field>
+			<field name="posttype_sort_manual_filters"
+				   class="posttype_sort posttype_sort_manual provider provider_posttype filter_manual_filter_sort" optionorder="16"
+				   type="filters" label=""
+				   filterlocationparam="roksprocket.providers.registered.posttype.path"
+				   filterfile="sorts.xml" emptybuttontext="Add Fallback Manual Sort Rules"/>
+		</fieldset>
+	</fields>
+</config>

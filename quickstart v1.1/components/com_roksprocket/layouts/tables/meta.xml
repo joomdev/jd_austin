@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+	<parameters>
+		<parameter key="roksprocket.layouts.tables" type="collection">
+			<parameter key="library.paths" type="collection">
+				<parameter>%current.path%</parameter>
+			</parameter>
+            <parameter key="ajax.dir">ajax</parameter>
+			<parameter key="service">roksprocket.layout.tables</parameter>
+			<parameter key="displayname">Tables</parameter>
+			<parameter key="recommended">simple</parameter>
+			<parameter key="options.file">options.xml</parameter>
+			<parameter key="options.peritem">items.xml</parameter>
+			<parameter key="options.joinmethod">merge</parameter>
+			<parameter key="icon">icon.png</parameter>
+			<parameter key="paths" type="collection">
+				<parameter>%current.path%</parameter>
+				<parameter>%roksprocket.template.override.path%/layouts/tables</parameter>
+			</parameter>
+			<parameter key="themes" type="collection">
+				<parameter key="product" type="collection">
+					<parameter key="displayname">Product</parameter>
+					<parameter key="basefile">index.php</parameter>
+				</parameter>
+			</parameter>
+		</parameter>
+	</parameters>
+	<services>
+		<service id="roksprocket.layout.tables" class="RokSprocket_Layout_Tables" shared="false">
+			<argument type="service" id="roksprocket_dispatcher"/>
+		</service>
+	</services>
+</container>

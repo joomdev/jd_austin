@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony-project.org/2.0/container">
+    <imports>
+        <import resource="base.xml"/>
+    </imports>
+    <parameters>
+        <parameter key="platforminfo.class">RokCommon_PlatformInfo_Joomla</parameter>
+        <parameter key="i18n.class">RokCommon_I18N_Joomla</parameter>
+        <parameter key="header.class">RokCommon_Header_Joomla</parameter>
+        <parameter key="logger.class">RokCommon_Logger_Joomla</parameter>
+        <parameter key="cache.class">RokCommon_Cache_Joomla</parameter>
+        <parameter key="doctrine.platform.class">RokCommon_Doctrine_Platform_Joomla16</parameter>
+        <parameter key="registry.converter.class">RokCommon_Registry_Converter_Joomla</parameter>
+        <parameter key="form.namehandler.class">RokCommon_Form_JoomlaItemNameHandler</parameter>
+        <parameter key="form.field.paths" type="collection">
+            <parameter key="RokCommon_Form_Field_" type="collection">
+                <parameter key="20" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Fields/Joomla</parameter>
+                </parameter>
+                <parameter key="10" type="collection">
+                    <parameter>%libpath%/RokCommon/Form/Fields</parameter>
+                </parameter>
+            </parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="doctrine_platform" class="%doctrine.platform.class%"/>
+        <service id="logger" class="%logger.class%" shared="false">
+            <argument>%logger.loglevels%</argument>
+            <argument type="collection">
+                <!-- Formatted Text File Options -->
+                <argument key="logger">formattedtext</argument>
+                <argument key="text_file">rokcommon.php</argument>
+                <argument key="text_file_no_php">0</argument>
+                <!--<argument key="text_file_path"></argument>-->
+                <!--<argument key="text_entry_format"></argument>-->
+
+                <!-- Syslog Options -->
+                <!--<argument key="logger">syslog</argument>-->
+                <!--<argument key="sys_ident">Joomla Platform</argument>-->
+                <!--<argument key="sys_add_pid">1</argument>-->
+                <!--<argument key="sys_use_stderr">0</argument>-->
+
+                <!-- Database Options -->
+                <!--<argument key="logger">database</argument>-->
+                <!--<argument key="db_driver">mysql</argument>-->
+                <!--<argument key="db_host">127.0.0.1</argument>-->
+                <!--<argument key="db_user">root</argument>-->
+                <!--<argument key="db_pass"></argument>-->
+                <!--<argument key="db_database">logging</argument>-->
+                <!--<argument key="db_prefix">jos_</argument>-->
+                <!--<argument key="db_table">#__log_entries</argument>-->
+
+                <!-- Echo Options -->
+                <!--<argument key="logger">echo</argument>-->
+
+                <!-- Message Queue Options -->
+                <!--<argument key="logger">messagequeue</argument>-->
+
+                <!-- W3C Options -->
+                <!--<argument key="logger">w3c</argument>-->
+                <!--<argument key="text_file">error.w3c.php</argument>-->
+            </argument>
+            <argument>RokCommon</argument>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,210 @@
+{
+    "roktoggle": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "rokcheckbox": {
+        "type": "text",
+        "value": "value"
+    },
+    "roktext": {
+        "type": "text",
+        "value": "value"
+    },
+    "roklink": {
+        "type": "link",
+        "value": "value"
+    },
+    "roktabs": {
+        "type": "text",
+        "value": "value"
+    },
+    "rokfixed": {
+        "type": "text",
+        "value": "value"
+    },
+    "rokimage": {
+        "type": "image",
+        "value": "file"
+    },
+    "rokmedia": {
+        "type": "link",
+        "value": "url"
+    },
+    "rtdownload": {
+        "type": "unknown",
+        "value": "url"
+    },
+    "addthis": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "checkbox": {
+        "type": "text",
+        "value": "value"
+    },
+    "country": {
+        "type": "text",
+        "value": "value"
+    },
+    "date": {
+        "type": "text",
+        "value": "value"
+    },
+    "disqus": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "download": {
+        "type": "link",
+        "value": "value"
+    },
+    "email": {
+        "type": "text",
+        "value": "value"
+    },
+    "flickr": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "googlemaps": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "image": {
+        "type": "image",
+        "value": "file"
+    },
+    "intensedebate": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemaccess": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemauthor": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemcategory": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemcommentslink": {
+        "type": "link",
+        "value": "value"
+    },
+    "itemcreated": {
+        "type": "text",
+        "value": "value"
+    },
+    "itemedit": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemfrontpage": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemhits": {
+        "type": "text",
+        "value": "value"
+    },
+    "itemlink": {
+        "type": "link",
+        "value": "value"
+    },
+    "itemmodified": {
+        "type": "text",
+        "value": "value"
+    },
+    "itemname": {
+        "type": "text",
+        "value": "value"
+    },
+    "itemprevnext": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemprint": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itempublish_down": {
+        "type": "text",
+        "value": "value"
+    },
+    "itempublish_up": {
+        "type": "text",
+        "value": "value"
+    },
+    "itemsearchable": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemstate": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "itemtag": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "joomlamodule": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "link": {
+        "type": "link",
+        "value": "value"
+    },
+    "media": {
+        "type": "link",
+        "value": "url"
+    },
+    "option": {
+        "type": "text",
+        "value": "value"
+    },
+    "radio": {
+        "type": "text",
+        "value": "value"
+    },
+    "rating": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "relatedcategories": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "relateditems": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "repeatable": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "select": {
+        "type": "text",
+        "value": "value"
+    },
+    "socialbookmarks": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "socialbuttons": {
+        "type": "unknown",
+        "value": "value"
+    },
+    "text": {
+        "type": "text",
+        "value": "value"
+    },
+    "textarea": {
+        "type": "text",
+        "value": "value"
+    }
+}

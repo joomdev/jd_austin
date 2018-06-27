@@ -1,0 +1,3 @@
+<filters>
+    <filter name="article" label="Item" type="RokSprocket_Provider_K2_Filter_Type_Article"/>
+</filters>

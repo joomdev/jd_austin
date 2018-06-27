@@ -1,0 +1,32 @@
+<config>
+	<fields name="params">
+		<fieldset name="peritem" overwrite="false">
+
+			<field name="sliders_item_title" label="ROKSPROCKET_LAYOUT_SLIDERS_TITLE_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="58" description="ROKSPROCKET_LAYOUT_SLIDERS_TITLE_DESC">
+				<option value="-default-">JDEFAULT</option>
+				<option value="-title-">ROKSPROCKET_ARTICLE_TITLE</option>
+				<option value="-none-">JNONE</option>
+				<option value="divider"></option>
+				<option value="">ROKSPROCKET_CUSTOM</option>
+			</field>
+
+			<field name="sliders_item_description" label="ROKSPROCKET_LAYOUT_SLIDERS_DESCRIPTION_LABEL" type="peritempicker" default="-default-" icon="text" optionorder="59" description="ROKSPROCKET_LAYOUT_SLIDERS_DESCRIPTION_DESC">
+				<option value="-none-">JNONE</option>
+				<option value="-default-">JDEFAULT</option>
+				<option value="-article-">ROKSPROCKET_ARTICLE_DESCRIPTION</option>
+				<option value="divider"></option>
+				<option value="">ROKSPROCKET_CUSTOM</option>
+			</field>
+
+			<field name="sliders_item_image" label="ROKSPROCKET_LAYOUT_SLIDERS_IMAGE_LABEL" type="imagepicker" icon="image" default="-default-" optionorder="60" description="ROKSPROCKET_LAYOUT_SLIDERS_IMAGE_DESC"/>
+			<field name="sliders_item_link" label="ROKSPROCKET_LAYOUT_SLIDERS_LINK_LABEL" type="peritempicker" default="-default-" icon="link" optionorder="61" description="ROKSPROCKET_LAYOUT_SLIDERS_LINK_DESC">
+				<option value="-none-">JNONE</option>
+				<option value="-default-">JDEFAULT</option>
+				<option value="-article-">ROKSPROCKET_ARTICLE_LINK</option>
+				<option value="divider"></option>
+				<option value="">ROKSPROCKET_CUSTOM</option>
+			</field>
+
+		</fieldset>
+	</fields>
+</config>
