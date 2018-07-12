@@ -63,7 +63,7 @@ if (function_exists('zip_open') && function_exists('zip_read') && strtoupper(sub
             for ($i = 0; $i < $EofCentralDirData['totalentries']; $i++) {
                 rewind($this->fileHandle);
                 fseek($this->fileHandle, $centralDirectoryHeaderOffset);
-                $centralDirectoryData = $this->_readCentralDirectoryData();
+                $centralDirectoryData         = $this->_readCentralDirectoryData();
                 $centralDirectoryHeaderOffset += 46 + $centralDirectoryData['filenamelength'] + $centralDirectoryData['extrafieldlength'] + $centralDirectoryData['commentlength'];
                 if (!is_array($centralDirectoryData) || substr($centralDirectoryData['filename'], -1) == '/') continue;
                 $data = $this->_readLocalFileHeaderAndData($centralDirectoryData);

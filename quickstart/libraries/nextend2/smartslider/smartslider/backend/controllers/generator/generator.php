@@ -148,6 +148,25 @@ class N2SmartsliderBackendGeneratorController extends N2SmartSliderController {
                 if (count($slides) > 0) {
                     $slide = $slides[0];
 
+                    N2Request::set('sliderid', $slide['slider']);
+
+                    $slidersModel = new N2SmartsliderSlidersModel();
+                    $slider       = $slidersModel->get($slide['slider']);
+
+                    $group = $generator['group'];
+                    $type  = $generator['type'];
+
+                    $generatorGroup  = $generatorModel->getGeneratorGroup($group);
+                    $generatorSource = $generatorGroup->getSource($type);
+                    if (!$generatorSource) {
+                        $this->redirect($this->appType->router->createUrl(array(
+                            "slides/edit",
+                            array(
+                                'sliderid' => $slider['id'],
+                                'slideid'  => $slide['id']
+                            )
+                        )));
+                    }
 
                     if (N2Request::getInt('save')) {
                         $request = new N2Data(N2Request::getVar('generator'));
@@ -169,11 +188,6 @@ class N2SmartsliderBackendGeneratorController extends N2SmartSliderController {
                             )
                         ), 302, true);
                     }
-
-                    N2Request::set('sliderid', $slide['slider']);
-
-                    $slidersModel = new N2SmartsliderSlidersModel();
-                    $slider       = $slidersModel->get($slide['slider']);
 
                     $xref   = new N2SmartsliderSlidersXrefModel();
                     $groups = $xref->getGroups($slider['id']);
@@ -217,11 +231,13 @@ class N2SmartsliderBackendGeneratorController extends N2SmartSliderController {
                     ), n2_('Edit generator')));
 
                     $this->addView("edit", array(
-                        "generatorModel" => $generatorModel,
-                        "generator"      => $generator,
-                        "slide"          => $slide,
-                        'sliderid'       => $slider['id'],
-                        'slideid'        => $slide['id']
+                        "generatorModel"  => $generatorModel,
+                        "generatorGroup"  => $generatorGroup,
+                        "generatorSource" => $generatorSource,
+                        "generator"       => $generator,
+                        "slide"           => $slide,
+                        'sliderid'        => $slider['id'],
+                        'slideid'         => $slide['id']
                     ));
                     $this->render();
                 } else {
@@ -264,50 +280,57 @@ class N2SmartsliderBackendGeneratorController extends N2SmartSliderController {
 
             $generatorGroup = N2SSGeneratorFactory::getGenerator(N2Request::getCmd('group'));
             $source         = $generatorGroup->getSource(N2Request::getVar('type'));
+            if ($source) {
 
-            $this->layout->addBreadcrumb(N2Html::tag('a', array(
-                'href'  => $this->appType->router->createUrl(array(
+                $this->layout->addBreadcrumb(N2Html::tag('a', array(
+                    'href'  => $this->appType->router->createUrl(array(
+                        "slider/edit",
+                        array('sliderid' => $slider['id'])
+                    )),
+                    'class' => 'n2-h4'
+                ), $slider['title']));
+
+                $this->layout->addBreadcrumb(N2Html::tag('a', array(
+                    'href'  => $this->appType->router->createUrl(array(
+                        "generator/create",
+                        array(
+                            "sliderid" => $sliderID
+                        )
+                    )),
+                    'class' => 'n2-h4'
+                ), n2_('Add dynamic slides')));
+
+
+                $this->layout->addBreadcrumb(N2Html::tag('a', array(
+                    'href'  => $this->appType->router->createUrl(array(
+                        "generator/createStep2",
+                        array(
+                            "sliderid" => $sliderID,
+                            'group'    => $generatorGroup->getName()
+                        )
+                    )),
+                    'class' => 'n2-h4'
+                ), $generatorGroup->getLabel()));
+
+
+                $this->layout->addBreadcrumb(N2Html::tag('a', array(
+                    'href'  => '#',
+                    'class' => 'n2-h4 n2-active'
+                ), $source->getLabel()));
+
+
+                $this->addView("create-step3-settings", array(
+                    'slider'         => $slider,
+                    'generatorGroup' => $generatorGroup,
+                    'source'         => $source
+                ));
+                $this->render();
+            } else {
+                $this->redirect($this->appType->router->createUrl(array(
                     "slider/edit",
                     array('sliderid' => $slider['id'])
-                )),
-                'class' => 'n2-h4'
-            ), $slider['title']));
-
-            $this->layout->addBreadcrumb(N2Html::tag('a', array(
-                'href'  => $this->appType->router->createUrl(array(
-                    "generator/create",
-                    array(
-                        "sliderid" => $sliderID
-                    )
-                )),
-                'class' => 'n2-h4'
-            ), n2_('Add dynamic slides')));
-
-
-            $this->layout->addBreadcrumb(N2Html::tag('a', array(
-                'href'  => $this->appType->router->createUrl(array(
-                    "generator/createStep2",
-                    array(
-                        "sliderid" => $sliderID,
-                        'group'    => $generatorGroup->getName()
-                    )
-                )),
-                'class' => 'n2-h4'
-            ), $generatorGroup->getLabel()));
-
-
-            $this->layout->addBreadcrumb(N2Html::tag('a', array(
-                'href'  => '#',
-                'class' => 'n2-h4 n2-active'
-            ), $source->getLabel()));
-
-
-            $this->addView("create-step3-settings", array(
-                'slider'         => $slider,
-                'generatorGroup' => $generatorGroup,
-                'source'         => $source
-            ));
-            $this->render();
+                )));
+            }
         }
     }
 

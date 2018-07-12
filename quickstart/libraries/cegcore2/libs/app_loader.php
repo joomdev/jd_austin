@@ -14,12 +14,14 @@ class AppLoader {
 		$app = '';
 		if(defined('JPATH_SITE')){
 			$app = 'joomla';
+		}else if(defined('DB_HOST')){
+			$app = 'wordpress';
 		}
 		
 		return $app;
 	}
 	
-	public static function initialize(){
+	public static function initialize($plugin = null){
 		$app = self::app();
 		
 		\G2\Globals::set('app', $app);
@@ -29,13 +31,13 @@ class AppLoader {
 		
 		//\G2\Bootstrap::initialize($app);
 		$boot = \G2\Globals::getClass('boot');
-		new $boot($app);
+		new $boot($app, $plugin);
 	}
 	
 	function __construct($area, $joption, $extension, $setup = null, $cont_vars = array()){
 		$app = self::app();
 		
-		self::initialize();
+		self::initialize($joption);
 		
 		$tvout = !empty(\G2\L\Request::data('tvout')) ? \G2\L\Request::data('tvout') : '';
 		$controller = \G2\L\Request::data('cont', '');

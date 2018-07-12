@@ -9,11 +9,7 @@ class Connections extends \G2\A\E\Chronoforms\App {
 	use \G2\A\C\T\DataOps;
 	
 	var $models = array(
-		'\G2\A\E\Chronoforms\M\Connection', 
-		//'\G2\A\E\Chronoforms\M\ConnectionPage', 
-		//'\G2\A\M\Page', 
-		//'\G2\A\M\PageAction', 
-		//'\G2\A\M\Action', 
+		'\G2\A\E\Chronoforms\M\Connection',  
 		'\G2\A\M\Group',
 	);
 	

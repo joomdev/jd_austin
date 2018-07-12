@@ -8,7 +8,7 @@ class File extends \G2\L\Cache{
 	var $domain = 'gcore';
 	
 	function __construct($domain = 'gcore', $params = array('dir' => '', 'expiration' => 0)){
-		$this->dir = empty($params['dir']) ? \G2\Globals::get('FRONT_PATH').'cache'.DS : $params['dir'];
+		$this->dir = empty($params['dir']) ? \G2\Globals::get('CACHE_PATH') : $params['dir'];
 		$this->expiration = !empty($params['expiration']) ? $params['expiration'] : \G2\L\Config::get('app_cache_expiry', 900);
 		$this->domain = $domain;
 	}

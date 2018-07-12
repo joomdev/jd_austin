@@ -87,7 +87,7 @@ class N2SmartsliderInstallModel extends N2Model {
             }
         }
 
-        N2Settings::set('n2_ss3_version', N2SS3::$version);
+        N2Settings::set('n2_ss3_version', N2SS3::$completeVersion);
     }
 
 

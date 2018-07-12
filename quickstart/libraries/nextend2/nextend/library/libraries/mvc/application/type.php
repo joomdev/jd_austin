@@ -193,11 +193,19 @@ abstract class N2ApplicationType {
             echo ob_get_clean();
         } catch (Exception $e) {
             n2_ob_end_clean_all();
-            echo "<div style='position:fixed;background:white;left:25%;top:25%;width:46%;height:46%;z-index:100000;padding:3%;'>" . $e->getMessage() . "</div>";
-
+			if(isset($_GET['debug'])){
+				echo '<pre>';
+				print_r($e);
+				echo '</pre>';
+			} else {
+				$params = array_merge($_GET, array("debug" => "1"));
+				$new_query_string = http_build_query($params);
+				$redirect_url = (empty($_SERVER['HTTPS'])?"http://":"https://") . (empty($_SERVER['HTTP_HOST'])?$defaultHost:$_SERVER['HTTP_HOST']) . $_SERVER['REQUEST_URI'] . "?" . $new_query_string;				
+				echo "<div style='position:fixed;background:white;left:25%;top:25%;width:46%;height:46%;z-index:100000;padding:3%;'>" . $e->getMessage() . " <br><br> <a href=\"" . $redirect_url ."\">debug error</a></div>";
+			}
         }
     }
-
+	
     protected function onControllerReady() {
     }
 

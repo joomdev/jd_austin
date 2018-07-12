@@ -36,7 +36,8 @@ class N2SSPluginItemFactoryYouTube extends N2SSPluginItemFactoryAbstract {
             'modestbranding' => 1,
             'reset'          => 0,
             'start'          => '0',
-            'playbutton'     => 1
+            'playbutton'     => 1,
+            'scroll-pause'   => 'partly-visible',
         );
     }
 
@@ -77,6 +78,14 @@ class N2SSPluginItemFactoryYouTube extends N2SSPluginItemFactoryAbstract {
         new N2ElementImage($settings, 'image', n2_('Cover image'), '', array(
             'fixed' => true,
             'style' => 'width:236px;'
+        ));
+
+        new N2ElementList($settings, 'scroll-pause', n2_('Pause on scroll'), 'partly-visible', array(
+            'options' => array(
+                ''               => n2_('Never'),
+                'partly-visible' => n2_('When partly visible'),
+                'not-visible'    => n2_('When not visible'),
+            )
         ));
 
         $misc = new N2ElementGroup($settings, 'item-vimeo-misc');

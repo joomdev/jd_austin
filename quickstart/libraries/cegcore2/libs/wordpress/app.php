@@ -46,7 +46,7 @@ class App extends \G2\L\App{
 			$this->action = 'e404';
 			//reset the controller
 			//$classname = '\G2\C\Errors';
-			$this->buffer = 'Page not found';
+			$this->buffer = 'Page not found...';
 			\G2\L\Env::e404();
 			\JError::raiseError(404, $this->buffer);
 			//we need the rendered content only
@@ -94,7 +94,7 @@ class App extends \G2\L\App{
 		$doc->addHeaderTag('
 		<script type="text/javascript">
 		//'.rand().'
-		jQuery(document).ready(function($){$("body").trigger("contentChange");});
+		jQuery(document).ready(function($){$("div.G2-wordpress").trigger("contentChange");});
 		</script>
 		');
 		

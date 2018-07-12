@@ -15,7 +15,12 @@
 
   .n2-ss-button-container a div {
     display: inline;
-    font-size:inherit;
+    font-size: inherit;
+    text-decoration: inherit;
+	color: inherit;
+	line-height: inherit;
+	font-family: inherit;
+	font-weight: inherit;
   }
 
   .n2-ss-button-container a > div {

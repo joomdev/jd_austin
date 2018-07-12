@@ -28,7 +28,6 @@ class N2ElementPublishSlider extends N2ElementHidden {
                         e.clipboardData.setData('text/plain', window.getSelection().toString());
                         e.clipboardData.setData('text/html', '<div>' + window.getSelection().toString() + '</div>');
                         e.preventDefault();
-                        console.log('copied');
                     } catch (e) {
 
                     }

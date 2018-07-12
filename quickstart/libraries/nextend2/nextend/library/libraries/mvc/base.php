@@ -29,6 +29,7 @@ class N2Base {
             N2Loader::importAll('libraries.assets.js');
             N2Loader::importAll('libraries.assets.less');
             N2Loader::importAll('libraries.assets.google');
+            N2Loader::importAll('libraries.assets.image');
             N2Loader::importAll('libraries.uri');
             N2Loader::import('libraries.acl.acl');
             N2Loader::import('libraries.message.message');

@@ -255,7 +255,7 @@ defined("GCORE_SITE") or die;
 		
 		<div class="field">
 			<label><?php el('Extra attributes'); ?></label>
-			<textarea name="Connection[views][<?php echo $n; ?>][attrs]" rows="3"></textarea>
+			<textarea name="Connection[views][<?php echo $n; ?>][attrs]" rows="3">autocomplete:off</textarea>
 		</div>
 
 		<div class="two fields">

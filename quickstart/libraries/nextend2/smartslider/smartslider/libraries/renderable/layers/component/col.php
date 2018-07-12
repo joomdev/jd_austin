@@ -223,12 +223,12 @@ class N2SSSlideComponentCol extends N2SSSlideComponent {
         $this->createProperty('bgimagex', '50');
         $this->createProperty('bgimagey', '50');
         $this->createProperty('bgimageparallax', '0');
-        $this->createProperty('bgcolor', '00000000');
+        $this->createColorProperty('bgcolor', '00000000');
         $this->createProperty('bgcolorgradient', 'off');
-        $this->createProperty('bgcolorgradientend', '00000000');
-        $this->createProperty('bgcolor-hover');
-        $this->createProperty('bgcolorgradient-hover');
-        $this->createProperty('bgcolorgradientend-hover');
+        $this->createColorProperty('bgcolorgradientend', '00000000');
+        $this->createColorProperty('bgcolor-hover', '00000000');
+        $this->createProperty('bgcolorgradient-hover', 'off');
+        $this->createColorProperty('bgcolorgradientend-hover', '00000000');
 
         $this->createProperty('borderradius', '0');
         $this->createProperty('borderradius-hover');
@@ -282,6 +282,11 @@ class N2SSSlideComponentCol extends N2SSSlideComponent {
      * @param array              $layer
      */
     public static function getFilled($slide, &$layer) {
+        N2SSSlideComponent::getFilled($slide, $layer);
+
+        if (!empty($layer['bgimage'])) {
+            $layer['bgimage'] = $slide->fill($layer['bgimage']);
+        }
 
         $slide->fillLayers($layer['layers']);
     }

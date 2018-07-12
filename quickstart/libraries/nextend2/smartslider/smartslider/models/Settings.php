@@ -51,6 +51,7 @@ class N2SmartsliderSettingsModel extends N2Model {
 
         new N2ElementOnOff($general, 'beacon', n2_('Show help beacon'), 1);
         new N2ElementOnOff($general, 'discover', n2_('Show discover modal'), 1);
+
         new N2ElementOnOff($general, 'autoupdatecheck', n2_('Automatic update check'), 1);
 
         $translateUrl = new N2ElementMixed($general, 'translate-url', n2_('Translate url'), '|*|');
@@ -68,11 +69,20 @@ class N2SmartsliderSettingsModel extends N2Model {
         new N2ElementOnOff($general, 'editor-icon', n2_('Show editor icon'), 1);
         new N2ElementOnOff($general, 'force-rtl-backend', n2_('Force Joomla RTL backend'), 0);
 
-        JPluginHelper::importPlugin('content');
-
         $pluginsContent = new N2ElementGroup($general, 'plugins-content', n2_('Run content plugins on sliders'));
 
+        JPluginHelper::importPlugin('content');
+
         $classNames = array();
+
+        $dispatcher = JEventDispatcher::getInstance();
+        foreach ($dispatcher->get('_observers') AS $observer) {
+            if (method_exists($observer, 'onContentPrepare')) {
+                $className              = strtolower(get_class($observer));
+                $classNames[$className] = $className;
+            }
+        }
+
         foreach (JPluginHelper::getPlugin('content') AS $plugin) {
             $className              = strtolower('Plg' . $plugin->type . $plugin->name);
             $classNames[$className] = ucfirst($plugin->name);
@@ -88,6 +98,8 @@ class N2SmartsliderSettingsModel extends N2Model {
             'isMultiple' => true,
             'options'    => $classNames
         ));
+
+        new N2ElementOnOff($general, 'youtube-privacy-enhanced', 'YouTube privacy enhanced mode', 0);
 
         $responsive = new N2Tab($form, 'responsive', n2_('Responsive mode'));
 

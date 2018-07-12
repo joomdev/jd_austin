@@ -7,7 +7,7 @@
 N2Html::topBar();
 
 N2HTML::heading(array(
-    'title'   => n2_('Dashboard') . N2Html::tag('span', array(), n2_('Version') . ': ' . N2SS3::$version . '-' . N2SS3::$plan . ' - <a target="_blank" href="https://smartslider3.helpscoutdocs.com/article/432-changelog">' . n2_('Changelog') . '</a>'),
+    'title'   => n2_('Dashboard') . N2Html::tag('span', array(), n2_('Version') . ': ' . N2SS3::$version . '-' . N2SS3::$plan . '-r' . N2SS3::$revision . ' - <a target="_blank" href="https://smartslider3.helpscoutdocs.com/article/432-changelog">' . n2_('Changelog') . '</a>'),
     'actions' => $_class->getDashboardButtons()
 ));
 ?>

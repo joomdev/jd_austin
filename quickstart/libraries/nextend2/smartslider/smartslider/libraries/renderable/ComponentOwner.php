@@ -9,6 +9,9 @@ abstract class N2SmartSliderComponentOwnerAbstract {
      */
     protected $renderable;
 
+    /** @var string Used for generators when multiple slides might contain the same unique class */
+    public $unique = '';
+
     /**
      * @return N2SmartSliderRenderableAbstract
      */
@@ -70,6 +73,8 @@ abstract class N2SmartSliderComponentOwnerAbstract {
     public abstract function addFont($font, $mode, $pre = null);
 
     public abstract function addStyle($style, $mode, $pre = null);
+
+    public abstract function addImage($imageUrl);
 
     public abstract function isAdmin();
 }

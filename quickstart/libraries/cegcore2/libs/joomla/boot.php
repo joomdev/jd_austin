@@ -49,6 +49,8 @@ class Boot extends \G2\L\Boot{
 		//\G2\Globals::set('ROOT_PATH', JPATH_BASE.DS);
 		\G2\Globals::set('ROOT_PATH', JPATH_ROOT.DS);
 		
+		\G2\Globals::set('CACHE_PATH', JPATH_ROOT.DS.'cache'.DS);
+		
 		$lang = \JFactory::getLanguage();
 		\G2\L\Config::set('site.language', str_replace('-', '_', $lang->getTag()));
 		

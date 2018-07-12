@@ -34,14 +34,13 @@ N2Loader::import('libraries.string');
 
 N2Loader::import("libraries.mvc.base");
 N2Loader::import('libraries.session.session');
-N2Loader::importAll('libraries.plugin');
+N2Loader::import('libraries.plugin.pluggable');
 N2Loader::import('libraries.base64');
 N2Loader::import('libraries.data.data');
 N2Loader::import("libraries.router.router");
 N2Loader::import('libraries.request');
 N2Loader::import('libraries.transferdata');
 N2Loader::import('libraries.ajax.ajax');
-N2Loader::import("libraries.helpers.system");
 N2Loader::import("libraries.mvc.model");
 N2Loader::import("libraries.html.html");
 N2Loader::import('libraries.storage.section');

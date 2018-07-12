@@ -64,6 +64,8 @@ class N2SSSlideComponentLayer extends N2SSSlideComponent {
      * @param array              $layer
      */
     public static function getFilled($slide, &$layer) {
+        N2SSSlideComponent::getFilled($slide, $layer);
+
         if (empty($layer['item'])) {
             $layer['item'] = $layer['items'][0];
             unset($layer['items']);

@@ -34,11 +34,6 @@ N2Html::topBar(array(
     $group = $generator['group'];
     $type  = $generator['type'];
 
-    $generatorModel = new N2SmartsliderGeneratorModel();
-
-    $generatorGroup  = $generatorModel->getGeneratorGroup($group);
-    $generatorSource = $generatorGroup->getSource($type);
-
     N2HTML::heading(array(
         'title' => $generatorGroup->getLabel() . ' - ' . $generatorSource->getLabel()
     ));

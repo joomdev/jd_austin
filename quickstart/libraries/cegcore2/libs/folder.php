@@ -19,13 +19,13 @@ class Folder {
 		return false;
 	}
 	
-	public static function getFiles($path, $recursive = false){
+	public static function getFiles($path, $recursive = false, $match = '*'){
 		$path = rtrim($path, DS).DS;
 		if(!$recursive){
-			return glob($path.'*');
+			return glob($path.$match);
 		}else{
 			$files = array();
-			foreach(glob($path.'*') as $file){
+			foreach(glob($path.$match) as $file){
 				if(is_dir($file)){
 					$files = array_merge($files, self::getFiles($file, $recursive));
 				}else{

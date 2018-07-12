@@ -32,6 +32,13 @@ class N2AssetsManager {
      */
     public static $googleFonts;
 
+    /**
+     * @var N2AssetsImage
+     */
+    public static $image;
+
+    private static $imageStack = array();
+
     private static $googleFontsStack = array();
 
     public static $cacheAll = true;
@@ -43,6 +50,8 @@ class N2AssetsManager {
         if (null === $instance) {
             $instance = new N2AssetsManager();
             self::createStack();
+
+            N2Pluggable::doAction('n2_assets_manager_started');
         }
 
         return $instance;
@@ -61,6 +70,9 @@ class N2AssetsManager {
 
         self::$googleFonts = new N2AssetsGoogleFonts();
         array_unshift(self::$googleFontsStack, self::$googleFonts);
+
+        self::$image = new N2AssetsImage();
+        array_unshift(self::$imageStack, self::$image);
     }
 
     public static function removeStack() {
@@ -70,6 +82,7 @@ class N2AssetsManager {
              * @var $previousLESS         N2AssetsLess
              * @var $previousJS           N2AssetsJs
              * @var $previousGoogleFons   N2AssetsGoogleFonts
+             * @var $previousImage        N2AssetsImage
              */
             $previousCSS = array_shift(self::$cssStack);
             self::$css   = self::$cssStack[0];
@@ -83,11 +96,15 @@ class N2AssetsManager {
             $previousGoogleFons = array_shift(self::$googleFontsStack);
             self::$googleFonts  = self::$googleFontsStack[0];
 
+            $previousImage = array_shift(self::$imageStack);
+            self::$image   = self::$imageStack[0];
+
             return array(
                 'css'         => $previousCSS->serialize(),
                 'less'        => $previousLESS->serialize(),
                 'js'          => $previousJS->serialize(),
-                'googleFonts' => $previousGoogleFons->serialize()
+                'googleFonts' => $previousGoogleFons->serialize(),
+                'image'       => $previousImage->serialize()
             );
         } else {
             echo "Too much remove stack on the asset manager...";
@@ -115,6 +132,7 @@ class N2AssetsManager {
         self::$less->unSerialize($array['less']);
         self::$js->unSerialize($array['js']);
         self::$googleFonts->unSerialize($array['googleFonts']);
+        self::$image->unSerialize($array['image']);
     }
 
     public static function getCSS($path = false) {
@@ -142,29 +160,12 @@ class N2AssetsManager {
     }
 
     public static function generateAjaxCSS() {
-        /*
-        $data                  = N2Post::getVar('loadedCSS');
-        $alreadyLoadedCSSFiles = array();
-        if ($data) {
-            $alreadyLoadedCSSFiles = (array)json_decode(n2_base64_decode($data));
-        }
-        self::$css->removeFiles($alreadyLoadedCSSFiles);
-        */
 
         return N2Html::style(self::$css->getAjaxOutput());
     }
 
 
     public static function generateAjaxJS() {
-        /*
-        $data                 = N2Post::getVar('loadedJSS');
-        $alreadyLoadedJSFiles = array();
-        if (!empty($data)) {
-            $alreadyLoadedJSFiles = (array)json_decode(n2_base64_decode($data));
-        }
-
-        self::$js->removeFiles($alreadyLoadedJSFiles);
-        */
 
         return self::$js->getAjaxOutput();
     }

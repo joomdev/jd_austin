@@ -14,7 +14,7 @@ class DatabaseAdapter extends \G2\L\DatabaseObject {
 	function __construct($options = array(), $driver_options = null){
 		
 		if(!empty($options)){
-			$wpdbNew = new wpdb($options['user'], $options['pass'], $options['name'], $options['host']);
+			$wpdbNew = new \wpdb($options['user'], $options['pass'], $options['name'], $options['host']);
 			$this->adapter = $wpdbNew;
 		}else{
 			global $wpdb;

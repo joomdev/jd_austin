@@ -49,6 +49,9 @@ class N2SmartSliderSlidesGenerator {
         for ($i = 0; $i < count($data); $i++) {
             $newSlide = clone $this->slide;
             $newSlide->setVariables($data[$i]);
+            if ($i > 0) {
+                $newSlide->unique = $i;
+            }
             $slides[] = $newSlide;
         }
         if (count($slides) == 0) {
@@ -64,6 +67,9 @@ class N2SmartSliderSlidesGenerator {
         for ($i = 0; $i < count($data); $i++) {
             $newSlide = clone $this->slide;
             $newSlide->setVariables($data[$i]);
+            if ($i > 0) {
+                $newSlide->unique = $i;
+            }
             $slides[] = $newSlide;
         }
         if (count($slides) == 0) {
@@ -96,15 +102,20 @@ class N2SmartSliderSlidesGenerator {
             }
 
             $this->dataSource = $generatorGroup->getSource($this->currentGenerator['type']);
-            $this->dataSource->setData($this->currentGenerator['params']);
+            if ($this->dataSource) {
+                $this->dataSource->setData($this->currentGenerator['params']);
 
-            $cache = new N2CacheManifestGenerator($this->slider, $this);
-            $name  = $this->dataSource->filterName('generator' . $this->currentGenerator['id']);
+                $cache = new N2CacheManifestGenerator($this->slider, $this);
+                $name  = $this->dataSource->filterName('generator' . $this->currentGenerator['id']);
 
-            self::$localCache[$this->slide->generator_id] = $cache->makeCache($name, $this->dataSource->hash(json_encode($this->currentGenerator) . max($this->slide->parameters->get('record-slides'), 1)), array(
-                $this,
-                'getNotCachedData'
-            ));
+                self::$localCache[$this->slide->generator_id] = $cache->makeCache($name, $this->dataSource->hash(json_encode($this->currentGenerator) . max($this->slide->parameters->get('record-slides'), 1)), array(
+                    $this,
+                    'getNotCachedData'
+                ));
+            } else {
+                self::$localCache[$this->slide->generator_id] = array();
+                N2Message::error(sprintf(n2_('%1$s generator missing the following source: %2$s'), $generatorGroup->getLabel(), $this->currentGenerator['type']));
+            }
         }
 
         return self::$localCache[$this->slide->generator_id];

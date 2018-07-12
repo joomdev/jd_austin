@@ -18,4 +18,5 @@ label{
 .ui-accordion-content{height:auto !important;}
 .ui.menu{padding-top:0;}
 .ui.button{height:auto; /*z-index:9;*/}
+.ui.dropdown.button{z-index:9;}
 .hidden{display:none !important;}

@@ -11,7 +11,7 @@ namespace G2\L\Wordpress;
 defined("GCORE_SITE") or die;
 class Boot extends \G2\L\Boot{
 	
-	function __construct($name){
+	function __construct($name, $plugin){
 		self::initialize();
 		
 		global $wpdb;
@@ -30,11 +30,12 @@ class Boot extends \G2\L\Boot{
 		
 		//\G2\Globals::set('app', 'wordpress');
 		
-		\G2\Globals::set('FRONT_URL', plugins_url().'/'.$name.'/cegcore2/');
-		\G2\Globals::set('ADMIN_URL', plugins_url().'/'.$name.'/cegcore2/admin/');
+		\G2\Globals::set('FRONT_URL', plugins_url().'/'.$plugin.'/cegcore2/');
+		\G2\Globals::set('ADMIN_URL', plugins_url().'/'.$plugin.'/cegcore2/admin/');
 		\G2\Globals::set('ROOT_URL', site_url().'/');
 		
 		\G2\Globals::set('ROOT_PATH', dirname(dirname(dirname(__FILE__))).DS);
+		\G2\Globals::set('CACHE_PATH', \G2\Globals::get('FRONT_PATH').'cache'.DS);
 		
 		\G2\L\Config::set('site.language', get_bloginfo('language'));
 		//change the default page parameter string because WP uses the param "page"

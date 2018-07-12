@@ -10,7 +10,7 @@ defined("GCORE_SITE") or die;
 		<a class="item" data-tab="sections-<?php echo $name; ?>-preview" data-class="preview-tab" data-name="<?php echo $name; ?>"><?php el('Preview'); ?></a>
 		<a class="item" data-tab="sections-<?php echo $name; ?>-template"><?php el('Template'); ?></a>
 		<div class="item right" data-tab="sections-<?php echo $name; ?>-tools">
-			<i class="icon <?php if(!empty($this->data('Connection.sections.'.$name.'.minimized'))):?>maximize<?php else: ?>minimize<?php endif; ?> teal link minimize_area" data-hint="<?php el('Minimize/Maximize'); ?>" data-named="<?php echo $name; ?>"></i>
+			<i class="icon window <?php if(!empty($this->data('Connection.sections.'.$name.'.minimized'))):?>maximize<?php else: ?>minimize<?php endif; ?> teal link minimize_area" data-hint="<?php el('Minimize/Maximize'); ?>" data-named="<?php echo $name; ?>"></i>
 			<i class="icon sort yellow link sort_area" data-hint="<?php el('Sort'); ?>"></i>
 			<i class="icon delete red link delete_area" data-hint="<?php el('Delete'); ?>"></i>
 		</div>

@@ -31,7 +31,7 @@ abstract class N2SmartSliderCSSAbstract {
             'width'          => $width . 'px',
             'height'         => $height . 'px',
             'canvas'         => 0,
-            'count'          => count($slider->slides),
+            'count'          => ($slider->slides == null ? 0 : count($slider->slides)),
             'margin'         => '0px 0px 0px 0px',
             'hasPerspective' => 0
         ));

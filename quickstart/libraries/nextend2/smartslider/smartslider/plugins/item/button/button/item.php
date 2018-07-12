@@ -31,8 +31,8 @@ class N2SSItemButton extends N2SSItemAbstract {
 
         $style = $owner->addStyle($this->data->get('style'), 'heading');
 
-        $html  .= $this->getLink('<div>' . $content . '</div>', $attrs + array(
-                "class" => "{$style} n2-ow {$this->data->get('class', '')}"
+        $html .= $this->getLink('<div>' . $content . '</div>', $attrs + array(
+                "class" => "{$style} n2-ow " . $owner->fill($this->data->get('class', ''))
             ), true);
 
         $html .= N2Html::closeTag("div");

@@ -13,6 +13,8 @@ class N2Settings {
             'combine-js'               => 0,
             'minify-js'                => 0,
             'scriptattributes'         => '',
+            'javascript-inline'        => 'head',
+            'api-secondary'            => 0,
             'protocol-relative'        => 1,
             'force-english-backend'    => 0,
             'show-joomla-admin-footer' => 0,

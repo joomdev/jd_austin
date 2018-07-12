@@ -329,8 +329,70 @@ abstract class N2FilesystemAbstract {
         return $path;
     }
 
+    private static function trailingslashit($string) {
+        return self::untrailingslashit($string) . '/';
+    }
+
+    private static function untrailingslashit($string) {
+        return rtrim($string, '/\\');
+    }
+
     public static function fixPathSeparator($path) {
         return str_replace(N2_DS_INV, DIRECTORY_SEPARATOR, $path);
+    }
+
+    public static function get_temp_dir() {
+        static $temp = '';
+        if (defined('SS_TEMP_DIR')) return self::trailingslashit(SS_TEMP_DIR);
+
+        if ($temp) return self::trailingslashit($temp);
+
+        if (function_exists('sys_get_temp_dir')) {
+            $temp = sys_get_temp_dir();
+            if (@is_dir($temp) && self::is_writable($temp)) return self::trailingslashit($temp);
+        }
+
+        $temp = ini_get('upload_tmp_dir');
+        if (@is_dir($temp) && self::is_writable($temp)) return self::trailingslashit($temp);
+
+        $temp = N2Filesystem::getNotWebCachePath() . '/';
+        if (is_dir($temp) && self::is_writable($temp)) return $temp;
+
+        return '/tmp/';
+    }
+
+    public static function tempnam($filename = '', $dir = '') {
+        if (empty($dir)) {
+            $dir = N2Filesystem::get_temp_dir();
+        }
+
+        if (empty($filename) || '.' == $filename || '/' == $filename || '\\' == $filename) {
+            $filename = time();
+        }
+
+        // Use the basename of the given file without the extension as the name for the temporary directory
+        $temp_filename = basename($filename);
+        $temp_filename = preg_replace('|\.[^.]*$|', '', $temp_filename);
+
+        // If the folder is falsey, use its parent directory name instead.
+        if (!$temp_filename) {
+            return self::tempnam(dirname($filename), $dir);
+        }
+
+        // Suffix some random data to avoid filename conflicts
+        $temp_filename .= '-' . md5(uniqid(rand() . time()));
+        $temp_filename .= '.tmp';
+        $temp_filename = $dir . $temp_filename;
+
+        $fp = @fopen($temp_filename, 'x');
+        if (!$fp && is_writable($dir) && file_exists($temp_filename)) {
+            return self::tempnam($filename, $dir);
+        }
+        if ($fp) {
+            fclose($fp);
+        }
+
+        return $temp_filename;
     }
 }
 

@@ -50,13 +50,13 @@ defined("GCORE_SITE") or die;
 			<div class="field">
 				<label><?php el('Width'); ?></label>
 				<input type="text" value="400" name="Connection[views][<?php echo $n; ?>][width]">
-				<small><?php el('The signature pad width.'); ?></small>
+				<small><?php el('The default signature pad width.'); ?></small>
 			</div>
 			
 			<div class="field">
 				<label><?php el('Height'); ?></label>
 				<input type="text" value="150" name="Connection[views][<?php echo $n; ?>][height]">
-				<small><?php el('The signature pad height.'); ?></small>
+				<small><?php el('The defualt signature pad height.'); ?></small>
 			</div>
 			
 			<div class="field">
@@ -70,7 +70,7 @@ defined("GCORE_SITE") or die;
 		<div class="field">
 			<label><?php el('Style'); ?></label>
 			<input type="text" value="border: 1px solid;" name="Connection[views][<?php echo $n; ?>][style]">
-			<small><?php el('Default styling for the signature area.'); ?></small>
+			<small><?php el('Default styling for the signature area, you can force static width or height here.'); ?></small>
 		</div>
 		
 	</div>

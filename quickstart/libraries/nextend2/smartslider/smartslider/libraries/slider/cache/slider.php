@@ -94,8 +94,7 @@ class N2CacheManifestSlider extends N2CacheManifest {
         }
 
         if (N2SmartSliderHelper::getInstance()
-                               ->isSliderChanged($this->parameters['slider']->sliderId, 1)
-        ) {
+                               ->isSliderChanged($this->parameters['slider']->sliderId, 1)) {
             $this->clearCurrentGroup();
             N2SmartSliderHelper::getInstance()
                                ->setSliderChanged($this->parameters['slider']->sliderId, 0);

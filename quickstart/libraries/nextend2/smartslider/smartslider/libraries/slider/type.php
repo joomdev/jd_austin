@@ -26,10 +26,6 @@ abstract class N2SmartSliderType {
         $this->jsDependency[] = 'nextend-gsap';
     
 
-        if (class_exists('N2AssetsGoogleFonts', false) && N2AssetsGoogleFonts::$hasWebFontLoader) {
-            $this->jsDependency[] = 'nextend-webfontloader';
-        }
-
         if ($slider->isAdmin) {
             $this->jsDependency[] = 'documentReady';
         }

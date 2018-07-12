@@ -16,6 +16,7 @@ class N2SmartSlider extends N2SmartSliderAbstract {
                 $excludedPlugins   = explode('||', N2SmartSliderSettings::get('joomla-plugins-content-excluded', ''));
                 $excludedPlugins[] = 'plgcontentemailcloak';
                 $excludedPlugins[] = 'plgcontentdropeditor';
+                $excludedPlugins[] = 'plgcontentshortcode_ultimate';
 
                 JPluginHelper::importPlugin('content');
 
@@ -32,6 +33,8 @@ class N2SmartSlider extends N2SmartSliderAbstract {
                         if (is_object($observer)) {
                             $className = strtolower(get_class($observer));
                             if (in_array($className, $classNames)) {
+                                $pluginsToRun[] = $observer;
+                            } else if (method_exists($observer, 'onContentPrepare') && !in_array($className, $excludedPlugins)) {
                                 $pluginsToRun[] = $observer;
                             }
                         }

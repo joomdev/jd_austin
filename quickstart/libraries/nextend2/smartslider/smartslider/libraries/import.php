@@ -21,19 +21,14 @@ class N2SmartSliderImport {
 
     public function import($filePathOrData, $groupID = 0, $imageImportMode = 'clone', $linkedVisuals = 1, $isFilePath = true) {
         if (!$isFilePath) {
-            $folder = sys_get_temp_dir();
-            if (!is_writable($folder)) {
-                $folder = N2Filesystem::getNotWebCachePath();
-            }
-            if (!is_writable($folder)){
-                N2Message::error(sprintf(n2_('Slider can\'t be imported. The destination folder ( %s ) is not writable. Contact your host to fix the permission issue.'), $folder));
-                return false;
-            }
-            $tmp = tempnam($folder, 'ss3');
+            $tmp = N2Filesystem::tempnam();
             file_put_contents($tmp, $filePathOrData);
             $filePathOrData = $tmp;
         }
         $importData = N2ZipReader::read($filePathOrData);
+        if (!$isFilePath) {
+            @unlink($tmp);
+        }
         if (!is_array($importData)) {
             N2Message::error(n2_('The importing failed at the unzipping part.'));
 

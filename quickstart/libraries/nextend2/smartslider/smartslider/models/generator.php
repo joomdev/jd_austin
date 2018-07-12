@@ -115,12 +115,12 @@ class N2SmartsliderGeneratorModel extends N2Model {
                 $col2->set(array(
                     'desktopportraitinneralign' => "right",
                 ));
-                $heading = new N2SmartSliderSlideBuilderLayer($col2, 'heading');
-                $heading->set(array(
+                $text = new N2SmartSliderSlideBuilderLayer($col2, 'text');
+                $text->set(array(
                     'desktopportraitselfalign'  => 'inherit'
                 ));
-                $heading->item->set(array(
-                    'heading'   => '{price}',
+                $text->item->set(array(
+                    'content'   => '{price}',
                     'font'      => base64_encode('{"name":"Static","data":[{"extra":"","color":"ffffffff","size":"36||px","tshadow":"0|*|0|*|0|*|000000ff","afont":"Roboto,Arial","lineheight":"1.5","bold":0,"italic":0,"underline":0,"align":"inherit","letterspacing":"normal","wordspacing":"normal","texttransform":"none"},{"extra":""}]}'),
                 ));
 

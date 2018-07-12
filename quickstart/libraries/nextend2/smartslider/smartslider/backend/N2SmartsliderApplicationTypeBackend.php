@@ -12,8 +12,12 @@ class N2SmartsliderApplicationTypeBackend extends N2ApplicationType {
             'libraries.parse.parse'
         ));
 
-
-        N2Form::import(dirname(__FILE__) . '/elements');
+        /**
+         * We do not need the method exists check here, but upgrading from 3.2.14 -> 3.3 caused an error in WordPress free
+         */
+        if(method_exists('N2Form', 'import')) {
+            N2Form::import(dirname(__FILE__) . '/elements');
+        }
 
         N2Loader::import(array(
             'libraries.settings.settings'

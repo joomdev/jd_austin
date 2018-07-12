@@ -43,9 +43,13 @@ abstract class N2SliderGeneratorPluginAbstract {
     /**
      * @param $name
      *
-     * @return N2GeneratorAbstract
+     * @return false|N2GeneratorAbstract
      */
     public function getSource($name) {
+        if (!isset($this->sources[$name])) {
+            return false;
+        }
+
         return $this->sources[$name];
     }
 

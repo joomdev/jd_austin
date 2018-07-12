@@ -73,7 +73,7 @@ class N2SSPluginWidgetAutoplayImage extends N2SSPluginWidgetAbstract {
             $play = $params->get(self::$key . 'play');
             if ($play == -1) {
                 $play = null;
-            } elseif ($play[0] != '$') {
+            } else if ($play[0] != '$') {
                 $play = N2Uri::pathToUri(dirname(__FILE__) . '/image/play/' . $play);
             }
         }
@@ -88,7 +88,7 @@ class N2SSPluginWidgetAutoplayImage extends N2SSPluginWidgetAbstract {
                 $pause = $params->get(self::$key . 'pause');
                 if ($pause == -1) {
                     $pause = null;
-                } elseif ($pause[0] != '$') {
+                } else if ($pause[0] != '$') {
                     $pause = N2Uri::pathToUri(dirname(__FILE__) . '/image/pause/' . $pause);
                 }
             }
@@ -142,7 +142,7 @@ class N2SSPluginWidgetAutoplayImage extends N2SSPluginWidgetAbstract {
             $slider->features->addInitCallback('new N2Classes.SmartSliderWidgetAutoplayImage(this, ' . n2_floatval($params->get(self::$key . 'responsive-desktop')) . ', ' . n2_floatval($params->get(self::$key . 'responsive-tablet')) . ', ' . n2_floatval($params->get(self::$key . 'responsive-mobile')) . ');');
 
             $html = N2Html::tag('div', $displayAttributes + $attributes + array(
-                    'class'      => $displayClass . $styleClass . 'nextend-autoplay n2-ib n2-ow nextend-autoplay-image',
+                    'class'      => $displayClass . $styleClass . 'nextend-autoplay n2-ow nextend-autoplay-image' . ($isNormalFlow ? '' : ' n2-ib'),
                     'style'      => $style,
                     'role'       => 'button',
                     'aria-label' => 'Pause autoplay'

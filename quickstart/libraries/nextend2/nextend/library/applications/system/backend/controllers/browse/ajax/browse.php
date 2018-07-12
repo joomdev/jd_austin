@@ -402,10 +402,11 @@ class N2BulletProof {
                 case 'mp3':
                     $rawMime = 'audio/mpeg';
                     break;
+                default:
+                    $rawMime = '';
+                    break;
             }
         }
-
-        $rawMime = mime_content_type($fileToUpload["tmp_name"]);
 
         switch ($rawMime) {
             case 'video/mp4':

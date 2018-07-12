@@ -456,7 +456,9 @@ class N2FontStyle {
     public function loadFont($families) {
         $families = explode(',', $families);
         for ($i = 0; $i < count($families); $i++) {
-            $families[$i] = $this->getFamily(trim(trim($families[$i]), '\'"'));
+            if($families[$i] != "inherit"){
+                $families[$i] = $this->getFamily(trim(trim($families[$i]), '\'"'));
+            }
         }
 
         return implode(',', $families);

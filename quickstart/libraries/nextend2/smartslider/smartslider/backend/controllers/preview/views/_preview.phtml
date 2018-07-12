@@ -57,9 +57,12 @@ N2JS::addFirstCode("
     autoHeight();
     $(window).on('resize', autoHeight);
     $('.n2-ss-slider').on('SliderResize', autoHeight);
-    window[$('.n2-ss-slider').attr('id')].startedDeferred.done(function(slider){
-        slider.ready(autoHeight);
-    });
+    
+    N2R('#' + $('.n2-ss-slider').attr('id'), $.proxy(function ($, slider) {
+        slider.startedDeferred.done(function(slider){
+            slider.ready(autoHeight);
+        });
+    }));
         
     $('.n2-lb-header').each(function () {
         var bar = $(this);

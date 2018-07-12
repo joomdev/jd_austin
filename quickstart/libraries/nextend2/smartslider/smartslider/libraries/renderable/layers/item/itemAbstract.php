@@ -27,6 +27,10 @@ abstract class N2SSItemAbstract {
         $this->layer = $layer;
     }
 
+    public function fillDefault($defaults) {
+        $this->data->fillDefault($defaults);
+    }
+
     public abstract function render();
 
     public function renderAdmin() {

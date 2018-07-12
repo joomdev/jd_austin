@@ -126,48 +126,7 @@ defined("GCORE_SITE") or die;
 	</div>
 	
 	<div class="ui bottom attached tab segment small fields_events_list" data-tab="view-<?php echo $n; ?>-events">
-		<input type="hidden" class="fields_events_counter" value="<?php echo !empty($view['events']) ? max(array_keys($view['events'])) : 0; ?>">
-		<?php
-			if(empty($view['events'])){
-				$view['events'] = [1];
-			}
-		?>
-		<?php foreach($view['events'] as $ke => $field_event): ?>
-		<div class="fields">
-			<div class="three wide field">
-				<label><?php el('On'); ?></label>
-				<select name="Connection[views][<?php echo $n; ?>][events][<?php echo $ke; ?>][sign]" class="ui fluid dropdown">
-					<option value="click"><?php el('Click'); ?></option>
-				</select>
-			</div>
-			<div class="five wide field">
-				<label><?php el('Actions'); ?></label>
-				<select name="Connection[views][<?php echo $n; ?>][events][<?php echo $ke; ?>][action][]" class="ui fluid dropdown" multiple>
-					<option value="enable"><?php el('Enable'); ?></option>
-					<option value="disable"><?php el('Disable'); ?></option>
-					<option value="show"><?php el('Show'); ?></option>
-					<option value="hide"><?php el('Hide'); ?></option>
-					<option value="disable_validation"><?php el('Disable validation'); ?></option>
-					<option value="enable_validation"><?php el('Enable validation'); ?></option>
-					<option value="add"><?php el('Add to'); ?></option>
-					<option value="sub"><?php el('Subtract from'); ?></option>
-					<option value="multiply"><?php el('Multiply with'); ?></option>
-				</select>
-			</div>
-			<div class="five wide field">
-				<label><?php el('Element(s) identifier'); ?>
-				<i class="icon info circular blue inverted small" data-hint="<?php el('Enter a field name, or an element id preceded by #, or an element class preceded by .'); ?>"></i>
-				</label>
-				<textarea name="Connection[views][<?php echo $n; ?>][events][<?php echo $ke; ?>][identifier]" rows="1" data-autoresize="1"></textarea>
-			</div>
-			<div class="two wide field">
-				<label>&nbsp;</label>
-				<button type="button" class="ui button icon compact green tiny" onclick="Fields_add_field_event(this);"><i class="plus icon"></i></button>
-				<button type="button" class="ui button icon compact red tiny <?php if($ke == 0): ?>hidden<?php endif; ?> delete_button" onclick="Fields_delete_field_event(this);"><i class="cancel icon"></i></button>
-			</div>
-		</div>
-		<?php endforeach; ?>
-		
+		<?php $this->view(dirname(dirname(__FILE__)).DS.'field_events'.DS.'field_events_config.php', ['view' => $view, 'n' => $n, 'events_values' => false, 'events_events' => ['click' => rl('Click')]]); ?>
 	</div>
 	
 	<div class="ui bottom attached tab segment" data-tab="view-<?php echo $n; ?>-permissions">

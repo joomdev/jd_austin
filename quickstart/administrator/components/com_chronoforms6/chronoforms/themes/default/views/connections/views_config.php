@@ -73,7 +73,7 @@ defined("GCORE_SITE") or die;
 			<?php $ename = explode(':', $ename)[0]; ?>
 			<div class="ui segment top attached secondary inverted <?php echo $ecolor; ?>" style="padding:0.2em 1em;">
 				<?php echo $ename; ?>
-				<i class="icon <?php if(!empty($this->data('Connection.views.'.$count.'.'.$ename.'.minimized'))):?>maximize<?php else: ?>minimize<?php endif; ?> white link minimize_area" data-hint="<?php el('Minimize/Maximize'); ?>" data-named="<?php echo $type.$count; ?>/<?php echo $ename; ?>"></i>
+				<i class="icon window <?php if(!empty($this->data('Connection.views.'.$count.'.'.$ename.'.minimized'))):?>maximize<?php else: ?>minimize<?php endif; ?> white link minimize_area" data-hint="<?php el('Minimize/Maximize'); ?>" data-named="<?php echo $type.$count; ?>/<?php echo $ename; ?>"></i>
 			</div>
 			<input type="hidden" value="0" name="Connection[views][<?php echo $count; ?>][<?php echo $ename; ?>][minimized]" data-minimized="<?php echo $type.$count; ?>/<?php echo $ename; ?>">
 			<div class="ui segment view_section bottom attached draggable-receiver <?php if(!empty($this->data('Connection.views.'.$count.'.'.$ename.'.minimized'))):?>hidden<?php endif; ?>" style="min-height:50px;" data-name="<?php echo $type.$count; ?>/<?php echo $ename; ?>" data-title="<?php echo $ename; ?>">

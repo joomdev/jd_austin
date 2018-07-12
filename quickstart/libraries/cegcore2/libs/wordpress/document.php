@@ -44,31 +44,11 @@ class Document extends \G2\L\Document {
 			}
 			return;
 		}
+		
 		parent::_($name, $params);
 	}
-	/*
-	function addCssFile($path, $media = 'screen'){
-		$document = \JFactory::getDocument();
-		$document->addStyleSheet($path);
-	}
-
-	function addJsFile($path, $type = 'text/javascript'){
-		$document = \JFactory::getDocument();
-		$document->addScript($path);
-	}
 	
-	function addCssCode($content, $media = 'screen'){
-		$document = \JFactory::getDocument();
-		$document->addStyleDeclaration($content);
-	}
-
-	function addJsCode($content, $type = 'text/javascript'){
-		$document = \JFactory::getDocument();
-		$document->addScriptDeclaration($content);
-	}
-	*/
 	function title($title = null){
-		
 		if(is_null($title)){
 			return wp_title('>', false);
 		}else{
@@ -77,75 +57,44 @@ class Document extends \G2\L\Document {
 	}
 	
 	function meta($name, $content = null, $http = false){
-		/*$document = \JFactory::getDocument();
 		
-		if(is_null($content)){
-			return $document->getMetaData($name);
-		}else{
-			$document->setMetaData($name, $content, $http);
-		}*/
 	}
 	
-	
-	public static function _header(){
-		$doc = \G2\L\Document::getInstance();
-		static $used;
-		if(!isset($used)){
-			$used = array('chunks' => []);
-		}
-		$chunks = array();
-		/*
-		$JDocument = \JFactory::getDocument();
-		if(!method_exists($JDocument, 'addCustomTag')){
-			return;
-		}
-		*/
-		$HtmlHelper = new \G2\H\Html();
-		//add css files list
-		foreach($doc->cssfiles as $k => $cssfile){
-			if(empty($used['cssfiles'][$k])){
-				$used['cssfiles'][$k] = true;
-				$cssfile['href'] = \G2\Globals::fix_urls($cssfile['href']);
-				$chunks[] = $HtmlHelper->attrs($cssfile)->tag('link');
-			}
-		}
-		//add css code list
-		foreach($doc->csscodes as $media => $codes){
-			$chunks[] = $HtmlHelper->attrs(['type' => 'text/css', 'media' => $media])->content(implode("\n", $codes))->tag('style');
-			foreach($doc->csscodes[$media] as $k => $code){
-				unset($doc->csscodes[$media][$k]);
-			}
-		}
-		//add js files list
-		foreach($doc->jsfiles as$k => $jsfile){
-			if(empty($used['jsfiles'][$k])){
-				$used['jsfiles'][$k] = true;
-				$jsfile['src'] = \G2\Globals::fix_urls($jsfile['src']);
-				$chunks[] = $HtmlHelper->attrs($jsfile)->content('')->tag('script');
-			}
-		}
-		//add js code list
-		foreach($doc->jscodes as $type => $codes){
-			foreach($doc->jscodes[$type] as $k => $code){
-				$chunks[] = $HtmlHelper->attrs(['type' => $type])->content($code)->tag('script');
-				unset($doc->jscodes[$type][$k]);
-			}
-		}
-
-		foreach($doc->headertags as $k => $code){
-			$chunks[] = $code;
-			unset($doc->headertags[$k]);
+	public function buildHeader(){
+		//$JDocument = \JFactory::getDocument();
+		//$this->package();
+		
+		foreach($this->cssfiles as $k => $cssfile){
+			//$JDocument->addStyleSheet($cssfile['href']);
+			echo '<link href="'.$cssfile['href'].'" rel="stylesheet" />';
+			//wp_enqueue_style($cssfile['href'], $cssfile['href']);
 		}
 		
-		foreach($chunks as $k => $chunk){
-			if(in_array($chunk, $used['chunks'])){
-				continue;
-			}
-			$used['chunks'][] = $chunk;
-			echo \G2\Globals::fix_urls($chunk);
+		foreach($this->csscodes as $media => $codes){
+			//$JDocument->addStyleDeclaration(implode("\n", $codes));
+			echo '<style type="text/css">';
+			echo implode("\n", $codes);
+			echo '</style>';
 		}
 		
-		unset($HtmlHelper);
+		foreach($this->jsfiles as$k => $jsfile){
+			//$JDocument->addScript($jsfile['src']);//, 'text/javascript', true);
+			echo '<script type="text/javascript" src="'.$jsfile['src'].'"></script>';
+			//wp_enqueue_script($jsfile['src'], $jsfile['src']);
+		}
+		
+		foreach($this->jscodes as $type => $codes){
+			//$JDocument->addScriptDeclaration(implode("\n", $codes));
+			echo '<script type="text/javascript">';
+			echo implode("\n", $codes);
+			echo '</script>';
+		}
+		
+		ksort($this->headertags, SORT_STRING);
+		foreach($this->headertags as $k => $code){
+			//$JDocument->addCustomTag($code);
+			echo $code;
+		}
 	}
 	
 }

@@ -2,7 +2,11 @@
 
 class N2SS3 {
 
-    public static $version = '3.3.1';
+    public static $version = '3.3.4';
+
+    public static $revision = '2332';
+
+    public static $completeVersion;
 
     public static $plan = 'pro';
 
@@ -112,14 +116,14 @@ class N2SS3 {
             case 'ERROR_HANDLED':
                 break;
             case '503':
-                N2Message::error('Licensing server is down, try again later!');
+                N2Message::error('Licensing server is down. Try: Global Settings -> Framework settings -> Secondary server -> On');
                 break;
             case null:
-                N2Message::error('Licensing server not reachable, try again later!');
+                N2Message::error('Licensing server not reachable. Try: Global Settings -> Framework settings -> Secondary server -> On');
                 break;
             default:
                 N2Message::error('Debug: ' . $status);
-                N2Message::error('Licensing server not reachable, try again later!');
+                N2Message::error('Licensing server not reachable. Try: Global Settings -> Framework settings -> Secondary server -> On');
                 break;
         }
 
@@ -135,4 +139,6 @@ class N2SS3 {
     public static function initLicense() {
     }
 }
+
+N2SS3::$completeVersion = N2SS3::$version . 'r' . N2SS3::$revision;
 N2SS3::$plan = 'free';

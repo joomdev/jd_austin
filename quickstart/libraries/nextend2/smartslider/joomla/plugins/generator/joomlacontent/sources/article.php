@@ -301,58 +301,60 @@ class N2GeneratorJoomlaContentArticle extends N2GeneratorAbstract {
 
             $data[] = $r;
         }
+		
+		if(!empty($idArray)){
+			if ($this->data->get('sourcetagvariables', 0)) {
+				$query = 'SELECT t.title, c.content_item_id  FROM #__tags AS t
+				  LEFT JOIN #__contentitem_tag_map AS c ON t.id = c.tag_id
+				  WHERE t.id IN (SELECT tag_id FROM #__contentitem_tag_map WHERE type_alias = \'com_content.article\' AND content_item_id IN (' . implode(',', $idArray) . '))';
+				$db->setQuery($query);
+				$result   = $db->loadAssocList();
+				$tags     = array();
+				$articles = array();
+				foreach ($result AS $r) {
+					$tags[$r['content_item_id']][] = $r['title'];
+					$articles[]                    = $r['content_item_id'];
 
-        if ($this->data->get('sourcetagvariables', 0)) {
-            $query = 'SELECT t.title, c.content_item_id  FROM #__tags AS t
-              LEFT JOIN #__contentitem_tag_map AS c ON t.id = c.tag_id
-              WHERE t.id IN (SELECT tag_id FROM #__contentitem_tag_map WHERE type_alias = \'com_content.article\' AND content_item_id IN (' . implode(',', $idArray) . '))';
-            $db->setQuery($query);
-            $result   = $db->loadAssocList();
-            $tags     = array();
-            $articles = array();
-            foreach ($result AS $r) {
-                $tags[$r['content_item_id']][] = $r['title'];
-                $articles[]                    = $r['content_item_id'];
+				}
+				for ($i = 0; $i < count($data); $i++) {
+					if (in_array($data[$i]['id'], $articles)) {
+						$j = 1;
+						foreach ($tags[$data[$i]['id']] AS $tag) {
+							$data[$i]['tag' . $j] = $tag;
+							$j++;
+						}
+					}
+				}
+			}
 
-            }
-            for ($i = 0; $i < count($data); $i++) {
-                if (in_array($data[$i]['id'], $articles)) {
-                    $j = 1;
-                    foreach ($tags[$data[$i]['id']] AS $tag) {
-                        $data[$i]['tag' . $j] = $tag;
-                        $j++;
-                    }
-                }
-            }
-        }
+			if ($this->data->get('sourcefields', 0)) {
+				$query = "SELECT fv.value, fv.item_id, f.title, f.type FROM #__fields_values AS fv LEFT JOIN #__fields AS f ON fv.field_id = f.id WHERE fv.item_id IN (" . implode(',', $idArray) . ")";
+				$db->setQuery($query);
+				$result    = $db->loadAssocList();
+				$AllResult = array();
+				foreach ($result AS $r) {
+					if ($r['type'] == 'media') {
+						$r['value'] = N2ImageHelper::dynamic($uri . "/" . $r["value"]);
+					}
+					$r['title'] = htmlentities($r['title']);
+					$keynum     = 2;
+					while (isset($AllResult[$r['item_id']][$r['title']])) {
+						$r['title'] = $r['title'] . $keynum;
+						$keynum++;
+					}
+					$AllResult[$r['item_id']][$r['title']] = $r['value'];
+				}
 
-        if ($this->data->get('sourcefields', 0)) {
-            $query = "SELECT fv.value, fv.item_id, f.title, f.type FROM #__fields_values AS fv LEFT JOIN #__fields AS f ON fv.field_id = f.id WHERE fv.item_id IN (" . implode(',', $idArray) . ")";
-            $db->setQuery($query);
-            $result    = $db->loadAssocList();
-            $AllResult = array();
-            foreach ($result AS $r) {
-                if ($r['type'] == 'media') {
-                    $r['value'] = N2ImageHelper::dynamic($uri . "/" . $r["value"]);
-                }
-                $r['title'] = htmlentities($r['title']);
-                $keynum     = 2;
-                while (isset($AllResult[$r['item_id']][$r['title']])) {
-                    $r['title'] = $r['title'] . $keynum;
-                    $keynum++;
-                }
-                $AllResult[$r['item_id']][$r['title']] = $r['value'];
-            }
-
-            for ($i = 0; $i < count($data); $i++) {
-                if (isset($AllResult[$data[$i]['id']])) {
-                    foreach ($AllResult[$data[$i]['id']] as $key => $value) {
-                        $key            = preg_replace('/[^a-zA-Z0-9_\x7f-\xff]*/', '', $key);
-                        $data[$i][$key] = $value;
-                    }
-                }
-            }
-        }
+				for ($i = 0; $i < count($data); $i++) {
+					if (isset($AllResult[$data[$i]['id']])) {
+						foreach ($AllResult[$data[$i]['id']] as $key => $value) {
+							$key            = preg_replace('/[^a-zA-Z0-9_\x7f-\xff]*/', '', $key);
+							$data[$i][$key] = $value;
+						}
+					}
+				}
+			}
+		}
 
         return $data;
     }

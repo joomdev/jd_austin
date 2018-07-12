@@ -168,6 +168,11 @@ class N2SmartSliderFeatureSlideBackground {
         return '';
     }
 
+    /**
+     * @param $slide N2SmartSliderSlide
+     *
+     * @return string
+     */
     private function renderImage($slide) {
 
         $rawBackgroundImage = $slide->parameters->get('backgroundImage', '');
@@ -201,6 +206,7 @@ class N2SmartSliderFeatureSlideBackground {
             $src = N2Image::base64Transparent();
         } else {
             $src = N2ImageHelper::dynamic($this->slider->features->optimize->optimizeBackground($backgroundImage, $x, $y));
+            $slide->addImage(N2ImageHelper::fixed($src));
         }
 
 

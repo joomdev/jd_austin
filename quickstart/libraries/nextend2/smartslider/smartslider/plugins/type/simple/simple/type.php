@@ -107,7 +107,7 @@ class N2SmartSliderTypeSimple extends N2SmartSliderType {
     }
 
     public function getScript() {
-        return N2Html::script("N2R(" . json_encode($this->jsDependency) . ",function(){new N2Classes.SmartSliderSimple('#{$this->slider->elementId}', " . json_encode($this->javaScriptProperties) . ");});");
+        return "N2R(" . json_encode($this->jsDependency) . ",function(){new N2Classes.SmartSliderSimple('#{$this->slider->elementId}', " . json_encode($this->javaScriptProperties) . ");});";
     }
 
     public function loadResources() {
@@ -193,9 +193,7 @@ class N2SmartSliderTypeSimple extends N2SmartSliderType {
             return '';
         }
 
-        $attributes = array(
-            'autoplay' => 1
-        );
+        $attributes = array();
 
         if ($params->get('backgroundVideoMuted', 1)) {
             $attributes['muted'] = 'muted';
@@ -210,7 +208,8 @@ class N2SmartSliderTypeSimple extends N2SmartSliderType {
                 'data-mode'          => $params->get('backgroundVideoMode', 'fill'),
                 'playsinline'        => 1,
                 'webkit-playsinline' => 1,
-                'data-keepplaying'   => 1
+                'data-keepplaying'   => 1,
+                'preload'            => 'none'
             ), N2Html::tag("source", array(
             "src"  => $mp4,
             "type" => "video/mp4"

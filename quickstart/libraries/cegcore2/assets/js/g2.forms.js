@@ -465,10 +465,11 @@
 		
 		Form.on('submit', function(e){
 			if(Form.form('is valid') == false){
+				Form.form('validate form');//revalidate the form to have the error class added in case the error is not under the first tab
 				if(Form.find('.field.error').first().is(':visible')){
 					jQuery.G2.scrollTo(Form.find('.field.error').first());
 				}else{
-					Form.form('validate form');//revalidate the form to have the error class added in case the error is not under the first tab
+					//Form.form('validate form');//revalidate the form to have the error class added in case the error is not under the first tab
 					if(Form.find('.field.error').first().closest('.partitioned').length > 0){
 						var activeTab = Form.find('.field.error').first().closest('.partitioned').find('.ui.segment.tab.active').first();
 			

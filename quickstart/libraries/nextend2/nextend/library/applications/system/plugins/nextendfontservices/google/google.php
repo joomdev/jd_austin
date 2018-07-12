@@ -17,8 +17,8 @@ console.log(JSON.stringify(f));
 
     private static $styles = array();
     private static $subsets = array();
-    
-    public function __construct(){
+
+    public function __construct() {
         $lines = file(dirname(__FILE__) . '/families.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         for ($i = 0; $i < count($lines); $i++) {
             self::$fonts[strtolower($lines[$i])] = $lines[$i];
@@ -37,7 +37,10 @@ console.log(JSON.stringify(f));
     public function renderFields($form) {
 
         $googleFonts = new N2Tab($form, 'google-fonts', false);
-        new N2ElementOnOff($googleFonts, 'google-enabled', n2_('Enable'), 1);
+
+        $enabledGroup = new N2ElementGroup($googleFonts, 'google-font-enabled', n2_('Enabled'));
+        new N2ElementOnOff($enabledGroup, 'google-enabled', n2_('Frontend'), 1);
+        new N2ElementOnOff($enabledGroup, 'google-enabled-backend', n2_('Backend'), 1);
 
         $styleGroup = new N2ElementGroup($googleFonts, 'google-font-style', n2_('Style'));
         new N2ElementOnOff($styleGroup, 'google-style-100', '100', 0);
@@ -97,7 +100,7 @@ console.log(JSON.stringify(f));
 
             $parameters->fillDefault(self::getDefaults());
 
-            if ($parameters->get('google-enabled', 1)) {
+            if ((!N2Platform::$isAdmin && $parameters->get('google-enabled', 1)) || (N2Platform::$isAdmin && $parameters->get('google-enabled-backend', 1))) {
                 N2GoogleFonts::$enabled = 1;
 
                 for ($i = 100; $i < 1000; $i += 100) {
@@ -134,7 +137,14 @@ console.log(JSON.stringify(f));
     }
 
     public function onFontManagerLoadBackend() {
-        N2JS::addInline('new N2Classes.NextendFontServiceGoogle("' . implode(',', self::$styles) . '","' . implode(',', self::$subsets) . '", ' . json_encode(self::$fonts) . ');');
+        $settings   = N2Fonts::loadSettings();
+        $parameters = $settings['plugins'];
+
+        $parameters->fillDefault(self::getDefaults());
+
+        if ($parameters->get('google-enabled-backend', 1)) {
+            N2JS::addInline('new N2Classes.NextendFontServiceGoogle("' . implode(',', self::$styles) . '","' . implode(',', self::$subsets) . '", ' . json_encode(self::$fonts) . ');');
+        }
     }
 
     function addStyle($parameters, $weight) {

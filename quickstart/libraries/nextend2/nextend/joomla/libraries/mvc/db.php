@@ -104,7 +104,7 @@ class N2DBConnector extends N2DBConnectorAbstract
     public function findAllByAttributes(array $attributes, $fields = false, $order = false) {
         $query = $this->db->getQuery(true);
         if ($fields) {
-            $query->select($this->db->quoteName($fields));
+            $query->select($fields);
         } else {
             $query->select('*');
         }

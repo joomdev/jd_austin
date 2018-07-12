@@ -138,8 +138,22 @@ class N2SmartsliderSlidersModel extends N2Model {
         new N2ElementText($generalTab2, 'title', n2_('Name'), n2_('Slider'), array(
             'style' => 'width:400px;'
         ));
-        new N2ElementText($generalTab2, 'alias', n2_('Alias'), '', array(
+
+        $aliasGroup = new N2ElementGroup($generalTab2, 'aliasgroup', n2_('Alias'));
+
+        new N2ElementText($aliasGroup, 'alias', n2_('Alias'), '', array(
             'style' => 'width:200px;'
+        ));
+
+        new N2ElementOnOff($aliasGroup, 'alias-id', n2_('Use as ID on element before slider'), '', array(
+            'tip'           => 'You can have an empty div element before our slider, which would use this alias as its id. This can be useful, if you would want to use #your-alias as the url in your menu to jump to that element.',
+            'relatedFields' => array(
+                'alias-smoothscroll'
+            )
+        ));
+
+        new N2ElementOnOff($aliasGroup, 'alias-smoothscroll', n2_('Smooth scroll to this element'), '', array(
+            'tip' => 'The #your-alias urls in links would be forced to smooth scroll to our element.'
         ));
 
         $controls = new N2ElementGroup($generalTab2, 'controls', n2_('Controls'));
@@ -377,8 +391,12 @@ class N2SmartsliderSlidersModel extends N2Model {
             'tip' => n2_('You won\'t be able to scroll your website anymore.')
         ));
 
-        new N2ElementOnOff($developerOptions, 'clear-both', n2_('Clear both before slider'), 0, array(
+        $clearGroup = new N2ElementGroup($developerOptions, 'cleargroup', n2_('Clear both'));
+        new N2ElementOnOff($clearGroup, 'clear-both', n2_('Before slider'), 0, array(
             'tip' => n2_('If your slider does not resize correctly, turn this option on.')
+        ));
+        new N2ElementOnOff($clearGroup, 'clear-both-after', n2_('After slider'), 1, array(
+            'tip' => n2_('Turn this off to allow contents following the slider get into the same row where the slider is.')
         ));
 
         new N2ElementTextarea($developerOptions, 'custom-css-codes', 'CSS', '', array(

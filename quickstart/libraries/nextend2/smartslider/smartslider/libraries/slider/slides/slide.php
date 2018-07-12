@@ -231,7 +231,7 @@ class N2SmartSliderSlide extends N2SmartSliderComponentOwnerAbstract {
 
             N2SSSlideComponent::$isAdmin = $this->sliderObject->isAdmin;
 
-            $mainContainer = new N2SSSlideComponentMain($this, $this->slide);
+            $mainContainer = new N2SSSlideComponentMain(null, $this, null, $this->slide);
 
             $this->html = N2Html::tag('div', $this->containerAttributes, $mainContainer->render($this->sliderObject->isAdmin));
         }
@@ -242,7 +242,7 @@ class N2SmartSliderSlide extends N2SmartSliderComponentOwnerAbstract {
     }
 
     public function getAsStatic() {
-        $mainContainer = new N2SSSlideComponentMain($this, $this->slide);
+        $mainContainer = new N2SSSlideComponentMain(null, $this, null, $this->slide);
 
         return N2Html::tag('div', array(
             'class'             => 'n2-ss-static-slide n2-ow' . $this->classes,
@@ -284,7 +284,7 @@ class N2SmartSliderSlide extends N2SmartSliderComponentOwnerAbstract {
     }
 
     public function fill($value) {
-        if (!empty($this->variables)) {
+        if (!empty($this->variables) && !empty($value)) {
             return preg_replace_callback('/{((([a-z]+)\(([^}]+)\))|([a-zA-Z0-9][a-zA-Z0-9_\/]*))}/', array(
                 $this,
                 'parseFunction'
@@ -578,6 +578,10 @@ class N2SmartSliderSlide extends N2SmartSliderComponentOwnerAbstract {
         return $this->sliderObject->addStyle($style, $mode, $pre);
     }
 
+    public function addImage($imageUrl) {
+        $this->sliderObject->addImage($imageUrl);
+    }
+
     public function isAdmin() {
         return $this->sliderObject->isAdmin;
     }
@@ -597,9 +601,14 @@ class N2SmartSliderSlide extends N2SmartSliderComponentOwnerAbstract {
                 'src' => N2Image::base64($imagePath, $image)
             );
         }
+
+        $fixedImageUrl = N2ImageHelper::fixed($image);
+
         if (!$lazyLoad->layerImageOptimize || !$this->parameters->get('image-optimize', 1)) {
+            $this->addImage($fixedImageUrl);
+
             return array(
-                'src' => N2ImageHelper::fixed($image)
+                'src' => $fixedImageUrl
             );
         }
 
@@ -609,14 +618,16 @@ class N2SmartSliderSlide extends N2SmartSliderComponentOwnerAbstract {
         $mobile = N2Image::scaleImage('image', $image, $lazyLoad->layerImageMobile, false, $quality);
 
         if ($image == $tablet && $image == $mobile) {
+            $this->addImage($fixedImageUrl);
+
             return array(
-                'src' => N2ImageHelper::fixed($image)
+                'src' => $fixedImageUrl
             );
         }
 
         return array(
             'src'          => N2Image::base64Transparent(),
-            'data-desktop' => N2ImageHelper::fixed($image),
+            'data-desktop' => $fixedImageUrl,
             'data-tablet'  => N2ImageHelper::fixed($tablet),
             'data-mobile'  => N2ImageHelper::fixed($mobile),
             'data-device'  => '1'

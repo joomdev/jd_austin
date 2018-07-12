@@ -170,12 +170,13 @@ abstract class  N2SSSlideComponent {
 
         $class = $this->data->get('class', '');
         if (!empty($class)) {
-            $this->attributes['class'] .= ' ' . $class;
+            $this->attributes['class'] .= ' ' . $this->getOwner()
+                                                     ->fill($class);
         }
 
         $uniqueClass = $this->data->get('uniqueclass', '');
         if (!empty($uniqueClass)) {
-            $this->addUniqueClass($uniqueClass);
+            $this->addUniqueClass($uniqueClass . $this->owner->unique);
         }
 
     }
@@ -364,6 +365,15 @@ abstract class  N2SSSlideComponent {
         $this->attributes['data-' . $name] = $this->data->get($name, $default);
     }
 
+    public function createColorProperty($name, $default = null) {
+        $value = $this->data->get($name, $default);
+        $l     = strlen($value);
+        if (($l != 6 && $l != 8) || !preg_match('/^[0-9A-Fa-f]+$/', $value)) {
+            $value = $default;
+        }
+        $this->attributes['data-' . $name] = $value;
+    }
+
     public function createDeviceProperty($name, $default = null) {
         $device = 'desktopportrait';
 
@@ -466,7 +476,12 @@ abstract class  N2SSSlideComponent {
      * @param array              $layer
      */
     public static function getFilled($slide, &$layer) {
-
+        if (!empty($layer['uniqueclass'])) {
+            $layer['uniqueclass'] .= $slide->unique;
+        }
+        if (!empty($layer['class'])) {
+            $layer['class'] = $slide->fill($layer['class']);
+        }
     }
 
     /**
@@ -535,6 +550,8 @@ abstract class  N2SSSlideComponent {
             if (empty($uniqueClass)) {
                 $uniqueClass = self::generateUniqueIdentifier('n-uc-');
                 $this->data->set('uniqueclass', $uniqueClass);
+            } else {
+                $uniqueClass .= $this->owner->unique;
             }
 
             $this->getOwner()

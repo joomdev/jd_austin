@@ -100,7 +100,13 @@ class N2SmartSliderItemsFactory {
             self::$i[$elementID]++;
             $id = $elementID . 'item' . self::$i[$elementID];
 
-            return new $class($id, $itemData['values'], $layer);
+            /**
+             * @var $item N2SSItemAbstract
+             */
+            $item = new $class($id, $itemData['values'], $layer);
+            $item->fillDefault($factory->getValues());
+
+            return $item;
         }
 
         throw new Exception('Missing ' . $type . ' class:' . $class);

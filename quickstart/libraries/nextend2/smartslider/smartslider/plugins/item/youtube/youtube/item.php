@@ -47,10 +47,11 @@ class N2SSItemYouTube extends N2SSItemAbstract {
         $hasImage = 0;
         $image    = $owner->fill($this->data->get('image'));
 
-        $playImage = '';
+        $coverImage = '';
         if (!empty($image)) {
-            $style    = 'cursor:pointer; background: URL(' . N2ImageHelper::fixed($image) . ') no-repeat 50% 50%; background-size: cover';
-            $hasImage = 1;
+            $style     = 'cursor:pointer; background: URL(' . N2ImageHelper::fixed($image) . ') no-repeat 50% 50%; background-size: cover';
+            $hasImage  = 1;
+            $playImage = '';
 
             if ($this->data->get('playbutton', 1) == 1) {
 
@@ -59,7 +60,6 @@ class N2SSItemYouTube extends N2SSItemAbstract {
                 if ($playWidth > 0 && $playHeight > 0) {
 
                     $attributes = array(
-                        'class' => 'n2-video-play n2-ow',
                         'style' => ''
                     );
 
@@ -78,15 +78,23 @@ class N2SSItemYouTube extends N2SSItemAbstract {
                     $playImage = N2Html::image($src, 'Play', $attributes);
                 }
             }
+
+            $coverImage = N2Html::tag('div', array(
+                'class' => 'n2-ss-layer-player n2-ss-layer-player-cover',
+                'style' => $style
+            ), $playImage);
         }
+
+        $this->data->set('privacy-enhanced', intval(N2SmartSliderSettings::get('youtube-privacy-enhanced', 0)));
 
         $owner->addScript('new N2Classes.FrontendItemYouTube(this, "' . $this->id . '", ' . $this->data->toJSON() . ', ' . $hasImage . ');');
 
         return N2Html::tag('div', array(
             'id'    => $this->id,
-            'class' => 'n2-ow',
-            'style' => 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;' . $style
-        ), $playImage);
+            'class' => 'n2-ss-layer-player n2-ow-all'
+        ), N2Html::tag('div', array(
+                'id' => $this->id . '-frame',
+            ), '') . $coverImage);
     }
 
     public function _renderAdmin() {
@@ -98,7 +106,7 @@ class N2SSItemYouTube extends N2SSItemAbstract {
         return N2Html::tag('div', array(
             'class' => 'n2-ow',
             "style" => 'width: 100%; height: 100%; background: URL(' . N2ImageHelper::fixed($this->data->getIfEmpty('image', '$system$/images/placeholder/video.png')) . ') no-repeat 50% 50%; background-size: cover;'
-        ), $this->data->get('playbutton', 1) ? '<div class="n2-video-play n2-ow">' . file_get_contents(N2ImageHelperAbstract::fixed('$ss$/images/play.svg', true)) . '</div>' : '');
+        ), $this->data->get('playbutton', 1) ? '<div class="n2-ss-layer-player n2-ss-layer-player-cover">' . N2Html::image(N2ImageHelperAbstract::SVGToBase64('$ss$/images/play.svg')) . '</div>' : '');
 
     }
 

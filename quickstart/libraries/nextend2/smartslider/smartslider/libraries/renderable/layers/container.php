@@ -48,7 +48,7 @@ class  N2SSLayersContainer {
                             $this->layers[] = $layer;
 
                         } catch (Exception $e) {
-                            var_dump($e->getMessage());
+                            N2Message::error($e->getMessage());
                         }
                         break;
                     case 'group':

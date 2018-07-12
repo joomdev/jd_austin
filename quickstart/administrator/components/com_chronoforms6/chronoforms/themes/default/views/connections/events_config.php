@@ -8,7 +8,7 @@ defined("GCORE_SITE") or die;
 		<a class="item active" data-tab="events-<?php echo $name; ?>-general"><?php echo $name; ?></a>
 		<a class="item" data-tab="events-<?php echo $name; ?>-permissions"><?php el('Permissions'); ?></a>
 		<div class="item right" data-tab="events-<?php echo $name; ?>-tools">
-			<i class="icon <?php if(!empty($this->data('Connection.events.'.$name.'.minimized'))):?>maximize<?php else: ?>minimize<?php endif; ?> teal link minimize_area" data-hint="<?php el('Minimize/Maximize'); ?>" data-named="<?php echo $name; ?>"></i>
+			<i class="icon window <?php if(!empty($this->data('Connection.events.'.$name.'.minimized'))):?>maximize<?php else: ?>minimize<?php endif; ?> teal link minimize_area" data-hint="<?php el('Minimize/Maximize'); ?>" data-named="<?php echo $name; ?>"></i>
 			<i class="icon sort yellow link sort_area" data-hint="<?php el('Sort'); ?>"></i>
 			<i class="icon delete red link delete_area" data-hint="<?php el('Delete'); ?>"></i>
 		</div>

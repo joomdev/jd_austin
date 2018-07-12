@@ -105,10 +105,6 @@ class N2SSSlideComponentContent extends N2SSSlideComponent {
 
     }
 
-    protected function addUniqueClass($class) {
-        $this->attributes['class'] .= ' ' . $class;
-    }
-
     protected function admin() {
 
         $this->createProperty('verticalalign', 'center');
@@ -118,12 +114,12 @@ class N2SSSlideComponentContent extends N2SSSlideComponent {
         $this->createProperty('bgimagey', 50);
         $this->createProperty('bgimageparallax', '0');
 
-        $this->createProperty('bgcolor', '00000000');
+        $this->createColorProperty('bgcolor', '00000000');
         $this->createProperty('bgcolorgradient', 'off');
-        $this->createProperty('bgcolorgradientend', '00000000');
-        $this->createProperty('bgcolor-hover', '00000000');
+        $this->createColorProperty('bgcolorgradientend', '00000000');
+        $this->createColorProperty('bgcolor-hover', '00000000');
         $this->createProperty('bgcolorgradient-hover', 'off');
-        $this->createProperty('bgcolorgradientend-hover', '00000000');
+        $this->createColorProperty('bgcolorgradientend-hover', '00000000');
 
         $this->createProperty('opened', 1);
 
@@ -164,6 +160,11 @@ class N2SSSlideComponentContent extends N2SSSlideComponent {
      * @param array              $layer
      */
     public static function getFilled($slide, &$layer) {
+        N2SSSlideComponent::getFilled($slide, $layer);
+
+        if (!empty($layer['bgimage'])) {
+            $layer['bgimage'] = $slide->fill($layer['bgimage']);
+        }
 
         $slide->fillLayers($layer['layers']);
     }
