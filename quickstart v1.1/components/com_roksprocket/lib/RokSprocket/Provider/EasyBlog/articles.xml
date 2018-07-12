@@ -1,3 +1,0 @@
-<filters>
-    <filter name="article" label="Items" type="RokSprocket_Provider_EasyBlog_Filter_Type_Article"/>
-</filters>
