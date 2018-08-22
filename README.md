@@ -1,4 +1,8 @@
 # JD Austin
+![Github All Releases](https://img.shields.io/github/downloads/joomdev/jd_austin/total.svg)
+![AUR](https://img.shields.io/aur/license/yaourt.svg)
+![GitHub release](https://img.shields.io/github/release/joomdev/jd_austin.svg)
+
 JD Austin - Free Business Joomla Template
 
 #### Most Advanced Free Business Template
