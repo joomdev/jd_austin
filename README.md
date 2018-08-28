@@ -4,6 +4,7 @@
 ![GitHub release](https://img.shields.io/github/release/joomdev/jd_austin.svg)
 
 JD Austin - Free Business Joomla Template
+![JD Austin mockup](https://cdn.joomdev.com/images/jd-austin-desktop-thumb.png)
 
 #### Most Advanced Free Business Template
 
