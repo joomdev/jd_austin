@@ -16,7 +16,9 @@ defined('_JEXEC') or die;
 		<div class="article mod-articles-category-group">
 			<div class="mod-articles-category-group-title"><?php echo $group_name; ?></div>
 				<?php foreach ($group as $item) : $image = json_decode($item->images); ?>
-					<div class="category-image-intro"><img src="<?php echo JURI::root().$image->image_intro; ?>"></div>
+					<?php if(!empty($image->image_intro)) {?>
+						<div class="category-image-intro"><img src="<?php echo JURI::root().$image->image_intro; ?>"></div>
+					<?php } ?>
 					<div class="article-body mod-articles-category-body">
 					<div class="article-header mod-articles-header">
 						<h2 class="introheading">
@@ -80,13 +82,12 @@ defined('_JEXEC') or die;
 		</div>
 		<?php endforeach; ?>
 
-
-
-
 	<?php else : ?>
 		<?php foreach ($list as $item) : $image = json_decode($item->images); ?>
 			<div class="article mod-articles-category-group">
-				<div class="category-image-intro"><img src="<?php echo JURI::root().$image->image_intro; ?>"></div>
+					<?php if(!empty($image->image_intro)) {?>
+						<div class="category-image-intro"><img src="<?php echo JURI::root().$image->image_intro; ?>"></div>
+					<?php } ?>
 				<div class="article-body mod-articles-category-body">
 				<div class="article-header mod-articles-header">
 				<h2 class="introheading">
